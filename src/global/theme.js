@@ -1,4 +1,4 @@
-const theme = {
+export default {
   light: {
     background: 'white',
     buttonBackground: 'rebeccapurple',
@@ -14,5 +14,3 @@ const theme = {
     name: 'darkTheme',
   },
 };
-
-export default theme;
