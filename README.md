@@ -4,7 +4,25 @@ This is the main repo for NCMA Chapter websites.
 
 ## Getting Started Locally
 
+Install dependencies with either `yarn` or `npm`. Most of us use `yarn`:
 
+```
+yarn
+```
+
+Run your local server with:
+
+```
+yarn start
+```
+
+It should now automatically open on [localhost:8000](http://localhost:8000).
+
+## Working with different environments
+
+We use `.env` files for our environment variables. You should have default envrionment variables in `.env.development`.
+
+For more information on how Gatsby handles environment variables, [read this](https://www.gatsbyjs.org/docs/environment-variables/).
 
 ## How to work with `svg`s
 
