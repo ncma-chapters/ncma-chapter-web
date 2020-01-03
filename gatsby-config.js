@@ -7,8 +7,8 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        name: 'Gatsby Scalable Starter',
-        short_name: 'Gatsby Scalable',
+        name: 'NCMA Chapter Website',
+        short_name: 'NCMA Chapter',
         start_url: '/',
         background_color: '#ffffff',
         theme_color: '#744C9E',
