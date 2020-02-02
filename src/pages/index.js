@@ -2,13 +2,12 @@
 import React from 'react';
 import styled from 'styled-components';
 // Other imports.
-import { GatsbyTech } from 'src/assets/svg';
 import Layout from 'src/global/Layout';
 
 const LandingPage = () => (
   <Layout>
     <Page>
-      <h1>NCMA Monmouth</h1>
+      <h1>NCMA Chapter</h1>
     </Page>
   </Layout>
 );

@@ -3,16 +3,17 @@ import Helmet from 'react-helmet';
 import PropTypes from 'prop-types';
 import React, { useState } from 'react';
 import get from 'lodash/get';
-import styled, { ThemeProvider } from 'styled-components';
+import { ThemeProvider } from 'styled-components';
 import { StaticQuery, graphql } from 'gatsby';
 // Other imports.
+import NavTop from './NavTop';
 import GlobalStyle from './GlobalStyle';
-import Image from 'src/components/Image';
 import theme from './theme';
 
 const Layout = ({ children }) => {
   // Derive theme properties.
-  const [isLightTheme, toggleTheme] = useState(true);
+  const state = useState(true);
+  const isLightTheme = state[0];
 
   return (
     <StaticQuery
@@ -25,7 +26,7 @@ const Layout = ({ children }) => {
           }
         }
       `}
-      render={data => (
+      render={(data) => (
         <>
           {/* SEO Metatags */}
           <Helmet>
@@ -39,7 +40,7 @@ const Layout = ({ children }) => {
             <GlobalStyle />
 
             {/* Top Nav */}
-            {/* <NavTop /> */}
+            <NavTop />
 
             {/* Content */}
             {children}

@@ -7,7 +7,8 @@ export default createGlobalStyle`
 
   body {
     background: ${({ theme }) => theme.background};
-    font-family: 'Avenir Next', 'Helvetica Neue', 'Helvetica', sans-serif;
+    font-family: 'Proxima Nova', 'Avenir Next', 'Helvetica Neue', 'Helvetica', sans-serif;
     font-weight: 500;
+    font-size: 16px;
   }
 `;

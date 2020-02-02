@@ -1,16 +1,58 @@
 export default {
+  // LIGHT THEME.
   light: {
-    background: 'white',
-    buttonBackground: 'rebeccapurple',
-    buttonText: 'black',
-    color: 'black',
+    colors: {
+      primary: {
+        normal: '',
+        shade: '#0a3254',
+        tint: '',
+      },
+      secondary: {
+        normal: '',
+        shade: '',
+        tint: '',
+      },
+      tertiary: {
+        normal: '',
+        shade: '',
+        tint: '',
+      },
+      greys: {
+        normal: '#919197',
+        shade: '',
+        tint: '',
+      },
+      white: '#ffffff',
+      black: '#000000',
+    },
     name: 'lightTheme',
   },
+  // DARK THEME.
   dark: {
-    background: 'black',
-    buttonBackground: 'rebeccapurple',
-    buttonText: 'white',
-    color: 'white',
+    colors: {
+      primary: {
+        normal: '',
+        shade: '#0A3254',
+        tint: '',
+      },
+      secondary: {
+        normal: '',
+        shade: '',
+        tint: '',
+      },
+      tertiary: {
+        normal: '',
+        shade: '',
+        tint: '',
+      },
+      greys: {
+        normal: '#919197',
+        shade: '',
+        tint: '',
+      },
+      white: '#ffffff',
+      black: '#000000',
+    },
     name: 'darkTheme',
   },
 };
