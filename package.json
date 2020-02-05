@@ -2,6 +2,7 @@
   "name": "ncma-chapter-web",
   "description": "The main website for NCMA Chapter websites.",
   "version": "0.1.0",
+  "license": "MIT",
   "scripts": {
     "start": "gatsby develop -o",
     "storybook": "start-storybook -p 9000 -c .storybook",

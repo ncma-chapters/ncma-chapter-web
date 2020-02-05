@@ -15,13 +15,13 @@ const NavTop = () => (
 
       {/* Nav Items */}
       <Items>
-        {map(get(config, 'navTop.items'), (item) => {
+        {map(get(config, 'navItems'), (item) => {
           // Derive item properties.
           const label = get(item, 'label');
           const href = get(item, 'href');
 
           return (
-            <Item key={label} href={href}>
+            <Item key={label} to={href}>
               {label}
             </Item>
           );
@@ -29,7 +29,7 @@ const NavTop = () => (
       </Items>
 
       {/* Call To Action button */}
-      <CallToAction href={get(config, 'callToAction.href')}>{get(config, 'callToAction.label')}</CallToAction>
+      <CallToAction to={get(config, 'callToAction.href')}>{get(config, 'callToAction.label')}</CallToAction>
     </Content>
   </Wrapper>
 );

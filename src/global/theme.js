@@ -20,7 +20,7 @@ export default {
       greys: {
         normal: '#919197',
         shade: '',
-        tint: '',
+        tint: '#e2e2e2',
       },
       white: '#ffffff',
       black: '#000000',
@@ -48,7 +48,7 @@ export default {
       greys: {
         normal: '#919197',
         shade: '',
-        tint: '',
+        tint: '#e2e2e2',
       },
       white: '#ffffff',
       black: '#000000',

@@ -6,6 +6,7 @@ import get from 'lodash/get';
 import { ThemeProvider } from 'styled-components';
 import { StaticQuery, graphql } from 'gatsby';
 // Other imports.
+import Footer from './Footer';
 import NavTop from './NavTop';
 import GlobalStyle from './GlobalStyle';
 import theme from './theme';
@@ -46,7 +47,7 @@ const Layout = ({ children }) => {
             {children}
 
             {/* Footer */}
-            {/* <Footer /> */}
+            <Footer />
           </ThemeProvider>
         </>
       )}

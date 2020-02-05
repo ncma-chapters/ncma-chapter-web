@@ -1,7 +1,8 @@
 // Dependencies.
 import styled from 'styled-components';
+import { Link } from 'gatsby';
 
-export const CallToAction = styled.button`
+export const CallToAction = styled(Link)`
   align-items: center;
   background: ${({ theme }) => theme.colors.white};
   border-radius: 15px;
@@ -24,7 +25,7 @@ export const Content = styled.div`
   padding: 2rem;
 `;
 
-export const Item = styled.a`
+export const Item = styled(Link)`
   color: ${({ theme }) => theme.colors.white};
   cursor: pointer;
   font-size: 1rem;
