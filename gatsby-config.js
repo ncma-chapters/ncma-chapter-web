@@ -23,8 +23,15 @@ module.exports = {
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        path: `${__dirname}/src/pages`,
+        path: `${__dirname}/src/pageImports`,
         name: 'pages',
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        path: `${__dirname}/src/assets`,
+        name: 'assets',
       },
     },
     // Create an RSS feed (or multiple feeds) for your Gatsby site.
