@@ -10,30 +10,15 @@ module.exports = {
         name: 'NCMA Chapter Website',
         short_name: 'NCMA Chapter',
         start_url: '/',
-        background_color: '#ffffff',
-        theme_color: '#744C9E',
+        background_color: '#0A3254',
+        theme_color: '#0A3254',
         display: 'standalone',
-        icon: 'src/assets/images/icon.png',
+        icon: 'src/assets/critical_images/icon.png',
       },
     },
     // Required for creating a PWA: Adds a service worker for offline access.
     // WARNING: Must be listed *after* 'gatsby-plugin-manifest'.
     'gatsby-plugin-offline',
-    // The plugin creates File nodes from files.
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        path: `${__dirname}/src/pageImports`,
-        name: 'pages',
-      },
-    },
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        path: `${__dirname}/src/assets`,
-        name: 'assets',
-      },
-    },
     // Create an RSS feed (or multiple feeds) for your Gatsby site.
     `gatsby-plugin-feed`,
     // This is used to allow for absolute imports.

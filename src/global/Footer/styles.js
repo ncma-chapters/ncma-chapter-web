@@ -83,7 +83,9 @@ export const SocialLinks = styled.div`
   margin: 10px 0;
 `;
 
-export const SocialLink = styled.a``;
+export const SocialLink = styled.a`
+  margin-right: 15px;
+`;
 
 export const SocialIcon = styled.img`
   height: 20px;

@@ -1,5 +1,10 @@
 // Relative imports.
-import logo from './assets/images/logo.svg';
+import logo from 'src/assets/critical_images/logo.svg';
+import blog from 'src/assets/social/blog.svg';
+import fb from 'src/assets/social/fb.svg';
+import instagram from 'src/assets/social/instagram.svg';
+import linkedin from 'src/assets/social/linkedin.svg';
+import twitter from 'src/assets/social/twitter.svg';
 
 export default {
   callToAction: {
@@ -38,24 +43,29 @@ export default {
   logo,
   socialLinks: [
     {
-      label: 'Facebook',
+      label: 'Fb',
       href: 'https://facebook.com',
-      imagePath: '',
+      imagePath: fb,
     },
     {
       label: 'Twitter',
       href: 'https://twitter.com',
-      imagePath: '',
+      imagePath: twitter,
     },
     {
       label: 'Linkedin',
       href: 'https://linkedin.com',
-      imagePath: '',
+      imagePath: linkedin,
     },
     {
-      label: 'Pinterest',
-      href: 'https://pinterest.com',
-      imagePath: '',
+      label: 'Instagram',
+      href: 'https://instagram.com',
+      imagePath: instagram,
+    },
+    {
+      label: 'Blog',
+      href: 'https://medium.com',
+      imagePath: blog,
     },
   ],
 };
