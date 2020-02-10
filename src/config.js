@@ -109,25 +109,29 @@ export default {
   ],
   teamMembers: [
     {
-      fullName: 'Jordan Smith',
+      firstName: 'Jordan',
+      lastName: 'Smith',
       id: uniqueId(),
       image: presidentImage,
       role: 'President',
     },
     {
-      fullName: 'Casey Mills',
+      firstName: 'Casey',
+      lastName: 'Mills',
       id: uniqueId(),
       image: presidentImage,
       role: 'President - Elect',
     },
     {
-      fullName: 'Harper Cullen',
+      firstName: 'Harper',
+      lastName: 'Cullen',
       id: uniqueId(),
       image: presidentImage,
       role: 'Treasurer',
     },
     {
-      fullName: 'Sam Manning',
+      firstName: 'Sam',
+      lastName: 'Manning',
       id: uniqueId(),
       image: presidentImage,
       role: 'Secretary',

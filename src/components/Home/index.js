@@ -121,7 +121,8 @@ const Home = () => {
             <TeamMembers>
               {map(teamMembers, (member) => {
                 // Derive member properties.
-                const fullName = get(member, 'fullName');
+                const firstName = get(member, 'firstName');
+                const lastName = get(member, 'lastName');
                 const id = get(member, 'id');
                 const image = get(member, 'image');
                 const role = get(member, 'role');
@@ -129,8 +130,8 @@ const Home = () => {
                 return (
                   <TeamMember key={id}>
                     <Role>{role}</Role>
-                    <TeamMemberImage alt={fullName} src={image} />
-                    <Text>{fullName}</Text>
+                    <TeamMemberImage alt={`${firstName} ${lastName}`} src={image} />
+                    <Text>{`${firstName} ${lastName}`}</Text>
                   </TeamMember>
                 );
               })}
