@@ -7,8 +7,10 @@ export default createGlobalStyle`
 
   body {
     background: ${({ theme }) => theme.background};
+    display: flex;
+    flex-direction: column;
     font-family: 'Proxima Nova', 'Avenir Next', 'Helvetica Neue', 'Helvetica', sans-serif;
-    font-weight: 500;
     font-size: 16px;
+    font-weight: 500;
   }
 `;

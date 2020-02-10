@@ -1,9 +1,10 @@
 // Node modules.
 import Helmet from 'react-helmet';
+import styled, { ThemeProvider } from 'styled-components';
 import PropTypes from 'prop-types';
 import React, { useState } from 'react';
 import get from 'lodash/get';
-import { ThemeProvider } from 'styled-components';
+
 import { StaticQuery, graphql } from 'gatsby';
 // Other imports.
 import Footer from './Footer';
@@ -44,7 +45,7 @@ const Layout = ({ children }) => {
             <NavTop />
 
             {/* Content */}
-            {children}
+            <Content>{children}</Content>
 
             {/* Footer */}
             <Footer />
@@ -58,5 +59,12 @@ const Layout = ({ children }) => {
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
 };
+
+const Content = styled.div`
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+`;
 
 export default Layout;

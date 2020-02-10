@@ -8,7 +8,7 @@ export default {
         tint: '',
       },
       secondary: {
-        normal: '',
+        normal: '#e58258',
         shade: '',
         tint: '',
       },
@@ -19,8 +19,9 @@ export default {
       },
       greys: {
         normal: '#919197',
-        shade: '',
+        shade: '#605F66',
         tint: '#e2e2e2',
+        tint2: '#f8fcff',
       },
       white: '#ffffff',
       black: '#000000',
@@ -36,7 +37,7 @@ export default {
         tint: '',
       },
       secondary: {
-        normal: '',
+        normal: '#e58258',
         shade: '',
         tint: '',
       },
@@ -47,8 +48,9 @@ export default {
       },
       greys: {
         normal: '#919197',
-        shade: '',
+        shade: '#605F66',
         tint: '#e2e2e2',
+        tint2: '#f8fcff',
       },
       white: '#ffffff',
       black: '#000000',

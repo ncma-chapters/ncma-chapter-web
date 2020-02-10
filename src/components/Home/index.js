@@ -9,15 +9,15 @@ import Layout from 'src/global/Layout';
 import config from 'src/config';
 import {
   Banner,
+  BannerWrapper,
   Box,
+  CallToActionButton,
   Column,
   H2,
   H3,
   Hero,
-  LearnMoreButton,
   Line,
   MeetTeamMembersLink,
-  Name,
   Role,
   Row,
   Section,
@@ -32,99 +32,127 @@ import {
 const Home = () => {
   // Derive config properties.
   const teamMembers = get(config, 'teamMembers');
+  const content = get(config, 'content');
+  const callToAction = get(config, 'callToAction');
+
+  // Derive callToAction properties.
+  const label = get(callToAction, 'label');
+  const label2 = get(callToAction, 'label2', label);
+  const href = get(callToAction, 'href');
+
+  // Derive content properties.
+  const section1Header = get(content, 'home.section1Header');
+  const section1Text1 = get(content, 'home.section1Text1');
+  const section1VideoSrc = get(content, 'home.section1VideoSrc');
+  const bannerHeader = get(content, 'home.bannerHeader');
+  const bannerText = get(content, 'home.bannerText');
+  const section2Header = get(content, 'home.section2Header');
+  const section2SubHeader1 = get(content, 'home.section2SubHeader1');
+  const section2SubHeader1Text1 = get(content, 'home.section2SubHeader1Text1');
+  const section2SubHeader1ImageAlt = get(content, 'home.section2SubHeader1ImageAlt');
+  const section2SubHeader1ImageSrc = get(content, 'home.section2SubHeader1ImageSrc');
+  const section2SubHeader2ImageAlt = get(content, 'home.section2SubHeader2ImageAlt');
+  const section2SubHeader2ImageSrc = get(content, 'home.section2SubHeader2ImageSrc');
+  const section2SubHeader2 = get(content, 'home.section2SubHeader2');
+  const section2SubHeader2Text1 = get(content, 'home.section2SubHeader2Text1');
+  const section2SubHeader3 = get(content, 'home.section2SubHeader3');
+  const section3Header = get(content, 'home.section3Header');
+  const section3SubHeader1ImageAlt = get(content, 'home.section3SubHeader1ImageAlt');
+  const section3SubHeader1ImageSrc = get(content, 'home.section3SubHeader1ImageSrc');
+  const section3SubHeader1 = get(content, 'home.section3SubHeader1');
+  const section3SubHeader1Text1 = get(content, 'home.section3SubHeader1Text1');
 
   return (
     <Layout>
       <Hero>{/* <HeroPopup /> */}</Hero>
 
       <Section>
-        <H2>WHY NCMA IS THE PLACE FOR CONTRACT MANAGERS</H2>
-        <Text>
-          NCMA will connect you to an active support network for federal, commercial, and military contract managers. We
-          are the world’s leading resource for professionals in the contract management field.
-        </Text>
-        <Video />
+        <H2>{section1Header}</H2>
+        <Text style={{ textAlign: 'center' }}>{section1Text1}</Text>
+        <Video
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+          frameborder="0"
+          src={section1VideoSrc}
+        />
       </Section>
 
-      <Banner>
-        <Column>
-          <H3>LET&APOS;S DO THIS TOGETHER</H3>
-          <Line />
-          <Text>
-            The National Contract Management Association, Monmouth, NJ chapter serves the needs of contract management
-            professionals in central New Jersey.
-          </Text>
-        </Column>
+      <BannerWrapper>
+        <Banner>
+          <Column>
+            <H3>{bannerHeader}</H3>
+            <Line />
+            <Text>{bannerText}</Text>
+          </Column>
 
-        {/* <CallToAction /> */}
-      </Banner>
+          <Column style={{ alignItems: 'center' }}>
+            <CallToActionButton to={href}>{label}</CallToActionButton>
+          </Column>
+        </Banner>
+      </BannerWrapper>
 
       <Section>
-        <H2>ABOUT OUR CHAPTER</H2>
+        <H2>{section2Header}</H2>
 
         <Row>
           <Column>
-            <H3>OUR VISION</H3>
+            <H3>{section2SubHeader1}</H3>
             <Line />
-            <Text>
-              NCMA Monmouth will lead in defining the standards and the body of knowledge for the contract management
-              profession. We will provide advocacy, training, education, and certifications that enable the entry,
-              development, and advancement of all contract management professionals in central New Jersey.
-            </Text>
+            <Text>{section2SubHeader1Text1}</Text>
           </Column>
-          <StyledImage />
+
+          <StyledImage alt={section2SubHeader1ImageAlt} src={section2SubHeader1ImageSrc} />
         </Row>
 
         <Row>
-          <StyledImage />
+          <StyledImage alt={section2SubHeader2ImageAlt} src={section2SubHeader2ImageSrc} />
+
           <Column>
-            <H3>OUR MISSION</H3>
+            <H3>{section2SubHeader2}</H3>
             <Line />
-            <Text>
-              NCMA Monmouth serves the needs of contract management professionals in central New Jersey, giving its
-              members access to the best and brightest minds in contract management in our region. We advance the
-              contract management profession through advocacy and the execution of programs to connect NCMA members and
-              enable their professional development.
-            </Text>
+            <Text>{section2SubHeader2Text1}</Text>
           </Column>
         </Row>
 
-        <Column>
-          <H3>MEET OUR LEADERSHIP TEAM</H3>
-          <Line />
-          <TeamMembers>
-            {map(teamMembers, (member) => {
-              // Derive member properties.
-              const fullName = get(member, 'fullName');
-              const id = get(member, 'id');
-              const image = get(member, 'image');
-              const role = get(member, 'role');
+        <Row>
+          <Column>
+            <H3>{section2SubHeader3}</H3>
+            <Line style={{ maxWidth: '430px' }} />
+            <TeamMembers>
+              {map(teamMembers, (member) => {
+                // Derive member properties.
+                const fullName = get(member, 'fullName');
+                const id = get(member, 'id');
+                const image = get(member, 'image');
+                const role = get(member, 'role');
 
-              return (
-                <TeamMember key={id}>
-                  <Role>{role}</Role>
-                  <TeamMemberImage alt="fullName" src={image} />
-                  <Name>{fullName}</Name>
-                </TeamMember>
-              );
-            })}
-          </TeamMembers>
-          <MeetTeamMembersLink to="/team">Get to know the officers.</MeetTeamMembersLink>
-        </Column>
+                return (
+                  <TeamMember key={id}>
+                    <Role>{role}</Role>
+                    <TeamMemberImage alt={fullName} src={image} />
+                    <Text>{fullName}</Text>
+                  </TeamMember>
+                );
+              })}
+            </TeamMembers>
+
+            <MeetTeamMembersLink to="/team">Get to know the officers.</MeetTeamMembersLink>
+          </Column>
+        </Row>
       </Section>
 
       <Section>
-        <H2>JOIN NCMA MONMOUTH</H2>
+        <H2>{section3Header}</H2>
         <Row>
-          <StyledImage />
+          <StyledImage alt={section3SubHeader1ImageAlt} src={section3SubHeader1ImageSrc} />
+
           <Column>
-            <H3>A MESSAGE FROM THE PRESIDENT</H3>
+            <H3 style={{ marginLeft: '-15px' }}>{section3SubHeader1}</H3>
             <Box>
-              <Text>
-                We have a great year planned for NCMA members! NCMA Monmouth President Jordan Smith has five reasons why
-                you should join NCMA today.
-              </Text>
-              <LearnMoreButton>Learn More</LearnMoreButton>
+              <Text>{section3SubHeader1Text1}</Text>
+              <CallToActionButton to={href} style={{ marginTop: '40px' }}>
+                {label2}
+              </CallToActionButton>
             </Box>
           </Column>
         </Row>
