@@ -3,10 +3,10 @@ import React from 'react';
 import get from 'lodash/get';
 import map from 'lodash/map';
 // Relative imports.
-// import CallToAction from 'src/components/CallToAction';
-// import HeroPopup from 'src/components/HeroPopup';
-import Layout from 'src/global/Layout';
-import config from 'src/config';
+// import CallToAction from 'components/CallToAction';
+// import HeroPopup from 'components/HeroPopup';
+import Layout from 'global/Layout';
+import config from 'config';
 import {
   Banner,
   Box,

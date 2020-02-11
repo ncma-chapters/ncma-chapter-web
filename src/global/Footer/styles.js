@@ -2,7 +2,7 @@
 import styled from 'styled-components';
 import { Link } from 'gatsby';
 // Relative imports.
-import Logo from 'src/primitives/Logo';
+import Logo from 'primitives/Logo';
 
 export const Wrapper = styled.div`
   align-items: center;

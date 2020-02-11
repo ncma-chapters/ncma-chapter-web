@@ -3,7 +3,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import get from 'lodash/get';
 // Relative imports.
-import config from 'src/config';
+import config from 'config';
 import { Link, Image } from './styles';
 
 const Logo = ({ className }) => (

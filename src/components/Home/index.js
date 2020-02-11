@@ -3,31 +3,21 @@ import React from 'react';
 import get from 'lodash/get';
 import map from 'lodash/map';
 // Relative imports.
-// import CallToAction from 'src/components/CallToAction';
-// import HeroPopup from 'src/components/HeroPopup';
-import Layout from 'src/global/Layout';
-import config from 'src/config';
-import {
-  Banner,
-  BannerWrapper,
-  Box,
-  CallToActionButton,
-  Column,
-  H2,
-  H3,
-  Hero,
-  Line,
-  MeetTeamMembersLink,
-  Role,
-  Row,
-  Section,
-  StyledImage,
-  TeamMember,
-  TeamMemberImage,
-  TeamMembers,
-  Text,
-  Video,
-} from './styles';
+import Banner from 'primitives/Banner';
+import CallToActionButton from 'primitives/CallToActionButton';
+import Column from 'primitives/Column';
+import H2 from 'primitives/H2';
+import H3 from 'primitives/H3';
+import Hero from 'primitives/Hero';
+import Image from 'primitives/Image';
+import Layout from 'global/Layout';
+import Line from 'primitives/Line';
+import Row from 'primitives/Row';
+import Section from 'primitives/Section';
+import Text from 'primitives/Text';
+import Video from 'primitives/Video';
+import config from 'config';
+import { Box, MeetTeamMembersLink, Role, TeamMember, TeamMemberImage, TeamMembers } from './styles';
 
 const Home = () => {
   // Derive config properties.
@@ -41,6 +31,7 @@ const Home = () => {
   const href = get(callToAction, 'href');
 
   // Derive content properties.
+  const heroImage = get(content, 'home.heroImage');
   const section1Header = get(content, 'home.section1Header');
   const section1Text1 = get(content, 'home.section1Text1');
   const section1VideoSrc = get(content, 'home.section1VideoSrc');
@@ -64,7 +55,7 @@ const Home = () => {
 
   return (
     <Layout>
-      <Hero>{/* <HeroPopup /> */}</Hero>
+      <Hero url={heroImage} />
 
       <Section>
         <H2>{section1Header}</H2>
@@ -77,19 +68,17 @@ const Home = () => {
         />
       </Section>
 
-      <BannerWrapper>
-        <Banner>
-          <Column>
-            <H3>{bannerHeader}</H3>
-            <Line />
-            <Text>{bannerText}</Text>
-          </Column>
+      <Banner>
+        <Column>
+          <H3>{bannerHeader}</H3>
+          <Line />
+          <Text>{bannerText}</Text>
+        </Column>
 
-          <Column style={{ alignItems: 'center' }}>
-            <CallToActionButton to={href}>{label}</CallToActionButton>
-          </Column>
-        </Banner>
-      </BannerWrapper>
+        <Column style={{ alignItems: 'center' }}>
+          <CallToActionButton to={href}>{label}</CallToActionButton>
+        </Column>
+      </Banner>
 
       <Section>
         <H2>{section2Header}</H2>
@@ -101,11 +90,11 @@ const Home = () => {
             <Text>{section2SubHeader1Text1}</Text>
           </Column>
 
-          <StyledImage alt={section2SubHeader1ImageAlt} src={section2SubHeader1ImageSrc} />
+          <Image alt={section2SubHeader1ImageAlt} src={section2SubHeader1ImageSrc} />
         </Row>
 
         <Row>
-          <StyledImage alt={section2SubHeader2ImageAlt} src={section2SubHeader2ImageSrc} />
+          <Image alt={section2SubHeader2ImageAlt} src={section2SubHeader2ImageSrc} />
 
           <Column>
             <H3>{section2SubHeader2}</H3>
@@ -137,7 +126,7 @@ const Home = () => {
               })}
             </TeamMembers>
 
-            <MeetTeamMembersLink to="/team">Get to know the officers.</MeetTeamMembersLink>
+            <MeetTeamMembersLink to="/about">Get to know the officers.</MeetTeamMembersLink>
           </Column>
         </Row>
       </Section>
@@ -145,7 +134,7 @@ const Home = () => {
       <Section>
         <H2>{section3Header}</H2>
         <Row>
-          <StyledImage alt={section3SubHeader1ImageAlt} src={section3SubHeader1ImageSrc} />
+          <Image alt={section3SubHeader1ImageAlt} src={section3SubHeader1ImageSrc} />
 
           <Column>
             <H3 style={{ marginLeft: '-15px' }}>{section3SubHeader1}</H3>

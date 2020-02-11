@@ -1,17 +1,20 @@
 // Dependencies.
 import uniqueId from 'lodash/uniqueId';
 // Relative imports.
-import blog from 'src/assets/social/blog.svg';
-import fb from 'src/assets/social/fb.svg';
-import homeHeroImage from 'src/assets/pictures/home_hero.png';
-import instagram from 'src/assets/social/instagram.svg';
-import linkedin from 'src/assets/social/linkedin.svg';
-import logo from 'src/assets/critical_images/logo.svg';
-import missionImage from 'src/assets/pictures/mission.png';
-import presidentMessageImage from 'src/assets/pictures/president_message_pen.png';
-import presidentImage from 'src/assets/pictures/membership_seminars.png';
-import twitter from 'src/assets/social/twitter.svg';
-import visionImage from 'src/assets/pictures/vision.png';
+import blog from 'assets/social/blog.svg';
+import fb from 'assets/social/fb.svg';
+import homeHeroImage from 'assets/pictures/home_hero.png';
+import instagram from 'assets/social/instagram.svg';
+import linkedin from 'assets/social/linkedin.svg';
+import logo from 'assets/critical_images/logo.svg';
+import missionImage from 'assets/pictures/mission.png';
+import jordanImage from 'assets/team_members/jordan.png';
+import caseyImage from 'assets/team_members/casey.png';
+import harperImage from 'assets/team_members/harper.png';
+import samImage from 'assets/team_members/sam.png';
+import presidentMessageImage from 'assets/pictures/president_message_pen.png';
+import twitter from 'assets/social/twitter.svg';
+import visionImage from 'assets/pictures/vision.png';
 
 export default {
   callToAction: {
@@ -112,28 +115,28 @@ export default {
       firstName: 'Jordan',
       lastName: 'Smith',
       id: uniqueId(),
-      image: presidentImage,
+      image: jordanImage,
       role: 'President',
     },
     {
       firstName: 'Casey',
       lastName: 'Mills',
       id: uniqueId(),
-      image: presidentImage,
+      image: caseyImage,
       role: 'President - Elect',
     },
     {
       firstName: 'Harper',
       lastName: 'Cullen',
       id: uniqueId(),
-      image: presidentImage,
+      image: harperImage,
       role: 'Treasurer',
     },
     {
       firstName: 'Sam',
       lastName: 'Manning',
       id: uniqueId(),
-      image: presidentImage,
+      image: samImage,
       role: 'Secretary',
     },
   ],
