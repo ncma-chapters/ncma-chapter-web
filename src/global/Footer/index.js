@@ -4,7 +4,7 @@ import get from 'lodash/get';
 import map from 'lodash/map';
 import toUpper from 'lodash/toUpper';
 // Relative imports.
-import config from 'config';
+import config from '../../config';
 import {
   Address,
   Column,

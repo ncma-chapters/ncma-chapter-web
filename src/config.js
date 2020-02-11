@@ -1,20 +1,22 @@
 // Dependencies.
 import uniqueId from 'lodash/uniqueId';
 // Relative imports.
-import blog from 'assets/social/blog.svg';
-import fb from 'assets/social/fb.svg';
-import homeHeroImage from 'assets/pictures/home_hero.png';
-import instagram from 'assets/social/instagram.svg';
-import linkedin from 'assets/social/linkedin.svg';
-import logo from 'assets/critical_images/logo.svg';
-import missionImage from 'assets/pictures/mission.png';
-import jordanImage from 'assets/team_members/jordan.png';
-import caseyImage from 'assets/team_members/casey.png';
-import harperImage from 'assets/team_members/harper.png';
-import samImage from 'assets/team_members/sam.png';
-import presidentMessageImage from 'assets/pictures/president_message_pen.png';
-import twitter from 'assets/social/twitter.svg';
-import visionImage from 'assets/pictures/vision.png';
+import aboutBannerImage from './assets/pictures/about_banner.png';
+import aboutHeroImage from './assets/pictures/about_header.png';
+import blog from './assets/social/blog.svg';
+import caseyImage from './assets/team_members/casey.png';
+import fb from './assets/social/fb.svg';
+import harperImage from './assets/team_members/harper.png';
+import homeHeroImage from './assets/pictures/home_hero.png';
+import instagram from './assets/social/instagram.svg';
+import jordanImage from './assets/team_members/jordan.png';
+import linkedin from './assets/social/linkedin.svg';
+import logo from './assets/critical_images/logo.svg';
+import missionImage from './assets/pictures/mission.png';
+import presidentMessageImage from './assets/pictures/president_message_pen.png';
+import samImage from './assets/team_members/sam.png';
+import twitter from './assets/social/twitter.svg';
+import visionImage from './assets/pictures/vision.png';
 
 export default {
   callToAction: {
@@ -58,6 +60,29 @@ export default {
       section3SubHeader1: 'A MESSAGE FROM THE PRESIDENT',
       section3SubHeader1Text1:
         'We have a great year planned for NCMA members! NCMA Monmouth President Jordan Smith has five reasons why you should join NCMA today.',
+    },
+    about: {
+      heroImage: aboutHeroImage,
+      section1Header: 'WE ARE NCMA MONMOUTH',
+      section1Text1:
+        'We provide a venue for government and industry to interact, learn together, network, share best practices, and further the field of contract management for the communities that we serve.',
+      section1Text2:
+        'Our members have access to the best training and have opportunities to network with key contacts to help them meet and exceed their professional goals.',
+      section2Header: 'OUR STORY',
+      section2Text1:
+        'The NCMA Monmouth chapter covers a vibrant section of central New Jersey, including the communities of Long Branch, Asbury Park, Freehold Township and Toms River. Strategically located new the state capital of Trenton to the west and New York City to the north, NCMA Monmouth welcomes members of all areas.',
+      section2Text2:
+        'Our chapter received a charter from NCMA headquarters on January 1, 2020, because employees in central New Jersey wanted a chapter closer to their location.',
+      section2Text3:
+        'We look forward to growing and learning with you and promoting the benefits of contract management in our region.',
+      section3Header: 'MEET OUR OFFICERS',
+      section4Header: 'WE ARE HERE FOR YOU',
+      section4Text1:
+        'NCMA membership will keep you current on government contracting issues and changes, as well as giving you access to peers both in central New Jersey and in 90 chapters across the country.',
+      section4Text2:
+        'Joining NCMA will help you put your career on a fast track to success and give you opportunities and specialized training only available to our members.',
+      section4ImageAlt: 'About NCMA Monmouth',
+      section4ImageSrc: aboutBannerImage,
     },
   },
   navItems: [

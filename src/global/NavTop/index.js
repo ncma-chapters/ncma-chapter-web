@@ -3,8 +3,8 @@ import React from 'react';
 import get from 'lodash/get';
 import map from 'lodash/map';
 // Relative imports.
-import Logo from 'primitives/Logo';
-import config from 'config';
+import config from '../../config';
+import Logo from '../../primitives/Logo';
 import { CallToAction, Content, Item, Items, Wrapper } from './styles';
 
 const NavTop = () => (

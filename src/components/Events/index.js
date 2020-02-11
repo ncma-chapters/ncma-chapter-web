@@ -5,8 +5,8 @@ import map from 'lodash/map';
 // Relative imports.
 // import CallToAction from 'components/CallToAction';
 // import HeroPopup from 'components/HeroPopup';
-import Layout from 'global/Layout';
-import config from 'config';
+import config from '../../config';
+import Layout from '../../global/Layout';
 import {
   Banner,
   Box,

@@ -1,40 +1,30 @@
 // Dependencies.
 import styled from 'styled-components';
 
-export const Hero = styled.div``;
+export const TeamMembers = styled.div`
+  align-items: center;
+  display: flex;
+  margin: 50px 0 0;
+  justify-content: space-between;
+`;
 
-export const Section = styled.div``;
+export const TeamMember = styled.div`
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+`;
 
-export const H2 = styled.div``;
+export const Role = styled.h4`
+  color: ${({ theme }) => theme.colors.greys.shade};
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 0;
+  text-align: center;
+`;
 
-export const Text = styled.div``;
-
-export const Video = styled.div``;
-
-export const Banner = styled.div``;
-
-export const Column = styled.div``;
-
-export const H3 = styled.div``;
-
-export const Line = styled.div``;
-
-export const Row = styled.div``;
-
-export const StyledImage = styled.div``;
-
-export const TeamMembers = styled.div``;
-
-export const TeamMember = styled.div``;
-
-export const Role = styled.div``;
-
-export const TeamMemberImage = styled.div``;
-
-export const Name = styled.div``;
-
-export const MeetTeamMembersLink = styled.div``;
-
-export const Box = styled.div``;
-
-export const LearnMoreButton = styled.div``;
+export const TeamMemberImage = styled.img`
+  border-radius: 4px;
+  height: 150px;
+  margin: 25px 0 10px;
+  width: 150px;
+`;

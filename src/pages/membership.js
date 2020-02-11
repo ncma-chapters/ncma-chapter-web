@@ -1,3 +1,3 @@
-import Membership from 'components/Membership';
+import Membership from '../components/Membership';
 
 export default Membership;

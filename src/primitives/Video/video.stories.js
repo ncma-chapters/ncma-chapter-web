@@ -3,7 +3,7 @@ import React from 'react';
 import get from 'lodash/get';
 import { storiesOf } from '@storybook/react';
 // Relative imports.
-import config from 'config';
+import config from '../../config';
 import Video from './index';
 
 storiesOf('Primitives', module).add('Video', () => (

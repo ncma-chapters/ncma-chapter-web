@@ -3,20 +3,20 @@ import React from 'react';
 import get from 'lodash/get';
 import map from 'lodash/map';
 // Relative imports.
-import Banner from 'primitives/Banner';
-import CallToActionButton from 'primitives/CallToActionButton';
-import Column from 'primitives/Column';
-import H2 from 'primitives/H2';
-import H3 from 'primitives/H3';
-import Hero from 'primitives/Hero';
-import Image from 'primitives/Image';
-import Layout from 'global/Layout';
-import Line from 'primitives/Line';
-import Row from 'primitives/Row';
-import Section from 'primitives/Section';
-import Text from 'primitives/Text';
-import Video from 'primitives/Video';
-import config from 'config';
+import config from '../../config';
+import Layout from '../../global/Layout';
+import Banner from '../../primitives/Banner';
+import CallToActionButton from '../../primitives/CallToActionButton';
+import Column from '../../primitives/Column';
+import H2 from '../../primitives/H2';
+import H3 from '../../primitives/H3';
+import Hero from '../../primitives/Hero';
+import Image from '../../primitives/Image';
+import Line from '../../primitives/Line';
+import Row from '../../primitives/Row';
+import Section from '../../primitives/Section';
+import Text from '../../primitives/Text';
+import Video from '../../primitives/Video';
 import { Box, MeetTeamMembersLink, Role, TeamMember, TeamMemberImage, TeamMembers } from './styles';
 
 const Home = () => {
@@ -139,7 +139,7 @@ const Home = () => {
           <Column>
             <H3 style={{ marginLeft: '-15px' }}>{section3SubHeader1}</H3>
             <Box>
-              <Text>{section3SubHeader1Text1}</Text>
+              <Text style={{ marginBottom: '0' }}>{section3SubHeader1Text1}</Text>
               <CallToActionButton to={href} style={{ marginTop: '40px' }}>
                 {label2}
               </CallToActionButton>
