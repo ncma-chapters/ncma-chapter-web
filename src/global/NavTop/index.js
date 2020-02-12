@@ -21,7 +21,7 @@ const NavTop = () => (
           const href = get(item, 'href');
 
           return (
-            <Item selected={href === window.location.pathname} key={label} to={href}>
+            <Item key={label} to={href}>
               {label}
             </Item>
           );
