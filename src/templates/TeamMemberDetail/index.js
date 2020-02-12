@@ -1,12 +1,13 @@
 // Dependencies.
 import React from 'react';
 import PropTypes from 'prop-types';
-import find from 'lodash/find';
 import filter from 'lodash/filter';
+import find from 'lodash/find';
 import get from 'lodash/get';
 import map from 'lodash/map';
 import replace from 'lodash/replace';
 import toNumber from 'lodash/toNumber';
+import { navigate } from 'gatsby';
 // Relative imports.
 import config from '../../config';
 import Banner from '../../primitives/Banner';
@@ -31,7 +32,7 @@ const TeamMemberDetail = ({ location }) => {
 
   // Escape early if the selectedTeamMember is not found.
   if (!selectedTeamMember) {
-    window.history.pushState({}, '', window.location.origin);
+    navigate('/');
     return null;
   }
 
