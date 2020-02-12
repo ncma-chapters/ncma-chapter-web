@@ -1,7 +1,4 @@
 module.exports = {
-  siteMetadata: {
-    title: 'NCMA Chapter Website',
-  },
   plugins: [
     // Required for creating a PWA: Adds a manifest.json file for offline access.
     {
@@ -19,8 +16,6 @@ module.exports = {
     // Required for creating a PWA: Adds a service worker for offline access.
     // WARNING: Must be listed *after* 'gatsby-plugin-manifest'.
     'gatsby-plugin-offline',
-    // Create an RSS feed (or multiple feeds) for your Gatsby site.
-    `gatsby-plugin-feed`,
     // This is used to allow for absolute imports.
     'gatsby-plugin-root-import',
     // Attributes you add in their component, e.g. title, meta attributes, etc. will get added to the static HTML pages Gatsby builds.

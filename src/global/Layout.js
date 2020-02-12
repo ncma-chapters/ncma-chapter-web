@@ -1,15 +1,14 @@
 // Node modules.
-import Helmet from 'react-helmet';
-import styled, { ThemeProvider } from 'styled-components';
-import PropTypes from 'prop-types';
 import React, { useState } from 'react';
+import Helmet from 'react-helmet';
+import PropTypes from 'prop-types';
 import get from 'lodash/get';
-
-import { StaticQuery, graphql } from 'gatsby';
+import styled, { ThemeProvider } from 'styled-components';
 // Other imports.
 import Footer from './Footer';
-import NavTop from './NavTop';
 import GlobalStyle from './GlobalStyle';
+import NavTop from './NavTop';
+import config from '../config';
 import theme from './theme';
 
 const Layout = ({ children }) => {
@@ -18,41 +17,28 @@ const Layout = ({ children }) => {
   const isLightTheme = state[0];
 
   return (
-    <StaticQuery
-      query={graphql`
-        query SiteTitleQuery {
-          site {
-            siteMetadata {
-              title
-            }
-          }
-        }
-      `}
-      render={(data) => (
-        <>
-          {/* SEO Metatags */}
-          <Helmet>
-            <title>{get(data, 'site.siteMetadata.title')}</title>
-            <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-          </Helmet>
+    <>
+      {/* SEO Metatags */}
+      <Helmet>
+        <title>NCMA {get(config, 'chapterName', '')}</title>
+        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+      </Helmet>
 
-          {/* Theming */}
-          <ThemeProvider theme={isLightTheme ? theme.light : theme.dark}>
-            {/* Global Styling */}
-            <GlobalStyle />
+      {/* Theming */}
+      <ThemeProvider theme={isLightTheme ? theme.light : theme.dark}>
+        {/* Global Styling */}
+        <GlobalStyle />
 
-            {/* Top Nav */}
-            <NavTop />
+        {/* Top Nav */}
+        <NavTop />
 
-            {/* Content */}
-            <Content>{children}</Content>
+        {/* Content */}
+        <Content>{children}</Content>
 
-            {/* Footer */}
-            <Footer />
-          </ThemeProvider>
-        </>
-      )}
-    />
+        {/* Footer */}
+        <Footer />
+      </ThemeProvider>
+    </>
   );
 };
 
