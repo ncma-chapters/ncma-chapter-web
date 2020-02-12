@@ -1,3 +1,3 @@
-import Events from '../components/events';
+import Events from '../components/Events';
 
 export default Events;
