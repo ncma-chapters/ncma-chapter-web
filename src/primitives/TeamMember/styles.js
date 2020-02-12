@@ -1,19 +1,11 @@
 // Dependencies.
 import styled from 'styled-components';
+import { Link } from 'gatsby';
 
-export const TeamMembers = styled.div`
-  align-items: center;
-  display: flex;
-  margin: 50px 0 0;
-  justify-content: space-between;
-  width: 100%;
-`;
-
-export const TeamMember = styled.div`
+export const Wrapper = styled(Link)`
   align-items: center;
   display: flex;
   flex-direction: column;
-  margin: 0 55px;
 `;
 
 export const Role = styled.h4`

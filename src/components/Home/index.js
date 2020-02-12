@@ -15,9 +15,10 @@ import Image from '../../primitives/Image';
 import Line from '../../primitives/Line';
 import Row from '../../primitives/Row';
 import Section from '../../primitives/Section';
+import TeamMember from '../../primitives/TeamMember';
 import Text from '../../primitives/Text';
 import Video from '../../primitives/Video';
-import { Box, MeetTeamMembersLink, Role, TeamMember, TeamMemberImage, TeamMembers } from './styles';
+import { Box, MeetTeamMembersLink, TeamMembers } from './styles';
 
 const Home = () => {
   // Derive config properties.
@@ -72,7 +73,7 @@ const Home = () => {
         <Column>
           <H3>{bannerHeader}</H3>
           <Line />
-          <Text>{bannerText}</Text>
+          <Text style={{ marginBottom: '0' }}>{bannerText}</Text>
         </Column>
 
         <Column style={{ alignItems: 'center' }}>
@@ -108,22 +109,9 @@ const Home = () => {
             <H3>{section2SubHeader3}</H3>
             <Line style={{ maxWidth: '430px' }} />
             <TeamMembers>
-              {map(teamMembers, (member) => {
-                // Derive member properties.
-                const firstName = get(member, 'firstName');
-                const lastName = get(member, 'lastName');
-                const id = get(member, 'id');
-                const image = get(member, 'image');
-                const role = get(member, 'role');
-
-                return (
-                  <TeamMember key={id}>
-                    <Role>{role}</Role>
-                    <TeamMemberImage alt={`${firstName} ${lastName}`} src={image} />
-                    <Text>{`${firstName} ${lastName}`}</Text>
-                  </TeamMember>
-                );
-              })}
+              {map(teamMembers, (teamMember) => (
+                <TeamMember key={get(teamMember, 'id')} teamMember={teamMember} />
+              ))}
             </TeamMembers>
 
             <MeetTeamMembersLink to="/about">Get to know the officers.</MeetTeamMembersLink>

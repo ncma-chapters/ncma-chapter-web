@@ -29,7 +29,7 @@ export const Item = styled(Link)`
   color: ${({ theme }) => theme.colors.white};
   cursor: pointer;
   font-size: 1rem;
-  font-weight: 500;
+  font-weight: ${({ selected }) => (selected ? '900' : '500')};
   padding: 0 1.5rem;
   text-decoration: none;
   white-space: nowrap;

@@ -1,5 +1,3 @@
-// Dependencies.
-import uniqueId from 'lodash/uniqueId';
 // Relative imports.
 import aboutBannerImage from './assets/pictures/about_banner.png';
 import aboutHeroImage from './assets/pictures/about_header.png';
@@ -137,32 +135,52 @@ export default {
   ],
   teamMembers: [
     {
+      id: 1,
       firstName: 'Jordan',
       lastName: 'Smith',
-      id: uniqueId(),
       image: jordanImage,
       role: 'President',
+      quote: '',
+      bio1: '',
+      bio2: '',
+      bio3: '',
+      email: '',
     },
     {
+      id: 2,
       firstName: 'Casey',
       lastName: 'Mills',
-      id: uniqueId(),
       image: caseyImage,
       role: 'President - Elect',
+      quote: '',
+      bio1: '',
+      bio2: '',
+      bio3: '',
+      email: '',
     },
     {
+      id: 3,
       firstName: 'Harper',
       lastName: 'Cullen',
-      id: uniqueId(),
       image: harperImage,
       role: 'Treasurer',
+      quote: '',
+      bio1: '',
+      bio2: '',
+      bio3: '',
+      email: '',
     },
     {
+      id: 4,
       firstName: 'Sam',
       lastName: 'Manning',
-      id: uniqueId(),
       image: samImage,
       role: 'Secretary',
+      quote: '',
+      bio1: '',
+      bio2: '',
+      bio3: '',
+      email: '',
     },
   ],
 };

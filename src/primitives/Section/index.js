@@ -8,4 +8,5 @@ export default styled.div`
   justify-content: center;
   max-width: 1100px;
   padding: 115px 20px 0;
+  width: 100%;
 `;

@@ -9,8 +9,9 @@ import H2 from '../../primitives/H2';
 import Hero from '../../primitives/Hero';
 import Image from '../../primitives/Image';
 import Section from '../../primitives/Section';
+import TeamMember from '../../primitives/TeamMember';
 import Text from '../../primitives/Text';
-import { Role, TeamMember, TeamMemberImage, TeamMembers } from './styles';
+import { TeamMembers } from './styles';
 
 const About = () => {
   // Derive config properties.
@@ -26,7 +27,7 @@ const About = () => {
   const section2Text1 = get(content, 'about.section2Text1');
   const section2Text2 = get(content, 'about.section2Text2');
   const section2Text3 = get(content, 'about.section2Text3');
-  const section3Header1 = get(content, 'about.section3Header1');
+  const section3Header = get(content, 'about.section3Header');
   const section4Header = get(content, 'about.section4Header');
   const section4ImageAlt = get(content, 'about.section4ImageAlt');
   const section4ImageSrc = get(content, 'about.section4ImageSrc');
@@ -40,7 +41,7 @@ const About = () => {
       <Section>
         <H2>{section1Header}</H2>
         <Text>{section1Text1}</Text>
-        <Text>{section1Text2}</Text>
+        <Text style={{ marginBottom: '0' }}>{section1Text2}</Text>
       </Section>
 
       <Section>
@@ -51,24 +52,11 @@ const About = () => {
       </Section>
 
       <Section>
-        <H2>{section3Header1}</H2>
+        <H2>{section3Header}</H2>
         <TeamMembers>
-          {map(teamMembers, (member) => {
-            // Derive member properties.
-            const firstName = get(member, 'firstName');
-            const lastName = get(member, 'lastName');
-            const id = get(member, 'id');
-            const image = get(member, 'image');
-            const role = get(member, 'role');
-
-            return (
-              <TeamMember key={id}>
-                <Role>{role}</Role>
-                <TeamMemberImage alt={`${firstName} ${lastName}`} src={image} />
-                <Text>{`${firstName} ${lastName}`}</Text>
-              </TeamMember>
-            );
-          })}
+          {map(teamMembers, (teamMember) => (
+            <TeamMember key={get(teamMember, 'id')} teamMember={teamMember} />
+          ))}
         </TeamMembers>
       </Section>
 
@@ -76,7 +64,7 @@ const About = () => {
         <H2>{section4Header}</H2>
         <Text>{section4Text1}</Text>
         <Text>{section4Text2}</Text>
-        <Image alt={section4ImageAlt} src={section4ImageSrc} />
+        <Image alt={section4ImageAlt} src={section4ImageSrc} style={{ margin: '50px 0 100px' }} />
       </Section>
     </Layout>
   );
