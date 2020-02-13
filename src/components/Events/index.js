@@ -4,16 +4,16 @@ import filter from 'lodash/filter';
 import get from 'lodash/get';
 import map from 'lodash/map';
 // Relative imports.
-import config from '../../config';
+import BannerImage from '../../primitives/BannerImage';
 import CallToActionButton from '../../primitives/CallToActionButton';
 import Column from '../../primitives/Column';
 import H2 from '../../primitives/H2';
 import Hero from '../../primitives/Hero';
-import Image from '../../primitives/Image';
 import Layout from '../../global/Layout';
 import Section from '../../primitives/Section';
 import Text from '../../primitives/Text';
-import { Event, StyledDate, Title, Description, StyledLink } from './styles';
+import config from '../../config';
+import { Bar, BarTitle, BarSubtitle, Event, StyledDate, Title } from './styles';
 
 const Events = () => {
   // Derive config properties.
@@ -40,15 +40,17 @@ const Events = () => {
 
       <Section>
         <H2>{section1Header}</H2>
-        <Image alt={title} src={image} />
-        <Text>
-          {title}: {startsAt.format('MMMM D, YYYY')}
-        </Text>
-        <Text>{description}</Text>
+        <BannerImage url={image}>
+          <Bar>
+            <BarTitle>{title}</BarTitle>
+            <BarSubtitle>{startsAt.format('MMMM D, YYYY')}</BarSubtitle>
+          </Bar>
+        </BannerImage>
+        <Text style={{ marginTop: '50px' }}>{description}</Text>
         <CallToActionButton to="/membership">REGISTER NOW</CallToActionButton>
       </Section>
 
-      <Section style={{ marginBottom: '100px' }}>
+      <Section style={{ margin: '0 0 100px' }}>
         {map(otherEvents, (event) => {
           // Derive event properties.
           const id = get(event, 'id');
@@ -57,12 +59,11 @@ const Events = () => {
           const startsAt = get(event, 'startsAt');
 
           return (
-            <Event key={id}>
+            <Event key={id} to={`/events/${id}`}>
               <StyledDate>{startsAt.format('MMM D')}</StyledDate>
               <Column>
                 <Title>{title}</Title>
-                <Description>{description}</Description>
-                <StyledLink to={`/events/${id}`}>Learn More</StyledLink>
+                <Text style={{ margin: '0 0 25px' }}>{description}</Text>
               </Column>
             </Event>
           );
