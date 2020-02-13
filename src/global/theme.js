@@ -9,7 +9,7 @@ export default {
       },
       secondary: {
         normal: '#e58258',
-        shade: '',
+        shade: '#ab5d54',
         tint: '',
       },
       tertiary: {
@@ -38,7 +38,7 @@ export default {
       },
       secondary: {
         normal: '#e58258',
-        shade: '',
+        shade: '#ab5d54',
         tint: '',
       },
       tertiary: {

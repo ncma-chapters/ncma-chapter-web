@@ -3,9 +3,9 @@ import moment from 'moment';
 // Relative imports.
 import aboutBannerImage from './assets/pictures/about_banner.png';
 import aboutHeroImage from './assets/pictures/about_header.png';
-import eventsHeroImage from './assets/pictures/events_hero.png';
 import blog from './assets/social/blog.svg';
 import caseyImage from './assets/team_members/casey.png';
+import eventsHeroImage from './assets/pictures/events_hero.png';
 import fb from './assets/social/fb.svg';
 import harperImage from './assets/team_members/harper.png';
 import homeHeroImage from './assets/pictures/home_hero.png';
@@ -13,6 +13,13 @@ import instagram from './assets/social/instagram.svg';
 import jordanImage from './assets/team_members/jordan.png';
 import linkedin from './assets/social/linkedin.svg';
 import logo from './assets/critical_images/logo.svg';
+import membershipBecomeAMemberImage from './assets/pictures/memebership_become_a_member.png';
+import membershipCertificationsImage from './assets/pictures/membership_certification_programs.png';
+import membershipConferencesImage from './assets/pictures/membership_conferences.png';
+import membershipHeroImage from './assets/pictures/membership_header.png';
+import membershipLearningImage from './assets/pictures/membership_learning.png';
+import membershipMagazineImage from './assets/pictures/membership_cm_magazine.png';
+import membershipSeminarsImage from './assets/pictures/membership_seminars.png';
 import missionImage from './assets/pictures/mission.png';
 import presidentMessageImage from './assets/pictures/president_message_pen.png';
 import samImage from './assets/team_members/sam.png';
@@ -89,6 +96,59 @@ export default {
       heroImage: eventsHeroImage,
       section1Header: 'EVENTS',
     },
+    membership: {
+      heroImage: membershipHeroImage,
+      section1Header: 'BECOME A MEMBER. BECOME UNSTOPPABLE.',
+      section1Text1:
+        "NCMA membership connects you to a community of experts in your field. We've drawn tens of thousands of the best contract management professionals because we focus on:",
+      section1Point1: 'Quality content that builds better leaders',
+      section1Point2: 'Creating opportunities to bridge the industry-government divide',
+      section1Point3: 'Making the world smaller through strong local Chapter communities',
+      section1Point4: 'Certifications that show the world your potential',
+      section1Text2: "If you're looking for these kinds of opportunities, tools, and access, you're one of us already.",
+      section1ImageAlt: 'Become a NCMA Monmouth member today!',
+      section1ImageSrc: membershipBecomeAMemberImage,
+      section2Header: 'BENEFITS OF MEMBERSHIP',
+      section2Text1:
+        'Gain a professional advantage with access to valuable member-only content—including seminars, e-courses, and conferences—all at your fingertips.',
+      section2Text2:
+        'Learn from subject matter experts at a pace that fits your schedule and puts you in the position to make lasting connections.',
+      benefit1Title: 'CONFERENCES',
+      benefit1Description:
+        'Learn from subject matter experts at a pace that fits your schedule and puts you in the position to make lasting connections.',
+      benefit1ImageAlt: 'Attend NCMA Monmouth conferences',
+      benefit1ImageSrc: membershipConferencesImage,
+      benefit1Link: '',
+      benefit2Title: 'SEMINARS',
+      benefit2Description:
+        "You don't have to be a contract management expert to attend our educational seminars. These one-day events are conveniently offered in a number of locations at a preferred rate for NCMA members.",
+      benefit2ImageAlt: 'Attend NCMA Monmouth seminars',
+      benefit2ImageSrc: membershipSeminarsImage,
+      benefit2Link: '',
+      benefit3Title: 'CERTIFICATION PROGRAMS',
+      benefit3Description:
+        'Being an NCMA member gives you access to a variety of certification resources at a more cost-effective rate. From practice exams to Online Preparatory courses, industry knowledge is just a few clicks away.',
+      benefit3ImageAlt: 'Utilize NCMA Monmouth certification programs',
+      benefit3ImageSrc: membershipCertificationsImage,
+      benefit3Link: '',
+      benefit4Title: 'CM MAGAZINE',
+      benefit4Description:
+        "Contract Management Magazine is NCMA's award-winning flagship publication, now available both digitally and in print.",
+      benefit4ImageAlt: 'Get access to the NCMA Contract Management Magazine',
+      benefit4ImageSrc: membershipMagazineImage,
+      benefit4Link: '',
+      benefit5Title: 'E-LEARNING COURSES',
+      benefit5Description:
+        "Studying at your own pace is just one perk of taking NCMA's e-courses. Our virtual education is the perfect way to access anything you need! No matter where you are on your career path, NCMA has resources for you.",
+      benefit5ImageAlt: 'Learn with NCMA e-learning courses',
+      benefit5ImageSrc: membershipLearningImage,
+      benefit5Link: '',
+      section3Header: 'MEMBERSHIP DETAILS',
+      section3Text1: 'Select the membership that best fits your career stage.',
+      section3Text2:
+        "To download a printable membership application, click here and don't forget to list your chapter as NCMA Monmouth! ",
+      section3Link: '',
+    },
   },
   events: [
     {
@@ -146,6 +206,37 @@ export default {
         'Contract changes are inevitable and must be anticipated and properly managed. This one-day seminar will provide the information you need to handle any and all ambiguities, differences of opinion, or potential and real conflicts between the parties.',
       image: aboutHeroImage,
       startsAt: moment('February 22, 2020'),
+    },
+  ],
+  membershipPlans: [
+    {
+      id: 1,
+      title: 'General',
+      description: 'Join our community contract managers with our standard membership.',
+      priceUSDAnnual: 160,
+      initiationFee: 25,
+    },
+    {
+      id: 1,
+      title: 'New Professional',
+      description: 'An introductory rate for those just starting their careers. Must be age 33 and younger.',
+      priceUSDAnnual: 95,
+      initiationFee: 25,
+    },
+    {
+      id: 1,
+      title: 'Retirees',
+      description:
+        'Maintain your connections after retirement. You must be retired and not employed full-time in contract management.',
+      priceUSDAnnual: 75,
+      initiationFee: 25,
+    },
+    {
+      id: 1,
+      title: 'Students',
+      description: 'A reduced rate for full-time students in a degree-granting institution.',
+      priceUSDAnnual: 45,
+      initiationFee: 25,
     },
   ],
   navItems: [

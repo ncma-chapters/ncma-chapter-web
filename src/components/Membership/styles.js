@@ -1,40 +1,74 @@
 // Dependencies.
 import styled from 'styled-components';
 
-export const Hero = styled.div``;
+export const Benefit = styled.div`
+  align-items: center;
+  display: flex;
+  margin: 0 0 100px;
+  width: 100%;
+`;
 
-export const Section = styled.div``;
+export const BenefitTitle = styled.h3`
+  border-bottom: 1px solid ${({ theme }) => theme.colors.greys.tint};
+  color: ${({ theme }) => theme.colors.secondary.shade};
+  font-size: 1.6em;
+  font-weight: bold;
+  letter-spacing: 1px;
+  padding: 0 0 20px;
+  width: 100%;
+`;
 
-export const H2 = styled.div``;
+export const StyledLink = styled.a`
+  align-self: center;
+  color: ${({ theme }) => theme.colors.secondary.normal};
+  font-size: 1em;
+  margin: 0 0 0 20px;
+  text-decoration: underline;
+  white-space: nowrap;
+`;
 
-export const Text = styled.div``;
+export const Card = styled.div`
+  background: ${({ theme }) => theme.colors.greys.tint2};
+  border-radius: 4px;
+  border: 1px solid ${({ theme }) => theme.colors.greys.tint};
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+  margin: 0 20px;
+  max-width: 230px;
+  min-height: 360px;
+  min-width: 230px;
+  padding: 20px 15px 50px;
+  text-align: center;
+`;
 
-export const Video = styled.div``;
+export const CardTitle = styled.h4`
+  color: ${({ theme }) => theme.colors.greys.shade};
+  font-size: 1.2em;
+  font-weight: bold;
+  margin: 0 0 20px;
+`;
 
-export const Banner = styled.div``;
+export const CardDescription = styled.p`
+  border-bottom: 1px solid ${({ theme }) => theme.colors.greys.tint};
+  color: ${({ theme }) => theme.colors.greys.shade};
+  font-size: 0.8em;
+  line-height: 20px;
+  padding: 0 0 20px;
+  min-height: 100px;
+`;
 
-export const Column = styled.div``;
+export const CardCost = styled.p`
+  color: ${({ theme }) => theme.colors.secondary.shade};
+  font-size: 1.2em;
+  margin: 40px 0 10px;
+`;
 
-export const H3 = styled.div``;
+export const CardCostLabel = styled.p`
+  color: ${({ theme }) => theme.colors.secondary.shade};
+  font-size: 1em;
+  margin: 0 0 50px;
+`;
 
-export const Line = styled.div``;
-
-export const Row = styled.div``;
-
-export const StyledImage = styled.div``;
-
-export const TeamMembers = styled.div``;
-
-export const TeamMember = styled.div``;
-
-export const Role = styled.div``;
-
-export const TeamMemberImage = styled.div``;
-
-export const Name = styled.div``;
-
-export const MeetTeamMembersLink = styled.div``;
-
-export const Box = styled.div``;
-
-export const LearnMoreButton = styled.div``;
+export const InitiationFee = styled.p`
+  color: ${({ theme }) => theme.colors.greys.normal};
+  font-size: 0.8em;
+`;
