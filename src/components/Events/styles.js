@@ -27,7 +27,6 @@ export const BarSubtitle = styled.span`
 export const StyledDate = styled.div`
   align-items: center;
   background: ${({ theme }) => theme.colors.primary.shade};
-  border: 1px solid ${({ theme }) => theme.colors.primary.shade};
   color: ${({ theme }) => theme.colors.white};
   display: flex;
   font-size: 2em;
@@ -58,7 +57,6 @@ export const Event = styled(Link)`
 
     ${StyledDate} {
       background: ${({ theme }) => theme.colors.secondary.normal};
-      border: 1px solid ${({ theme }) => theme.colors.secondary.normal};
     }
   }
 `;
