@@ -1,40 +1,62 @@
 // Dependencies.
 import styled from 'styled-components';
+import { Link } from 'gatsby';
 
-export const Hero = styled.div``;
+export const FieldGroup = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
 
-export const Section = styled.div``;
+export const Label = styled.h4`
+  font-size: 1.4em;
+  font-weight: bold;
+  margin: 0 0 10px;
+`;
 
-export const H2 = styled.div``;
+export const ContactForm = styled.div`
+  background: ${({ theme }) => theme.colors.greys.tint2};
+  border: 1px solid ${({ theme }) => theme.colors.greys.tint};
+  display: flex;
+  flex-direction: column;
+  padding: 30px 20px;
+`;
 
-export const Text = styled.div``;
+export const Input = styled.input`
+  background: ${({ theme }) => theme.colors.white};
+  border: 1px solid ${({ theme }) => theme.colors.greys.tint};
+  color: ${({ theme }) => theme.colors.greys.shade};
+  font-size: 1em;
+  flex-grow: 1;
+  margin: 0 0 10px;
+  padding: 10px;
+`;
 
-export const Video = styled.div``;
+export const Textarea = styled.textarea`
+  background: ${({ theme }) => theme.colors.white};
+  border: 1px solid ${({ theme }) => theme.colors.greys.tint};
+  color: ${({ theme }) => theme.colors.greys.shade};
+  font-size: 1em;
+  margin: 0 0 10px;
+  padding: 5px 10px;
+`;
 
-export const Banner = styled.div``;
+export const SubmitButton = styled.button`
+  background: ${({ theme }) => theme.colors.secondary.normal};
+  border-radius: 4px;
+  color: ${({ theme }) => theme.colors.white};
+  font-size: 1.2em;
+  margin: 0 0 20px;
+  padding: 15px 20px;
+  text-align: center;
+  width: 100%;
+`;
 
-export const Column = styled.div``;
+export const Acknowledgement = styled.p`
+  color: ${({ theme }) => theme.colors.greys.shade};
+  font-size: 0.8em;
+`;
 
-export const H3 = styled.div``;
-
-export const Line = styled.div``;
-
-export const Row = styled.div``;
-
-export const StyledImage = styled.div``;
-
-export const TeamMembers = styled.div``;
-
-export const TeamMember = styled.div``;
-
-export const Role = styled.div``;
-
-export const TeamMemberImage = styled.div``;
-
-export const Name = styled.div``;
-
-export const MeetTeamMembersLink = styled.div``;
-
-export const Box = styled.div``;
-
-export const LearnMoreButton = styled.div``;
+export const StyledLink = styled(Link)`
+  color: ${({ theme }) => theme.colors.greys.shade};
+  text-decoration: underline;
+`;

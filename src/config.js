@@ -5,6 +5,7 @@ import aboutBannerImage from './assets/pictures/about_banner.png';
 import aboutHeroImage from './assets/pictures/about_header.png';
 import blog from './assets/social/blog.svg';
 import caseyImage from './assets/team_members/casey.png';
+import contactHeroImage from './assets/pictures/contact_header.png';
 import eventsHeroImage from './assets/pictures/events_hero.png';
 import fb from './assets/social/fb.svg';
 import harperImage from './assets/team_members/harper.png';
@@ -148,6 +149,15 @@ export default {
       section3Text2:
         "To download a printable membership application, click here and don't forget to list your chapter as NCMA Monmouth! ",
       section3Link: '',
+    },
+    contact: {
+      heroImage: contactHeroImage,
+      section1Header: "WE'D LOVE TO HEAR FROM YOU",
+      section1Text1:
+        "We can't wait to meet you and join you on your career as a contract management professional. If you have any questions about our events or joining NCMA Monmouth, then reach us here.",
+      section2Header1: 'ALL INQUIRIES',
+      section2Header2: 'EVENT INQUIRIES',
+      section3Header: 'OFFICE LOCATION',
     },
   },
   events: [
