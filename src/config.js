@@ -146,9 +146,6 @@ export default {
       benefit5Link: '',
       section3Header: 'MEMBERSHIP DETAILS',
       section3Text1: 'Select the membership that best fits your career stage.',
-      section3Text2:
-        "To download a printable membership application, click here and don't forget to list your chapter as NCMA Monmouth! ",
-      section3Link: '',
     },
     contact: {
       heroImage: contactHeroImage,

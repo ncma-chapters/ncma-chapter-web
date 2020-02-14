@@ -15,7 +15,7 @@ import config from '../../config';
 import {
   Benefit,
   BenefitTitle,
-  // StyledLink,
+  StyledLink,
   Card,
   CardTitle,
   CardDescription,
@@ -70,7 +70,6 @@ const Membership = () => {
   // const benefit5Link = get(content, 'membership.benefit5Link');
   const section3Header = get(content, 'membership.section3Header');
   const section3Text1 = get(content, 'membership.section3Text1');
-  const section3Text2 = get(content, 'membership.section3Text2');
 
   return (
     <Layout>
@@ -158,7 +157,17 @@ const Membership = () => {
       <Section>
         <H2>{section3Header}</H2>
         <Text>{section3Text1}</Text>
-        <Text>{section3Text2}</Text>
+        <Text>
+          To download a printable membership application,{' '}
+          <StyledLink
+            href="https://www.ncmahq.org/docs/default-source/community-files/mem19---membership-application.pdf"
+            rel="noopener noreferrer"
+            style={{ margin: '0' }}
+          >
+            click here
+          </StyledLink>{' '}
+          and don&apos;t forget to list your chapter as NCMA Monmouth!
+        </Text>
 
         <Row style={{ margin: '50px 0 100px' }}>
           {map(membershipPlans, (plan) => {
