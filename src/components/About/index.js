@@ -1,7 +1,7 @@
 // Dependencies.
 import React from 'react';
 import get from 'lodash/get';
-import map from 'lodash/map';
+// import map from 'lodash/map';
 // Relative imports.
 import config from '../../config';
 import Layout from '../../global/Layout';
@@ -9,13 +9,13 @@ import H2 from '../../primitives/H2';
 import Hero from '../../primitives/Hero';
 import Image from '../../primitives/Image';
 import Section from '../../primitives/Section';
-import TeamMember from '../../primitives/TeamMember';
+// import TeamMember from '../../primitives/TeamMember';
 import Text from '../../primitives/Text';
-import { TeamMembers } from './styles';
+// import { TeamMembers } from './styles';
 
 const About = () => {
   // Derive config properties.
-  const teamMembers = get(config, 'teamMembers');
+  // const teamMembers = get(config, 'teamMembers');
   const content = get(config, 'content');
 
   // Derive content properties.
@@ -27,7 +27,7 @@ const About = () => {
   const section2Text1 = get(content, 'about.section2Text1');
   const section2Text2 = get(content, 'about.section2Text2');
   const section2Text3 = get(content, 'about.section2Text3');
-  const section3Header = get(content, 'about.section3Header');
+  // const section3Header = get(content, 'about.section3Header');
   const section4Header = get(content, 'about.section4Header');
   const section4ImageAlt = get(content, 'about.section4ImageAlt');
   const section4ImageSrc = get(content, 'about.section4ImageSrc');
@@ -51,14 +51,14 @@ const About = () => {
         <Text>{section2Text3}</Text>
       </Section>
 
-      <Section>
+      {/* <Section>
         <H2>{section3Header}</H2>
         <TeamMembers>
           {map(teamMembers, (teamMember) => (
             <TeamMember key={get(teamMember, 'id')} teamMember={teamMember} />
           ))}
         </TeamMembers>
-      </Section>
+      </Section> */}
 
       <Section>
         <H2>{section4Header}</H2>

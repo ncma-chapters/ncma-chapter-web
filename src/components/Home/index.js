@@ -1,7 +1,7 @@
 // Dependencies.
 import React from 'react';
 import get from 'lodash/get';
-import map from 'lodash/map';
+// import map from 'lodash/map';
 // Relative imports.
 import config from '../../config';
 import Layout from '../../global/Layout';
@@ -15,20 +15,20 @@ import Image from '../../primitives/Image';
 import Line from '../../primitives/Line';
 import Row from '../../primitives/Row';
 import Section from '../../primitives/Section';
-import TeamMember from '../../primitives/TeamMember';
+// import TeamMember from '../../primitives/TeamMember';
 import Text from '../../primitives/Text';
 import Video from '../../primitives/Video';
-import { Box, MeetTeamMembersLink, TeamMembers } from './styles';
+// import { Box, MeetTeamMembersLink, TeamMembers } from './styles';
 
 const Home = () => {
   // Derive config properties.
-  const teamMembers = get(config, 'teamMembers');
+  // const teamMembers = get(config, 'teamMembers');
   const content = get(config, 'content');
   const callToAction = get(config, 'callToAction');
 
   // Derive callToAction properties.
   const label = get(callToAction, 'label');
-  const label2 = get(callToAction, 'label2', label);
+  // const label2 = get(callToAction, 'label2', label);
   const href = get(callToAction, 'href');
 
   // Derive content properties.
@@ -47,12 +47,12 @@ const Home = () => {
   const section2SubHeader2ImageSrc = get(content, 'home.section2SubHeader2ImageSrc');
   const section2SubHeader2 = get(content, 'home.section2SubHeader2');
   const section2SubHeader2Text1 = get(content, 'home.section2SubHeader2Text1');
-  const section2SubHeader3 = get(content, 'home.section2SubHeader3');
-  const section3Header = get(content, 'home.section3Header');
-  const section3SubHeader1ImageAlt = get(content, 'home.section3SubHeader1ImageAlt');
-  const section3SubHeader1ImageSrc = get(content, 'home.section3SubHeader1ImageSrc');
-  const section3SubHeader1 = get(content, 'home.section3SubHeader1');
-  const section3SubHeader1Text1 = get(content, 'home.section3SubHeader1Text1');
+  // const section2SubHeader3 = get(content, 'home.section2SubHeader3');
+  // const section3Header = get(content, 'home.section3Header');
+  // const section3SubHeader1ImageAlt = get(content, 'home.section3SubHeader1ImageAlt');
+  // const section3SubHeader1ImageSrc = get(content, 'home.section3SubHeader1ImageSrc');
+  // const section3SubHeader1 = get(content, 'home.section3SubHeader1');
+  // const section3SubHeader1Text1 = get(content, 'home.section3SubHeader1Text1');
 
   return (
     <Layout>
@@ -104,7 +104,7 @@ const Home = () => {
           </Column>
         </Row>
 
-        <Row>
+        {/* <Row>
           <Column>
             <H3>{section2SubHeader3}</H3>
             <Line style={{ maxWidth: '430px' }} />
@@ -116,10 +116,10 @@ const Home = () => {
 
             <MeetTeamMembersLink to="/about">Get to know the officers.</MeetTeamMembersLink>
           </Column>
-        </Row>
+        </Row> */}
       </Section>
 
-      <Section>
+      {/* <Section>
         <H2>{section3Header}</H2>
         <Row>
           <Image alt={section3SubHeader1ImageAlt} src={section3SubHeader1ImageSrc} />
@@ -134,7 +134,7 @@ const Home = () => {
             </Box>
           </Column>
         </Row>
-      </Section>
+      </Section> */}
     </Layout>
   );
 };

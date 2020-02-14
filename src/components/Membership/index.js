@@ -15,7 +15,7 @@ import config from '../../config';
 import {
   Benefit,
   BenefitTitle,
-  StyledLink,
+  // StyledLink,
   Card,
   CardTitle,
   CardDescription,
@@ -47,27 +47,27 @@ const Membership = () => {
   const benefit1Description = get(content, 'membership.benefit1Description');
   const benefit1ImageAlt = get(content, 'membership.benefit1ImageAlt');
   const benefit1ImageSrc = get(content, 'membership.benefit1ImageSrc');
-  const benefit1Link = get(content, 'membership.benefit1Link');
+  // const benefit1Link = get(content, 'membership.benefit1Link');
   const benefit2Title = get(content, 'membership.benefit2Title');
   const benefit2Description = get(content, 'membership.benefit2Description');
   const benefit2ImageAlt = get(content, 'membership.benefit2ImageAlt');
   const benefit2ImageSrc = get(content, 'membership.benefit2ImageSrc');
-  const benefit2Link = get(content, 'membership.benefit2Link');
+  // const benefit2Link = get(content, 'membership.benefit2Link');
   const benefit3Title = get(content, 'membership.benefit3Title');
   const benefit3Description = get(content, 'membership.benefit3Description');
   const benefit3ImageAlt = get(content, 'membership.benefit3ImageAlt');
   const benefit3ImageSrc = get(content, 'membership.benefit3ImageSrc');
-  const benefit3Link = get(content, 'membership.benefit3Link');
+  // const benefit3Link = get(content, 'membership.benefit3Link');
   const benefit4Title = get(content, 'membership.benefit4Title');
   const benefit4Description = get(content, 'membership.benefit4Description');
   const benefit4ImageAlt = get(content, 'membership.benefit4ImageAlt');
   const benefit4ImageSrc = get(content, 'membership.benefit4ImageSrc');
-  const benefit4Link = get(content, 'membership.benefit4Link');
+  // const benefit4Link = get(content, 'membership.benefit4Link');
   const benefit5Title = get(content, 'membership.benefit5Title');
   const benefit5Description = get(content, 'membership.benefit5Description');
   const benefit5ImageAlt = get(content, 'membership.benefit5ImageAlt');
   const benefit5ImageSrc = get(content, 'membership.benefit5ImageSrc');
-  const benefit5Link = get(content, 'membership.benefit5Link');
+  // const benefit5Link = get(content, 'membership.benefit5Link');
   const section3Header = get(content, 'membership.section3Header');
   const section3Text1 = get(content, 'membership.section3Text1');
   const section3Text2 = get(content, 'membership.section3Text2');
@@ -104,7 +104,7 @@ const Membership = () => {
             <BenefitTitle>{benefit1Title}</BenefitTitle>
             <Row style={{ margin: '0' }}>
               <Text style={{ margin: '20px 0 0' }}>{benefit1Description}</Text>
-              <StyledLink href={benefit1Link}>Learn More</StyledLink>
+              {/* <StyledLink href={benefit1Link}>Learn More</StyledLink> */}
             </Row>
           </Column>
           <Image alt={benefit1ImageAlt} style={{ maxWidth: '230px' }} src={benefit1ImageSrc} />
@@ -115,7 +115,7 @@ const Membership = () => {
             <BenefitTitle>{benefit2Title}</BenefitTitle>
             <Row style={{ margin: '0' }}>
               <Text style={{ margin: '20px 0 0' }}>{benefit2Description}</Text>
-              <StyledLink href={benefit2Link}>Learn More</StyledLink>
+              {/* <StyledLink href={benefit2Link}>Learn More</StyledLink> */}
             </Row>
           </Column>
           <Image alt={benefit2ImageAlt} style={{ maxWidth: '230px' }} src={benefit2ImageSrc} />
@@ -126,7 +126,7 @@ const Membership = () => {
             <BenefitTitle>{benefit3Title}</BenefitTitle>
             <Row style={{ margin: '0' }}>
               <Text style={{ margin: '20px 0 0' }}>{benefit3Description}</Text>
-              <StyledLink href={benefit3Link}>Learn More</StyledLink>
+              {/* <StyledLink href={benefit3Link}>Learn More</StyledLink> */}
             </Row>
           </Column>
           <Image alt={benefit3ImageAlt} style={{ maxWidth: '230px' }} src={benefit3ImageSrc} />
@@ -137,7 +137,7 @@ const Membership = () => {
             <BenefitTitle>{benefit4Title}</BenefitTitle>
             <Row style={{ margin: '0' }}>
               <Text style={{ margin: '20px 0 0' }}>{benefit4Description}</Text>
-              <StyledLink href={benefit4Link}>Learn More</StyledLink>
+              {/* <StyledLink href={benefit4Link}>Learn More</StyledLink> */}
             </Row>
           </Column>
           <Image alt={benefit4ImageAlt} style={{ maxWidth: '230px' }} src={benefit4ImageSrc} />
@@ -148,7 +148,7 @@ const Membership = () => {
             <BenefitTitle>{benefit5Title}</BenefitTitle>
             <Row style={{ margin: '0' }}>
               <Text style={{ margin: '20px 0 0' }}>{benefit5Description}</Text>
-              <StyledLink href={benefit5Link}>Learn More</StyledLink>
+              {/* <StyledLink href={benefit5Link}>Learn More</StyledLink> */}
             </Row>
           </Column>
           <Image alt={benefit5ImageAlt} style={{ maxWidth: '230px' }} src={benefit5ImageSrc} />

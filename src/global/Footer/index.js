@@ -6,18 +6,18 @@ import toUpper from 'lodash/toUpper';
 // Relative imports.
 import config from '../../config';
 import {
-  Address,
+  // Address,
   Column,
   ColumnHeader,
   Copyright,
-  FooterExternalLink,
+  // FooterExternalLink,
   FooterLink,
   FooterLinks,
   Line,
   MainFooter,
-  SocialIcon,
-  SocialLink,
-  SocialLinks,
+  // SocialIcon,
+  // SocialLink,
+  // SocialLinks,
   StyledLogo,
   SubFooter,
   SubFooterLink,
@@ -28,12 +28,12 @@ import {
 const Footer = () => {
   // Derive config properties.
   const chapterName = get(config, 'chapterName');
-  const email = get(config, 'contact.email');
-  const formattedAddress = get(config, 'contact.formattedAddress');
-  const formattedPhoneNumber = get(config, 'contact.formattedPhoneNumber');
+  // const email = get(config, 'contact.email');
+  // const formattedAddress = get(config, 'contact.formattedAddress');
+  // const formattedPhoneNumber = get(config, 'contact.formattedPhoneNumber');
   const navItems = get(config, 'navItems');
-  const phoneNumber = get(config, 'contact.phoneNumber');
-  const socialLinks = get(config, 'socialLinks');
+  // const phoneNumber = get(config, 'contact.phoneNumber');
+  // const socialLinks = get(config, 'socialLinks');
 
   // Derive the current year.
   const currentYear = new Date().getFullYear();
@@ -69,7 +69,7 @@ const Footer = () => {
           <ColumnHeader>KEEP CONNECTED</ColumnHeader>
 
           {/* Social Media Links */}
-          <SocialLinks>
+          {/* <SocialLinks>
             {map(socialLinks, (link) => {
               // Derive social link properties.
               const label = get(link, 'label');
@@ -82,13 +82,13 @@ const Footer = () => {
                 </SocialLink>
               );
             })}
-          </SocialLinks>
+          </SocialLinks> */}
 
           {/* Contact Phone Number */}
-          <FooterExternalLink href={`tel:${phoneNumber}`}>{formattedPhoneNumber}</FooterExternalLink>
+          {/* <FooterExternalLink href={`tel:${phoneNumber}`}>{formattedPhoneNumber}</FooterExternalLink> */}
 
           {/* Contact Email */}
-          <FooterExternalLink href={`mailto:${email}`}>{email}</FooterExternalLink>
+          {/* <FooterExternalLink href={`mailto:${email}`}>{email}</FooterExternalLink> */}
         </Column>
 
         {/* Vertical Line Separator */}
@@ -99,14 +99,14 @@ const Footer = () => {
           <ColumnHeader>EVENTS</ColumnHeader>
 
           {/* Event Links */}
-          <FooterLinks>
+          {/* <FooterLinks>
             <FooterLink to="/events">Industry Best Practices Seminar</FooterLink>
             <FooterLink to="/events">Spring Chapter Meeting</FooterLink>
             <FooterLink to="/events">Industry Standards Symposium</FooterLink>
-          </FooterLinks>
+          </FooterLinks> */}
 
           {/* Events Link */}
-          <FooterLink to="/events">See all events</FooterLink>
+          {/* <FooterLink to="/events">See all events</FooterLink> */}
         </Column>
       </MainFooter>
 
@@ -115,7 +115,7 @@ const Footer = () => {
           &copy; {currentYear} NCMA {chapterName}
         </Copyright>
 
-        <Address>{formattedAddress}</Address>
+        {/* <Address>{formattedAddress}</Address> */}
 
         <SubFooterLinks>
           <SubFooterLink to="/legal">Terms of Service</SubFooterLink>

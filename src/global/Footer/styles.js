@@ -18,6 +18,7 @@ export const MainFooter = styled.div`
   justify-content: space-between;
   max-width: 1000px;
   padding: 35px 0;
+  width: 100%;
 `;
 
 export const Column = styled.div`
