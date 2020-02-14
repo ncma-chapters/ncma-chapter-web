@@ -6,7 +6,7 @@ export const CallToAction = styled(Link)`
   align-items: center;
   background: ${({ theme }) => theme.colors.white};
   border-radius: 15px;
-  color: ${({ theme }) => theme.colors.greys.normal};
+  color: ${({ theme }) => theme.colors.greys.shade};
   cursor: pointer;
   display: flex;
   font-size: 0.8rem;
