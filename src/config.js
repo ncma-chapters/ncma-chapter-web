@@ -224,14 +224,14 @@ export default {
       initiationFee: 25,
     },
     {
-      id: 1,
+      id: 2,
       title: 'New Professional',
       description: 'An introductory rate for those just starting their careers. Must be age 33 and younger.',
       priceUSDAnnual: 95,
       initiationFee: 25,
     },
     {
-      id: 1,
+      id: 3,
       title: 'Retirees',
       description:
         'Maintain your connections after retirement. You must be retired and not employed full-time in contract management.',
@@ -239,7 +239,7 @@ export default {
       initiationFee: 25,
     },
     {
-      id: 1,
+      id: 4,
       title: 'Students',
       description: 'A reduced rate for full-time students in a degree-granting institution.',
       priceUSDAnnual: 45,

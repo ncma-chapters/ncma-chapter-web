@@ -32,7 +32,6 @@ export const Card = styled.div`
   border-radius: 4px;
   border: 1px solid ${({ theme }) => theme.colors.greys.tint};
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
-  margin: 0 20px;
   max-width: 230px;
   min-height: 360px;
   min-width: 230px;
