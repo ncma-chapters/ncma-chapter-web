@@ -2,6 +2,8 @@
 import React, { Component } from 'react';
 import get from 'lodash/get';
 import map from 'lodash/map';
+import trimEnd from 'lodash/trimEnd';
+import { window } from 'browser-monads';
 // Relative imports.
 import config from '../../config';
 import Burger from '../../primitives/Burger';
@@ -24,6 +26,9 @@ class NavTop extends Component {
     const { onBurgerClick } = this;
     const { open } = this.state;
 
+    // Derive the current pathname.
+    const pathname = trimEnd(get(window, 'location.pathname'), '/');
+
     return (
       <>
         <Wrapper>
@@ -42,7 +47,7 @@ class NavTop extends Component {
                 const href = get(item, 'href');
 
                 return (
-                  <Item key={label} to={href}>
+                  <Item key={label} to={href} selected={pathname === trimEnd(href, '/')}>
                     {label}
                   </Item>
                 );
@@ -61,7 +66,7 @@ class NavTop extends Component {
             const href = get(item, 'href');
 
             return (
-              <Item key={label} to={href}>
+              <Item key={label} to={href} selected={pathname === trimEnd(href, '/')}>
                 {label}
               </Item>
             );
