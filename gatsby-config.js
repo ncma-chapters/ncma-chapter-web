@@ -1,5 +1,12 @@
 module.exports = {
+  siteMetadata: {
+    siteUrl: 'https://ncmamonmouth.com',
+  },
   plugins: [
+    // Generates a sitemap on builds.
+    'gatsby-plugin-sitemap',
+    // Generates a robots.txt on builds.
+    'gatsby-plugin-robots-txt',
     // Required for creating a PWA: Adds a manifest.json file for offline access.
     {
       resolve: 'gatsby-plugin-manifest',

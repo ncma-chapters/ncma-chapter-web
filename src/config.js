@@ -27,6 +27,14 @@ import samImage from './assets/team_members/sam.png';
 import twitter from './assets/social/twitter.svg';
 import visionImage from './assets/pictures/vision.png';
 
+/*
+ *
+ *
+ * ** WARNING **: Be sure to update `gatsby-config.js`'s `siteMetadata.siteUrl`,
+ * otherwise we will fail to generate both a sitemap and a robots.txt.
+ *
+ */
+
 export default {
   callToAction: {
     label: 'JOIN US',
