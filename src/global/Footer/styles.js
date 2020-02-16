@@ -90,6 +90,7 @@ export const FooterLink = styled(Link)`
   color: ${({ theme }) => theme.colors.white};
   font-size: 1rem;
   margin: 10px 0;
+  text-shadow: ${({ selected }) => (selected ? '0.5px 0px 0.5px, -0.5px 0px 0.5px' : 'none')};
 `;
 
 export const FooterExternalLink = styled.a`

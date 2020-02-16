@@ -3,6 +3,8 @@ import React from 'react';
 import get from 'lodash/get';
 import map from 'lodash/map';
 import toUpper from 'lodash/toUpper';
+import trimEnd from 'lodash/trimEnd';
+import { window } from 'browser-monads';
 // Relative imports.
 import config from '../../config';
 import {
@@ -38,6 +40,9 @@ const Footer = () => {
   // Derive the current year.
   const currentYear = new Date().getFullYear();
 
+  // Derive the current pathname.
+  const pathname = trimEnd(get(window, 'location.pathname'), '/');
+
   return (
     <Wrapper>
       <MainFooter>
@@ -53,7 +58,7 @@ const Footer = () => {
               const href = get(item, 'href');
 
               return (
-                <FooterLink key={label} to={href}>
+                <FooterLink key={label} to={href} selected={pathname === trimEnd(href, '/')}>
                   {toUpper(label)}
                 </FooterLink>
               );
