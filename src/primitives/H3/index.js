@@ -11,6 +11,7 @@ export default styled.h3`
   ${({ largeScreenStyles }) => largeScreenStyles || ''}
 
   @media (max-width: 1000px) {
+    text-align: left;
     ${({ smallScreenStyles }) => smallScreenStyles || ''}
   }
 `;

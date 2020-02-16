@@ -8,6 +8,7 @@ export default styled.div`
   flex-direction: column;
   justify-content: center;
   max-width: 1100px;
+  overflow-x: hidden;
   padding: 115px 40px 0;
   width: 100%;
 

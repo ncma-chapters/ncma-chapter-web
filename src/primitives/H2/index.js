@@ -9,6 +9,7 @@ export default styled.h2`
   line-height: 22px;
   margin: 0 0 100px;
   text-align: center;
+  width: 100%;
 
   ${({ largeScreenStyles }) => largeScreenStyles || ''}
 
