@@ -70,9 +70,10 @@ export const Item = styled(Link)`
   color: ${({ theme }) => theme.colors.white};
   cursor: pointer;
   font-size: 1rem;
-  font-weight: ${({ selected }) => (selected ? '900' : '500')};
+  font-weight: 500;
   padding: 0 1.5rem;
   text-decoration: none;
+  text-shadow: ${({ selected }) => (selected ? '0.5px 0px 0.5px, -0.5px 0px 0.5px' : 'none')};
   white-space: nowrap;
 
   @media (max-width: 1000px) {
