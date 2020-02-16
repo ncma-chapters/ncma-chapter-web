@@ -9,7 +9,9 @@ export default styled.div`
   max-width: 1000px;
   width: 100%;
 
-  ${({ largeScreenStyles }) => largeScreenStyles || ''}
+  @media (min-width: 1001px) {
+    ${({ largeScreenStyles }) => largeScreenStyles || ''}
+  }
 
   @media (max-width: 1000px) {
     flex-direction: column;

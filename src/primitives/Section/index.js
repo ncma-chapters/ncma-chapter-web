@@ -12,7 +12,9 @@ export default styled.div`
   padding: 115px 40px 0;
   width: 100%;
 
-  ${({ largeScreenStyles }) => largeScreenStyles || ''}
+  @media (min-width: 1001px) {
+    ${({ largeScreenStyles }) => largeScreenStyles || ''}
+  }
 
   @media (max-width: 1000px) {
     padding: 40px 20px 0;

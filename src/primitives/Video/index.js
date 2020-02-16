@@ -6,7 +6,9 @@ export default styled.iframe`
   margin: 120px 0;
   width: 100%;
 
-  ${({ largeScreenStyles }) => largeScreenStyles || ''}
+  @media (min-width: 1001px) {
+    ${({ largeScreenStyles }) => largeScreenStyles || ''}
+  }
 
   @media (max-width: 1000px) {
     height: 300px;
