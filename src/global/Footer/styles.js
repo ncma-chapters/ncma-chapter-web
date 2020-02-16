@@ -19,12 +19,23 @@ export const MainFooter = styled.div`
   max-width: 1000px;
   padding: 35px 0;
   width: 100%;
+
+  @media (max-width: 1000px) {
+    align-items: center;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: center;
+  }
 `;
 
 export const Column = styled.div`
   display: flex;
   flex-direction: column;
   padding: 0 30px;
+
+  @media (max-width: 1000px) {
+    margin: 0 0 20px;
+  }
 `;
 
 export const SubFooter = styled.div`
@@ -35,6 +46,11 @@ export const SubFooter = styled.div`
   max-width: 900px;
   padding: 0 0 35px;
   width: 100%;
+
+  @media (max-width: 1000px) {
+    flex-flow: column-reverse;
+    justify-content: flex-start;
+  }
 `;
 
 export const Line = styled.div`
@@ -42,6 +58,10 @@ export const Line = styled.div`
   height: 185px;
   margin-top: 15px;
   width: 4px;
+
+  @media (max-width: 1000px) {
+    display: none;
+  }
 `;
 
 export const ColumnHeader = styled.h2`
@@ -94,6 +114,10 @@ export const SocialIcon = styled.img`
 
 export const Copyright = styled.p`
   color: ${({ theme }) => theme.colors.greys.tint};
+
+  @media (max-width: 1000px) {
+    margin: 40px 0 0;
+  }
 `;
 
 export const Address = styled.div`
@@ -103,9 +127,19 @@ export const Address = styled.div`
 export const SubFooterLinks = styled.div`
   display: flex;
   justify-content: flex-end;
+
+  @media (max-width: 1000px) {
+    align-items: center;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
 `;
 
 export const SubFooterLink = styled(Link)`
   color: ${({ theme }) => theme.colors.white};
   margin: 0 10px;
+
+  @media (max-width: 1000px) {
+    margin: 10px 0;
+  }
 `;
