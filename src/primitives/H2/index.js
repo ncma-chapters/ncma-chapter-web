@@ -9,4 +9,13 @@ export default styled.h2`
   line-height: 22px;
   margin: 0 0 100px;
   text-align: center;
+
+  ${({ largeScreenStyles }) => largeScreenStyles || ''}
+
+  @media (max-width: 1000px) {
+    font-size: 1.6rem;
+    line-height: 36px;
+    margin: 0 0 40px;
+    ${({ smallScreenStyles }) => smallScreenStyles || ''}
+  }
 `;

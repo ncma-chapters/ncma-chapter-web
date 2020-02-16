@@ -8,4 +8,11 @@ export default styled.div`
   background-size: cover;
   height: 500px;
   width: 100%;
+
+  ${({ largeScreenStyles }) => largeScreenStyles || ''}
+
+  @media (max-width: 1000px) {
+    height: 325px;
+    ${({ smallScreenStyles }) => smallScreenStyles || ''}
+  }
 `;

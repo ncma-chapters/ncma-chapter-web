@@ -4,8 +4,11 @@ import styled from 'styled-components';
 export const Link = styled.a`
   text-decoration: none;
 
+  ${({ largeScreenStyles }) => largeScreenStyles || ''}
+
   @media (max-width: 1000px) {
     padding-right: 20px;
+    ${({ smallScreenStyles }) => smallScreenStyles || ''}
   }
 `;
 

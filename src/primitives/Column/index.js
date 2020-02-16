@@ -6,4 +6,10 @@ export default styled.div`
   flex-direction: column;
   flex: 1;
   padding: 0 50px;
+
+  ${({ largeScreenStyles }) => largeScreenStyles || ''}
+
+  @media (max-width: 1000px) {
+    ${({ smallScreenStyles }) => smallScreenStyles || ''}
+  }
 `;

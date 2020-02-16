@@ -164,7 +164,7 @@ export default {
       description:
         'Contract changes are inevitable and must be anticipated and properly managed. This one-day seminar will provide the information you need to handle any and all ambiguities, differences of opinion, or potential and real conflicts between the parties.',
       image: aboutHeroImage,
-      startsAt: moment('February 22, 2020'),
+      startsAt: moment('2020-22-02'),
     },
     {
       id: 2,
@@ -172,7 +172,7 @@ export default {
       description:
         'Contract changes are inevitable and must be anticipated and properly managed. This one-day seminar will provide the information you need to handle any and all ambiguities, differences of opinion, or potential and real conflicts between the parties.',
       image: aboutHeroImage,
-      startsAt: moment('February 22, 2020'),
+      startsAt: moment('2020-22-02'),
     },
     {
       id: 3,
@@ -180,7 +180,7 @@ export default {
       description:
         'Contract changes are inevitable and must be anticipated and properly managed. This one-day seminar will provide the information you need to handle any and all ambiguities, differences of opinion, or potential and real conflicts between the parties.',
       image: aboutHeroImage,
-      startsAt: moment('February 22, 2020'),
+      startsAt: moment('2020-22-02'),
     },
     {
       id: 4,
@@ -188,7 +188,7 @@ export default {
       description:
         'Contract changes are inevitable and must be anticipated and properly managed. This one-day seminar will provide the information you need to handle any and all ambiguities, differences of opinion, or potential and real conflicts between the parties.',
       image: aboutHeroImage,
-      startsAt: moment('February 22, 2020'),
+      startsAt: moment('2020-22-02'),
     },
     {
       id: 5,
@@ -196,7 +196,7 @@ export default {
       description:
         'Contract changes are inevitable and must be anticipated and properly managed. This one-day seminar will provide the information you need to handle any and all ambiguities, differences of opinion, or potential and real conflicts between the parties.',
       image: aboutHeroImage,
-      startsAt: moment('February 22, 2020'),
+      startsAt: moment('2020-22-02'),
     },
     {
       id: 6,
@@ -204,7 +204,7 @@ export default {
       description:
         'Contract changes are inevitable and must be anticipated and properly managed. This one-day seminar will provide the information you need to handle any and all ambiguities, differences of opinion, or potential and real conflicts between the parties.',
       image: aboutHeroImage,
-      startsAt: moment('February 22, 2020'),
+      startsAt: moment('2020-22-02'),
     },
     {
       id: 7,
@@ -212,7 +212,7 @@ export default {
       description:
         'Contract changes are inevitable and must be anticipated and properly managed. This one-day seminar will provide the information you need to handle any and all ambiguities, differences of opinion, or potential and real conflicts between the parties.',
       image: aboutHeroImage,
-      startsAt: moment('February 22, 2020'),
+      startsAt: moment('2020-22-02'),
     },
   ],
   membershipPlans: [

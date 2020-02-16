@@ -12,4 +12,10 @@ export default styled(Link)`
   font-size: 1.3rem;
   justify-content: center;
   width: 200px;
+
+  ${({ largeScreenStyles }) => largeScreenStyles || ''}
+
+  @media (max-width: 1000px) {
+    ${({ smallScreenStyles }) => smallScreenStyles || ''}
+  }
 `;

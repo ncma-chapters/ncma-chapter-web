@@ -7,4 +7,10 @@ export default styled.h3`
   font-weight: bold;
   letter-spacing: 1px;
   margin: 0;
+
+  ${({ largeScreenStyles }) => largeScreenStyles || ''}
+
+  @media (max-width: 1000px) {
+    ${({ smallScreenStyles }) => smallScreenStyles || ''}
+  }
 `;

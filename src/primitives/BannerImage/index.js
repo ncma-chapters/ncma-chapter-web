@@ -9,4 +9,10 @@ export default styled.div`
   height: 325px;
   position: relative;
   width: 100%;
+
+  ${({ largeScreenStyles }) => largeScreenStyles || ''}
+
+  @media (max-width: 1000px) {
+    ${({ smallScreenStyles }) => smallScreenStyles || ''}
+  }
 `;

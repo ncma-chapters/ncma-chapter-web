@@ -6,6 +6,12 @@ export const Wrapper = styled(Link)`
   align-items: center;
   display: flex;
   flex-direction: column;
+
+  ${({ largeScreenStyles }) => largeScreenStyles || ''}
+
+  @media (max-width: 1000px) {
+    ${({ smallScreenStyles }) => smallScreenStyles || ''}
+  }
 `;
 
 export const Role = styled.h4`

@@ -41,7 +41,7 @@ const About = () => {
       <Section>
         <H2>{section1Header}</H2>
         <Text>{section1Text1}</Text>
-        <Text style={{ marginBottom: '0' }}>{section1Text2}</Text>
+        <Text largeScreenStyles={{ marginBottom: '0' }}>{section1Text2}</Text>
       </Section>
 
       <Section>
@@ -64,7 +64,7 @@ const About = () => {
         <H2>{section4Header}</H2>
         <Text>{section4Text1}</Text>
         <Text>{section4Text2}</Text>
-        <Image alt={section4ImageAlt} src={section4ImageSrc} style={{ margin: '50px 0 100px' }} />
+        <Image alt={section4ImageAlt} src={section4ImageSrc} largeScreenStyles={{ margin: '50px 0 100px' }} />
       </Section>
     </Layout>
   );

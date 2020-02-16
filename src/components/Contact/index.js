@@ -63,23 +63,23 @@ class Contact extends Component {
 
         <Section>
           <H2>{section1Header}</H2>
-          <Text style={{ marginBottom: '0' }}>{section1Text1}</Text>
+          <Text largeScreenStyles={{ marginBottom: '0' }}>{section1Text1}</Text>
         </Section>
 
         <Section>
-          <Row style={{ marginBottom: '0' }}>
+          <Row largeScreenStyles={{ marginBottom: '0' }}>
             <Column>
-              <H3 style={{ marginBottom: '50px' }}>{section2Header1}</H3>
+              <H3 largeScreenStyles={{ marginBottom: '50px' }}>{section2Header1}</H3>
               <FieldGroup>
                 <Label>Phone</Label>
                 <Text>{formattedPhoneNumber}</Text>
               </FieldGroup>
               <FieldGroup>
                 <Label>Email</Label>
-                <Text style={{ marginBottom: '20px' }}>{contactEmail}</Text>
+                <Text largeScreenStyles={{ marginBottom: '20px' }}>{contactEmail}</Text>
               </FieldGroup>
               <Line />
-              <H3 style={{ margin: '20px 0 50px' }}>{section2Header2}</H3>
+              <H3 largeScreenStyles={{ margin: '20px 0 50px' }}>{section2Header2}</H3>
               <FieldGroup>
                 <Label>Phone</Label>
                 <Text>{formattedPhoneNumber}</Text>
@@ -91,8 +91,8 @@ class Contact extends Component {
             </Column>
 
             <ContactForm onSubmit={onSubmit}>
-              <H3 style={{ textAlign: 'center' }}>GET IN TOUCH</H3>
-              <Row style={{ margin: '30px 0 0' }}>
+              <H3 largeScreenStyles={{ textAlign: 'center' }}>GET IN TOUCH</H3>
+              <Row largeScreenStyles={{ margin: '30px 0 0' }}>
                 <Input placeholder="First Name" onChange={onStateChange('firstName')} type="text" value={firstName} />
                 <Input placeholder="Last Name" onChange={onStateChange('lastName')} type="text" value={lastName} />
               </Row>
@@ -123,7 +123,7 @@ class Contact extends Component {
           <H2>{section3Header}</H2>
           <Row>
             <Column>
-              <H3 style={{ marginBottom: '20px' }}>NCMA {chapterName} HQ</H3>
+              <H3 largeScreenStyles={{ marginBottom: '20px' }}>NCMA {chapterName} HQ</H3>
               <Text>{formattedAddress}</Text>
             </Column>
           </Row>

@@ -12,6 +12,12 @@ export const BannerWrapper = styled.div`
   justify-content: center;
   padding: 50px 20px;
   width: 100%;
+
+  ${({ largeScreenStyles }) => largeScreenStyles || ''}
+
+  @media (max-width: 1000px) {
+    ${({ smallScreenStyles }) => smallScreenStyles || ''}
+  }
 `;
 
 export const InnerBannerWrapper = styled.div`

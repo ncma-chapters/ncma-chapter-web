@@ -6,4 +6,10 @@ export default styled.div`
   margin: 20px 0;
   height: 1px;
   width: 100%;
+
+  ${({ largeScreenStyles }) => largeScreenStyles || ''}
+
+  @media (max-width: 1000px) {
+    ${({ smallScreenStyles }) => smallScreenStyles || ''}
+  }
 `;

@@ -8,9 +8,12 @@ const Burger = styled.img`
   cursor: pointer;
   display: none;
 
+  ${({ largeScreenStyles }) => largeScreenStyles || ''}
+
   @media (max-width: 1000px) {
     display: flex;
     padding-right: 40px;
+    ${({ smallScreenStyles }) => smallScreenStyles || ''}
   }
 
   @media (max-width: 600px) {
