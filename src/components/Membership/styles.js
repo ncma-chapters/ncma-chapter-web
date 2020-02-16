@@ -6,6 +6,11 @@ export const Benefit = styled.div`
   display: flex;
   margin: 0 0 100px;
   width: 100%;
+
+  @media (max-width: 1000px) {
+    flex-flow: column-reverse;
+    margin: 0;
+  }
 `;
 
 export const BenefitTitle = styled.h3`
@@ -16,6 +21,10 @@ export const BenefitTitle = styled.h3`
   letter-spacing: 1px;
   padding: 0 0 20px;
   width: 100%;
+
+  @media (max-width: 1000px) {
+    border-bottom: none;
+  }
 `;
 
 export const StyledLink = styled.a`
@@ -25,6 +34,10 @@ export const StyledLink = styled.a`
   margin: 0 0 0 20px;
   text-decoration: underline;
   white-space: nowrap;
+
+  @media (max-width: 1000px) {
+    margin: 0;
+  }
 `;
 
 export const Card = styled.div`
@@ -37,6 +50,10 @@ export const Card = styled.div`
   min-width: 230px;
   padding: 20px 15px 50px;
   text-align: center;
+
+  @media (max-width: 1000px) {
+    margin: 40px 0;
+  }
 `;
 
 export const CardTitle = styled.h4`

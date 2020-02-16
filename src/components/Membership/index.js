@@ -78,14 +78,24 @@ const Membership = () => {
       <Section>
         <H2>{section1Header}</H2>
 
-        <Row>
+        <Row smallScreenStyles={{ margin: '0 0 20px' }}>
           <Column>
             <Text>{section1Text1}</Text>
-            <Text largeScreenStyles={{ margin: '0' }}>-- {section1Point1}</Text>
-            <Text largeScreenStyles={{ margin: '0' }}>-- {section1Point2}</Text>
-            <Text largeScreenStyles={{ margin: '0' }}>-- {section1Point3}</Text>
-            <Text largeScreenStyles={{ margin: '0' }}>-- {section1Point4}</Text>
-            <Text largeScreenStyles={{ margin: '50px 0 0' }}>{section1Text2}</Text>
+            <Text largeScreenStyles={{ margin: '0' }} smallScreenStyles={{ margin: '0 0 10px' }}>
+              -- {section1Point1}
+            </Text>
+            <Text largeScreenStyles={{ margin: '0' }} smallScreenStyles={{ margin: '0 0 10px' }}>
+              -- {section1Point2}
+            </Text>
+            <Text largeScreenStyles={{ margin: '0' }} smallScreenStyles={{ margin: '0 0 10px' }}>
+              -- {section1Point3}
+            </Text>
+            <Text largeScreenStyles={{ margin: '0' }} smallScreenStyles={{ margin: '0 0 10px' }}>
+              -- {section1Point4}
+            </Text>
+            <Text largeScreenStyles={{ margin: '50px 0 0' }} smallScreenStyles={{ marginTop: '40px' }}>
+              {section1Text2}
+            </Text>
           </Column>
           <Image alt={section1ImageAlt} largeScreenStyles={{ maxWidth: '325px' }} src={section1ImageSrc} />
         </Row>
@@ -106,7 +116,12 @@ const Membership = () => {
               {/* <StyledLink href={benefit1Link}>Learn More</StyledLink> */}
             </Row>
           </Column>
-          <Image alt={benefit1ImageAlt} largeScreenStyles={{ maxWidth: '230px' }} src={benefit1ImageSrc} />
+          <Image
+            alt={benefit1ImageAlt}
+            largeScreenStyles={{ maxWidth: '230px' }}
+            smallScreenStyles={{ margin: '0 0 60px' }}
+            src={benefit1ImageSrc}
+          />
         </Benefit>
 
         <Benefit>
@@ -117,7 +132,12 @@ const Membership = () => {
               {/* <StyledLink href={benefit2Link}>Learn More</StyledLink> */}
             </Row>
           </Column>
-          <Image alt={benefit2ImageAlt} largeScreenStyles={{ maxWidth: '230px' }} src={benefit2ImageSrc} />
+          <Image
+            alt={benefit2ImageAlt}
+            largeScreenStyles={{ maxWidth: '230px' }}
+            smallScreenStyles={{ margin: '0 0 60px' }}
+            src={benefit2ImageSrc}
+          />
         </Benefit>
 
         <Benefit>
@@ -128,7 +148,12 @@ const Membership = () => {
               {/* <StyledLink href={benefit3Link}>Learn More</StyledLink> */}
             </Row>
           </Column>
-          <Image alt={benefit3ImageAlt} largeScreenStyles={{ maxWidth: '230px' }} src={benefit3ImageSrc} />
+          <Image
+            alt={benefit3ImageAlt}
+            largeScreenStyles={{ maxWidth: '230px' }}
+            smallScreenStyles={{ margin: '0 0 60px' }}
+            src={benefit3ImageSrc}
+          />
         </Benefit>
 
         <Benefit>
@@ -139,7 +164,12 @@ const Membership = () => {
               {/* <StyledLink href={benefit4Link}>Learn More</StyledLink> */}
             </Row>
           </Column>
-          <Image alt={benefit4ImageAlt} largeScreenStyles={{ maxWidth: '230px' }} src={benefit4ImageSrc} />
+          <Image
+            alt={benefit4ImageAlt}
+            largeScreenStyles={{ maxWidth: '230px' }}
+            smallScreenStyles={{ margin: '0 0 60px' }}
+            src={benefit4ImageSrc}
+          />
         </Benefit>
 
         <Benefit>
@@ -150,7 +180,12 @@ const Membership = () => {
               {/* <StyledLink href={benefit5Link}>Learn More</StyledLink> */}
             </Row>
           </Column>
-          <Image alt={benefit5ImageAlt} largeScreenStyles={{ maxWidth: '230px' }} src={benefit5ImageSrc} />
+          <Image
+            alt={benefit5ImageAlt}
+            largeScreenStyles={{ maxWidth: '230px' }}
+            smallScreenStyles={{ margin: '0 0 60px' }}
+            src={benefit5ImageSrc}
+          />
         </Benefit>
       </Section>
 

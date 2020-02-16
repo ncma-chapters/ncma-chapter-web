@@ -12,7 +12,7 @@ export default styled.iframe`
 
   @media (max-width: 1000px) {
     height: 300px;
-    margin: 20px 0 80px;
+    margin: 40px 0 60px;
     ${({ smallScreenStyles }) => smallScreenStyles || ''}
   }
 `;
