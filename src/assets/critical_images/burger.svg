@@ -1,16 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="20px" height="19px" viewBox="0 0 20 19" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
-    <title>Burger</title>
-    <g id="Mobile" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
-        <g id="Mobile---home---1" transform="translate(-19.000000, -69.000000)" stroke="#F5F5F5" stroke-width="2">
-            <g id="List-View" transform="translate(20.000000, 69.000000)">
-                <g id="list">
-                    <path d="M0,1.35714286 L18,1.35714286" id="Path"></path>
-                    <path d="M0,9.5 L18,9.5" id="Path"></path>
-                    <path d="M0,17.6428571 L18,17.6428571" id="Path"></path>
-                </g>
-            </g>
-        </g>
-    </g>
-</svg>
+<svg height="19" viewBox="0 0 20 19" width="20" xmlns="http://www.w3.org/2000/svg"><g style="stroke:#f5f5f5;stroke-width:2;fill:none;fill-rule:evenodd;stroke-linecap:round;stroke-linejoin:round" transform="translate(1)"><path d="m0 1.35714286h18"/><path d="m0 9.5h18"/><path d="m0 17.6428571h18"/></g></svg>
