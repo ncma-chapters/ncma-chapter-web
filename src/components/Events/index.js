@@ -46,11 +46,11 @@ const Events = () => {
             <BarSubtitle>{startsAt.format('MMMM D, YYYY')}</BarSubtitle>
           </Bar>
         </BannerImage>
-        <Text style={{ marginTop: '50px' }}>{description}</Text>
+        <Text largeScreenStyles={{ marginTop: '50px' }}>{description}</Text>
         <CallToActionButton to="/membership">REGISTER NOW</CallToActionButton>
       </Section>
 
-      <Section style={{ margin: '0 0 100px' }}>
+      <Section largeScreenStyles={{ margin: '0 0 100px' }}>
         {map(otherEvents, (event) => {
           // Derive event properties.
           const id = get(event, 'id');
@@ -63,7 +63,7 @@ const Events = () => {
               <StyledDate>{startsAt.format('MMM D')}</StyledDate>
               <Column>
                 <Title>{title}</Title>
-                <Text style={{ margin: '0 0 25px' }}>{description}</Text>
+                <Text largeScreenStyles={{ margin: '0 0 25px' }}>{description}</Text>
               </Column>
             </Event>
           );

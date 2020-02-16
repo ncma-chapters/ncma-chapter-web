@@ -6,7 +6,7 @@ import get from 'lodash/get';
 import Text from '../Text';
 import { Role, TeamMemberImage, Wrapper } from './styles';
 
-const TeamMember = ({ teamMember }) => {
+const TeamMember = ({ teamMember, largeScreenStyles, smallScreenStyles }) => {
   // Derive teamMember properties.
   const firstName = get(teamMember, 'firstName');
   const id = get(teamMember, 'id');
@@ -15,10 +15,10 @@ const TeamMember = ({ teamMember }) => {
   const role = get(teamMember, 'role');
 
   return (
-    <Wrapper to={`/about/${id}`}>
+    <Wrapper to={`/about/${id}`} largeScreenStyles={largeScreenStyles} smallScreenStyles={smallScreenStyles}>
       <Role>{role}</Role>
       <TeamMemberImage alt={`${firstName} ${lastName}`} src={image} />
-      <Text style={{ textAlign: 'center' }}>{`${firstName} ${lastName}`}</Text>
+      <Text largeScreenStyles={{ textAlign: 'center' }}>{`${firstName} ${lastName}`}</Text>
     </Wrapper>
   );
 };
@@ -31,6 +31,8 @@ TeamMember.propTypes = {
     lastName: PropTypes.string.isRequired,
     role: PropTypes.string.isRequired,
   }).isRequired,
+  largeScreenStyles: PropTypes.object,
+  smallScreenStyles: PropTypes.object,
 };
 
 export default TeamMember;

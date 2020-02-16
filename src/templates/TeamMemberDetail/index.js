@@ -81,10 +81,10 @@ class TeamMemberDetail extends Component {
         <Hero url={heroImage} />
 
         <Section>
-          <H2 style={{ marginBottom: '50px' }}>
+          <H2 largeScreenStyles={{ marginBottom: '50px' }}>
             {firstName} {lastName}
           </H2>
-          <Text style={{ textAlign: 'center' }}>{role}</Text>
+          <Text largeScreenStyles={{ textAlign: 'center' }}>{role}</Text>
           <Image alt={`${firstName} ${lastName}`} src={image} />
         </Section>
 
@@ -96,7 +96,7 @@ class TeamMemberDetail extends Component {
 
         {bio1 && (
           <Section>
-            <H2 style={{ textTransform: 'uppercase' }}>
+            <H2 largeScreenStyles={{ textTransform: 'uppercase' }}>
               {firstName} {lastName}&apos;s biography
             </H2>
             {bio1 && <Text>{bio1}</Text>}
@@ -106,7 +106,7 @@ class TeamMemberDetail extends Component {
           </Section>
         )}
 
-        <Section style={{ marginBottom: '100px' }}>
+        <Section largeScreenStyles={{ marginBottom: '100px' }}>
           <H2>MEET THE OTHER OFFICERS</H2>
           <TeamMembers>
             {map(filteredTeamMembers, (teamMember) => (

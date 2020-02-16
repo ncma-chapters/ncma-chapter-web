@@ -60,7 +60,7 @@ const Home = () => {
 
       <Section>
         <H2>{section1Header}</H2>
-        <Text style={{ textAlign: 'center' }}>{section1Text1}</Text>
+        <Text largeScreenStyles={{ textAlign: 'center' }}>{section1Text1}</Text>
         <Video
           allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
           allowfullscreen
@@ -73,10 +73,10 @@ const Home = () => {
         <Column>
           <H3>{bannerHeader}</H3>
           <Line />
-          <Text style={{ marginBottom: '0' }}>{bannerText}</Text>
+          <Text largeScreenStyles={{ marginBottom: '0' }}>{bannerText}</Text>
         </Column>
 
-        <Column style={{ alignItems: 'center' }}>
+        <Column largeScreenStyles={{ alignItems: 'center' }}>
           <CallToActionButton to={href}>{label}</CallToActionButton>
         </Column>
       </Banner>
@@ -107,7 +107,7 @@ const Home = () => {
         {/* <Row>
           <Column>
             <H3>{section2SubHeader3}</H3>
-            <Line style={{ maxWidth: '430px' }} />
+            <Line largeScreenStyles={{ maxWidth: '430px' }} />
             <TeamMembers>
               {map(teamMembers, (teamMember) => (
                 <TeamMember key={get(teamMember, 'id')} teamMember={teamMember} />
@@ -125,10 +125,10 @@ const Home = () => {
           <Image alt={section3SubHeader1ImageAlt} src={section3SubHeader1ImageSrc} />
 
           <Column>
-            <H3 style={{ marginLeft: '-15px' }}>{section3SubHeader1}</H3>
+            <H3 largeScreenStyles={{ marginLeft: '-15px' }}>{section3SubHeader1}</H3>
             <Box>
-              <Text style={{ marginBottom: '0' }}>{section3SubHeader1Text1}</Text>
-              <CallToActionButton to={href} style={{ marginTop: '40px' }}>
+              <Text largeScreenStyles={{ marginBottom: '0' }}>{section3SubHeader1Text1}</Text>
+              <CallToActionButton to={href} largeScreenStyles={{ marginTop: '40px' }}>
                 {label2}
               </CallToActionButton>
             </Box>

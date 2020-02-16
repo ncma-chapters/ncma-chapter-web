@@ -5,6 +5,12 @@ const Button = styled.button`
   background: rebeccapurple;
   border-radius: 6px;
   color: white;
+
+  ${({ largeScreenStyles }) => largeScreenStyles || ''}
+
+  @media (max-width: 1000px) {
+    ${({ smallScreenStyles }) => smallScreenStyles || ''}
+  }
 `;
 
 export default Button;

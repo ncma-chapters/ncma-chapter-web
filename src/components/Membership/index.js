@@ -81,13 +81,13 @@ const Membership = () => {
         <Row>
           <Column>
             <Text>{section1Text1}</Text>
-            <Text style={{ margin: '0' }}>-- {section1Point1}</Text>
-            <Text style={{ margin: '0' }}>-- {section1Point2}</Text>
-            <Text style={{ margin: '0' }}>-- {section1Point3}</Text>
-            <Text style={{ margin: '0' }}>-- {section1Point4}</Text>
-            <Text style={{ margin: '50px 0 0' }}>{section1Text2}</Text>
+            <Text largeScreenStyles={{ margin: '0' }}>-- {section1Point1}</Text>
+            <Text largeScreenStyles={{ margin: '0' }}>-- {section1Point2}</Text>
+            <Text largeScreenStyles={{ margin: '0' }}>-- {section1Point3}</Text>
+            <Text largeScreenStyles={{ margin: '0' }}>-- {section1Point4}</Text>
+            <Text largeScreenStyles={{ margin: '50px 0 0' }}>{section1Text2}</Text>
           </Column>
-          <Image alt={section1ImageAlt} style={{ maxWidth: '325px' }} src={section1ImageSrc} />
+          <Image alt={section1ImageAlt} largeScreenStyles={{ maxWidth: '325px' }} src={section1ImageSrc} />
         </Row>
       </Section>
 
@@ -101,56 +101,56 @@ const Membership = () => {
         <Benefit>
           <Column>
             <BenefitTitle>{benefit1Title}</BenefitTitle>
-            <Row style={{ margin: '0' }}>
-              <Text style={{ margin: '20px 0 0' }}>{benefit1Description}</Text>
+            <Row largeScreenStyles={{ margin: '0' }}>
+              <Text largeScreenStyles={{ margin: '20px 0 0' }}>{benefit1Description}</Text>
               {/* <StyledLink href={benefit1Link}>Learn More</StyledLink> */}
             </Row>
           </Column>
-          <Image alt={benefit1ImageAlt} style={{ maxWidth: '230px' }} src={benefit1ImageSrc} />
+          <Image alt={benefit1ImageAlt} largeScreenStyles={{ maxWidth: '230px' }} src={benefit1ImageSrc} />
         </Benefit>
 
         <Benefit>
           <Column>
             <BenefitTitle>{benefit2Title}</BenefitTitle>
-            <Row style={{ margin: '0' }}>
-              <Text style={{ margin: '20px 0 0' }}>{benefit2Description}</Text>
+            <Row largeScreenStyles={{ margin: '0' }}>
+              <Text largeScreenStyles={{ margin: '20px 0 0' }}>{benefit2Description}</Text>
               {/* <StyledLink href={benefit2Link}>Learn More</StyledLink> */}
             </Row>
           </Column>
-          <Image alt={benefit2ImageAlt} style={{ maxWidth: '230px' }} src={benefit2ImageSrc} />
+          <Image alt={benefit2ImageAlt} largeScreenStyles={{ maxWidth: '230px' }} src={benefit2ImageSrc} />
         </Benefit>
 
         <Benefit>
           <Column>
             <BenefitTitle>{benefit3Title}</BenefitTitle>
-            <Row style={{ margin: '0' }}>
-              <Text style={{ margin: '20px 0 0' }}>{benefit3Description}</Text>
+            <Row largeScreenStyles={{ margin: '0' }}>
+              <Text largeScreenStyles={{ margin: '20px 0 0' }}>{benefit3Description}</Text>
               {/* <StyledLink href={benefit3Link}>Learn More</StyledLink> */}
             </Row>
           </Column>
-          <Image alt={benefit3ImageAlt} style={{ maxWidth: '230px' }} src={benefit3ImageSrc} />
+          <Image alt={benefit3ImageAlt} largeScreenStyles={{ maxWidth: '230px' }} src={benefit3ImageSrc} />
         </Benefit>
 
         <Benefit>
           <Column>
             <BenefitTitle>{benefit4Title}</BenefitTitle>
-            <Row style={{ margin: '0' }}>
-              <Text style={{ margin: '20px 0 0' }}>{benefit4Description}</Text>
+            <Row largeScreenStyles={{ margin: '0' }}>
+              <Text largeScreenStyles={{ margin: '20px 0 0' }}>{benefit4Description}</Text>
               {/* <StyledLink href={benefit4Link}>Learn More</StyledLink> */}
             </Row>
           </Column>
-          <Image alt={benefit4ImageAlt} style={{ maxWidth: '230px' }} src={benefit4ImageSrc} />
+          <Image alt={benefit4ImageAlt} largeScreenStyles={{ maxWidth: '230px' }} src={benefit4ImageSrc} />
         </Benefit>
 
         <Benefit>
           <Column>
             <BenefitTitle>{benefit5Title}</BenefitTitle>
-            <Row style={{ margin: '0' }}>
-              <Text style={{ margin: '20px 0 0' }}>{benefit5Description}</Text>
+            <Row largeScreenStyles={{ margin: '0' }}>
+              <Text largeScreenStyles={{ margin: '20px 0 0' }}>{benefit5Description}</Text>
               {/* <StyledLink href={benefit5Link}>Learn More</StyledLink> */}
             </Row>
           </Column>
-          <Image alt={benefit5ImageAlt} style={{ maxWidth: '230px' }} src={benefit5ImageSrc} />
+          <Image alt={benefit5ImageAlt} largeScreenStyles={{ maxWidth: '230px' }} src={benefit5ImageSrc} />
         </Benefit>
       </Section>
 
@@ -162,14 +162,14 @@ const Membership = () => {
           <StyledLink
             href="https://www.ncmahq.org/docs/default-source/community-files/mem19---membership-application.pdf"
             rel="noopener noreferrer"
-            style={{ margin: '0' }}
+            largeScreenStyles={{ margin: '0' }}
           >
             click here
           </StyledLink>{' '}
           and don&apos;t forget to list your chapter as NCMA Monmouth!
         </Text>
 
-        <Row style={{ margin: '50px 0 100px' }}>
+        <Row largeScreenStyles={{ margin: '50px 0 100px' }}>
           {map(membershipPlans, (plan) => {
             // Derive plan properties.
             const id = get(plan, 'id');
