@@ -1,37 +1,76 @@
 // Dependencies.
-import React from 'react';
+import React, { Component } from 'react';
 import get from 'lodash/get';
 import map from 'lodash/map';
 // Relative imports.
 import config from '../../config';
+import Burger from '../../primitives/Burger';
 import Logo from '../../primitives/Logo';
-import { CallToAction, Content, Item, Items, Wrapper } from './styles';
+import { CallToAction, Content, MobileItems, Item, Items, Wrapper } from './styles';
 
-const NavTop = () => (
-  <Wrapper>
-    <Content>
-      {/* Logo */}
-      <Logo />
+class NavTop extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      open: false,
+    };
+  }
 
-      {/* Nav Items */}
-      <Items>
-        {map(get(config, 'navItems'), (item) => {
-          // Derive item properties.
-          const label = get(item, 'label');
-          const href = get(item, 'href');
+  onBurgerClick = () => {
+    this.setState({ open: !this.state.open });
+  };
 
-          return (
-            <Item key={label} to={href}>
-              {label}
-            </Item>
-          );
-        })}
-      </Items>
+  render() {
+    const { onBurgerClick } = this;
+    const { open } = this.state;
 
-      {/* Call To Action button */}
-      <CallToAction to={get(config, 'callToAction.href')}>{get(config, 'callToAction.label')}</CallToAction>
-    </Content>
-  </Wrapper>
-);
+    return (
+      <>
+        <Wrapper>
+          <Content>
+            {/* Burger */}
+            <Burger onClick={onBurgerClick} />
+
+            {/* Logo */}
+            <Logo />
+
+            {/* Nav Items Desktop */}
+            <Items>
+              {map(get(config, 'navItems'), (item) => {
+                // Derive item properties.
+                const label = get(item, 'label');
+                const href = get(item, 'href');
+
+                return (
+                  <Item key={label} to={href}>
+                    {label}
+                  </Item>
+                );
+              })}
+            </Items>
+
+            {/* Call To Action button */}
+            <CallToAction to={get(config, 'callToAction.href')}>{get(config, 'callToAction.label')}</CallToAction>
+          </Content>
+        </Wrapper>
+        {/* Nav Items Mobile */}
+        <MobileItems hidden={!open}>
+          {map(get(config, 'navItems'), (item) => {
+            // Derive item properties.
+            const label = get(item, 'label');
+            const href = get(item, 'href');
+
+            return (
+              <Item key={label} to={href}>
+                {label}
+              </Item>
+            );
+          })}
+          <CallToAction to={get(config, 'callToAction.href')}>{get(config, 'callToAction.label')}</CallToAction>
+        </MobileItems>
+      </>
+    );
+  }
+}
 
 export default NavTop;
