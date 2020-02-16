@@ -23,6 +23,7 @@ import Video from '../../primitives/Video';
 const Home = () => {
   // Derive config properties.
   // const teamMembers = get(config, 'teamMembers');
+  const chapterName = get(config, 'chapterName');
   const content = get(config, 'content');
   const callToAction = get(config, 'callToAction');
 
@@ -66,6 +67,7 @@ const Home = () => {
           allowfullscreen
           frameborder="0"
           src={section1VideoSrc}
+          title={`Video about NCMA ${chapterName}`}
         />
       </Section>
 

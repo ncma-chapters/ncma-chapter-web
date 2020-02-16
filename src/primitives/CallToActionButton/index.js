@@ -4,7 +4,7 @@ import { Link } from 'gatsby';
 
 export default styled(Link)`
   align-items: center;
-  background: ${({ theme }) => theme.colors.secondary.normal};
+  background: ${({ theme }) => theme.colors.secondary.shade};
   border-radius: 30px;
   color: ${({ theme }) => theme.colors.white};
   display: flex;

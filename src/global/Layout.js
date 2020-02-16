@@ -16,12 +16,17 @@ const Layout = ({ children }) => {
   const state = useState(true);
   const isLightTheme = state[0];
 
+  // Derive config properties.
+  const chapterName = get(config, 'chapterName');
+
   return (
     <>
       {/* SEO Metatags */}
       <Helmet>
-        <title>NCMA {get(config, 'chapterName', '')}</title>
+        <title>NCMA {chapterName}</title>
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+        <meta httpEquiv="content-language" content="en-us" />
+        <meta name="description" content={`Join NCMA ${chapterName} today and gain access to exclusive benefits.`} />
       </Helmet>
 
       {/* Theming */}
