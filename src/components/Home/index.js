@@ -76,7 +76,7 @@ const Home = () => {
           <Text largeScreenStyles={{ marginBottom: '0' }}>{bannerText}</Text>
         </Column>
 
-        <Column largeScreenStyles={{ alignItems: 'center' }}>
+        <Column largeScreenStyles={{ alignItems: 'center' }} smallScreenStyles={{ margin: '40px 0 0' }}>
           <CallToActionButton to={href}>{label}</CallToActionButton>
         </Column>
       </Banner>
@@ -94,7 +94,7 @@ const Home = () => {
           <Image alt={section2SubHeader1ImageAlt} src={section2SubHeader1ImageSrc} />
         </Row>
 
-        <Row>
+        <Row smallScreenStyles={{ flexFlow: 'column-reverse' }}>
           <Image alt={section2SubHeader2ImageAlt} src={section2SubHeader2ImageSrc} />
 
           <Column>

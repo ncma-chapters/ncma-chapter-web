@@ -26,6 +26,11 @@ export const InnerBannerWrapper = styled.div`
   justify-content: space-between;
   max-width: 1000px;
   width: 100%;
+
+  @media (max-width: 1000px) {
+    flex-direction: column;
+    justify-content: flex-start;
+  }
 `;
 
 const Banner = (props) => (

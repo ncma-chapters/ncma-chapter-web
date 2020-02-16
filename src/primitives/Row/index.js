@@ -12,6 +12,9 @@ export default styled.div`
   ${({ largeScreenStyles }) => largeScreenStyles || ''}
 
   @media (max-width: 1000px) {
+    flex-direction: column;
+    justify-content: flex-start;
+    margin: 0 0 50px;
     ${({ smallScreenStyles }) => smallScreenStyles || ''}
   }
 `;
