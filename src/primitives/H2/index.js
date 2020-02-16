@@ -11,7 +11,9 @@ export default styled.h2`
   text-align: center;
   width: 100%;
 
-  ${({ largeScreenStyles }) => largeScreenStyles || ''}
+  @media (min-width: 1001px) {
+    ${({ largeScreenStyles }) => largeScreenStyles || ''}
+  }
 
   @media (max-width: 1000px) {
     font-size: 1.6rem;

@@ -7,7 +7,9 @@ export default styled.div`
   height: 1px;
   width: 100%;
 
-  ${({ largeScreenStyles }) => largeScreenStyles || ''}
+  @media (min-width: 1001px) {
+    ${({ largeScreenStyles }) => largeScreenStyles || ''}
+  }
 
   @media (max-width: 1000px) {
     ${({ smallScreenStyles }) => smallScreenStyles || ''}

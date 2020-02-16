@@ -7,7 +7,9 @@ export default styled.div`
   flex: 1;
   padding: 0 50px;
 
-  ${({ largeScreenStyles }) => largeScreenStyles || ''}
+  @media (min-width: 1001px) {
+    ${({ largeScreenStyles }) => largeScreenStyles || ''}
+  }
 
   @media (max-width: 1000px) {
     padding: 0;

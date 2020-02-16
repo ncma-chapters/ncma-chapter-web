@@ -13,7 +13,9 @@ export default styled(Link)`
   justify-content: center;
   width: 200px;
 
-  ${({ largeScreenStyles }) => largeScreenStyles || ''}
+  @media (min-width: 1001px) {
+    ${({ largeScreenStyles }) => largeScreenStyles || ''}
+  }
 
   @media (max-width: 1000px) {
     height: 55px;
