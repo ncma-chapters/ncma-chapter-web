@@ -64,7 +64,12 @@ const About = () => {
         <H2>{section4Header}</H2>
         <Text>{section4Text1}</Text>
         <Text>{section4Text2}</Text>
-        <Image alt={section4ImageAlt} src={section4ImageSrc} largeScreenStyles={{ margin: '50px 0 100px' }} />
+        <Image
+          alt={section4ImageAlt}
+          src={section4ImageSrc}
+          largeScreenStyles={{ margin: '50px 0 100px' }}
+          smallScreenStyles={{ margin: '40px 0' }}
+        />
       </Section>
     </Layout>
   );

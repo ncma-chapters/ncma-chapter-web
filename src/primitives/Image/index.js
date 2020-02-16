@@ -9,6 +9,7 @@ export default styled.img`
   }
 
   @media (max-width: 1000px) {
+    margin: 40px 0 0;
     ${({ smallScreenStyles }) => smallScreenStyles || ''}
   }
 `;

@@ -15,6 +15,12 @@ export default styled.p`
 
   @media (max-width: 1000px) {
     text-align: left;
+
+    &:last-of-type {
+      margin: 0;
+      ${({ smallScreenStyles }) => smallScreenStyles || ''}
+    }
+
     ${({ smallScreenStyles }) => smallScreenStyles || ''}
   }
 `;
