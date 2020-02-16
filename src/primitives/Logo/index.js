@@ -8,7 +8,7 @@ import { Link, Image } from './styles';
 
 const Logo = ({ className }) => (
   <Link className={className} href="/">
-    <Image src={get(config, 'logo')} />
+    <Image alt={`NCMA ${get(config, 'chapterName')} logo`} src={get(config, 'logo')} />
   </Link>
 );
 
