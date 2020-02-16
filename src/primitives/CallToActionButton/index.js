@@ -16,6 +16,8 @@ export default styled(Link)`
   ${({ largeScreenStyles }) => largeScreenStyles || ''}
 
   @media (max-width: 1000px) {
+    height: 55px;
+    width: 175px;
     ${({ smallScreenStyles }) => smallScreenStyles || ''}
   }
 `;

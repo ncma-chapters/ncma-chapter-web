@@ -10,6 +10,7 @@ export default styled.div`
   ${({ largeScreenStyles }) => largeScreenStyles || ''}
 
   @media (max-width: 1000px) {
+    padding: 0;
     ${({ smallScreenStyles }) => smallScreenStyles || ''}
   }
 `;

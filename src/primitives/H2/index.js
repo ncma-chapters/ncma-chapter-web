@@ -16,6 +16,7 @@ export default styled.h2`
     font-size: 1.6rem;
     line-height: 36px;
     margin: 0 0 40px;
+    text-align: left;
     ${({ smallScreenStyles }) => smallScreenStyles || ''}
   }
 `;

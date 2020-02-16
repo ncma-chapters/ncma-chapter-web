@@ -9,6 +9,7 @@ export default styled.iframe`
   ${({ largeScreenStyles }) => largeScreenStyles || ''}
 
   @media (max-width: 1000px) {
+    height: 300px;
     margin: 20px 0 80px;
     ${({ smallScreenStyles }) => smallScreenStyles || ''}
   }
