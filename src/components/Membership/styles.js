@@ -31,13 +31,9 @@ export const StyledLink = styled.a`
   align-self: center;
   color: ${({ theme }) => theme.colors.secondary.normal};
   font-size: 1em;
-  margin: 0 0 0 20px;
+  margin: 0;
   text-decoration: underline;
   white-space: nowrap;
-
-  @media (max-width: 1000px) {
-    margin: 0;
-  }
 `;
 
 export const Card = styled.div`
