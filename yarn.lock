@@ -969,6 +969,11 @@
   resolved "https://registry.yarnpkg.com/@emotion/weak-memoize/-/weak-memoize-0.2.5.tgz#8eed982e2ee6f7f4e44c253e12962980791efd46"
   integrity sha512-6U71C2Wp7r5XtFtQzYrW5iKFT67OixrSxjI4MptCHzdSVlgabczzqLe0ZSgnub/5Kp4hSbpDB1tMytZY9pwxxA==
 
+"@fullstory/browser@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@fullstory/browser/-/browser-1.1.0.tgz#636d6454578a16f63133e9394b863c7f4aa74698"
+  integrity sha512-8iusKPCNCcUaCX9F5VTTN3V7zO3x4yQrBmIXLFJsT5rro4WBHTvg9c0jZobla2c/OsCnlCjVH6O4NARvMZ8rtw==
+
 "@hapi/address@2.x.x":
   version "2.1.4"
   resolved "https://registry.yarnpkg.com/@hapi/address/-/address-2.1.4.tgz#5d67ed43f3fd41a69d4b9ff7b56e7c0d1d0a81e5"

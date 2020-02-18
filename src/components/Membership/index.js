@@ -221,6 +221,8 @@ const Membership = () => {
                   {priceUSDAnnual.toLocaleString('en-US', {
                     style: 'currency',
                     currency: 'USD',
+                    maximumFractionDigits: 0,
+                    minimumFractionDigits: 0,
                   })}
                 </CardCost>
                 <CardCostLabel>Annually</CardCostLabel>
@@ -228,6 +230,8 @@ const Membership = () => {
                   {initiationFee.toLocaleString('en-US', {
                     style: 'currency',
                     currency: 'USD',
+                    maximumFractionDigits: 0,
+                    minimumFractionDigits: 0,
                   })}{' '}
                   Initiation Fee
                 </InitiationFee>

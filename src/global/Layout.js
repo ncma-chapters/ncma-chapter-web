@@ -4,12 +4,18 @@ import Helmet from 'react-helmet';
 import PropTypes from 'prop-types';
 import get from 'lodash/get';
 import styled, { ThemeProvider } from 'styled-components';
+import * as FullStory from '@fullstory/browser';
 // Other imports.
 import Footer from './Footer';
 import GlobalStyle from './GlobalStyle';
 import NavTop from './NavTop';
 import config from '../config';
 import theme from './theme';
+
+// Initialize FullStory analytics.
+if (process.env.GATSBY_FULL_STORY_ORG_ID) {
+  FullStory.init({ orgId: process.env.GATSBY_FULL_STORY_ORG_ID });
+}
 
 const Layout = ({ children }) => {
   // Derive theme properties.
