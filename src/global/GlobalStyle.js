@@ -13,4 +13,8 @@ export default createGlobalStyle`
     font-size: 16px;
     font-weight: 500;
   }
+
+  strong {
+    font-weight: bold;
+  }
 `;

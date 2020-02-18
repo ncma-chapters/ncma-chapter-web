@@ -123,9 +123,9 @@ const Footer = () => {
         {/* <Address>{formattedAddress}</Address> */}
 
         <SubFooterLinks>
-          <SubFooterLink to="/legal">Terms of Service</SubFooterLink>
-          <SubFooterLink to="/legal">Privacy Policy</SubFooterLink>
-          <SubFooterLink to="/legal">Cookie Policy</SubFooterLink>
+          <SubFooterLink to="/privacy">Terms of Service</SubFooterLink>
+          <SubFooterLink to="/privacy">Privacy Policy</SubFooterLink>
+          <SubFooterLink to="/privacy">Cookie Policy</SubFooterLink>
         </SubFooterLinks>
       </SubFooter>
     </Wrapper>
