@@ -126,7 +126,7 @@ export default {
       section1ImageSrc: membershipBecomeAMemberImage,
       section2Header: 'BENEFITS OF MEMBERSHIP',
       section2Text1:
-        'Gain a professional advantage with access to valuable member-only content—including seminars, e-courses, and conferences—all at your fingertips.',
+        'Gain a professional advantage with access to valuable member-only content—including seminars, e-courses, and conferences — all at your fingertips.',
       section2Text2:
         'NCMA’s virtual education events provide accessible, affordable training for both individuals and work teams. The lessons learned in our courses can give your team an advantage the next time you compete for a contract. Or it may help you stay ahead of the curve by giving you the certification you need to land your next career role.',
       section2Text3:
