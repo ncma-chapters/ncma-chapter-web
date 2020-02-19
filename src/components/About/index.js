@@ -27,6 +27,8 @@ const About = () => {
   const section2Text1 = get(content, 'about.section2Text1');
   const section2Text2 = get(content, 'about.section2Text2');
   const section2Text3 = get(content, 'about.section2Text3');
+  const section2Text4 = get(content, 'about.section2Text4');
+  const section2Text5 = get(content, 'about.section2Text5');
   // const section3Header = get(content, 'about.section3Header');
   const section4Header = get(content, 'about.section4Header');
   const section4ImageAlt = get(content, 'about.section4ImageAlt');
@@ -49,6 +51,8 @@ const About = () => {
         <Text>{section2Text1}</Text>
         <Text>{section2Text2}</Text>
         <Text>{section2Text3}</Text>
+        <Text>{section2Text4}</Text>
+        <Text>{section2Text5}</Text>
       </Section>
 
       {/* <Section>

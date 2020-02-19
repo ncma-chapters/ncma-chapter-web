@@ -87,11 +87,15 @@ export default {
         'Our members have access to the best training and have opportunities to network with key contacts to help them meet and exceed their professional goals.',
       section2Header: 'OUR STORY',
       section2Text1:
-        'The NCMA Monmouth chapter covers a vibrant section of central New Jersey, including the communities of Long Branch, Asbury Park, Freehold Township and Toms River. Strategically located new the state capital of Trenton to the west and New York City to the north, NCMA Monmouth welcomes members of all areas.',
+        'The NCMA Monmouth chapter has a long and distinguished history of serving central New Jersey and the contract managers that interact regularly with local, state, and federal government.',
       section2Text2:
-        'Our chapter received a charter from NCMA headquarters on January 1, 2020, because employees in central New Jersey wanted a chapter closer to their location.',
+        'Our chapter received a charter from NCMA headquarters in 1970 to support the military community at Fort Monmouth, New Jersey. We provided programing, training opportunities, and scholarship programs for government workers and officials stationed there.',
       section2Text3:
-        'We look forward to growing and learning with you and promoting the benefits of contract management in our region.',
+        'Although Fort Monmouth was closed by the Base Realignment and Closure Commission in 2005, many NCMA members with ties to the base remained in the area and are active in NCMA Monmouth to this day. Today we serve a more diversified membership of contractors and civil employees representing local, state, and federal government.',
+      section2Text4:
+        'Now in our 50th year, we are proud to help contract managers navigate the rapidly evolving world of contract management in the 21st century. Our members live and work in a dynamic section of central New Jersey, including the communities of Long Branch, Asbury Park, Freehold Township and Toms River.',
+      section2Text5:
+        'Strategically located new the state capital of Trenton to the west and New York City to the north, the NCMA Monmouth chapter looks forward to growing and learning with you and promoting the benefits of contract management in our region.',
       section3Header: 'MEET OUR OFFICERS',
       section4Header: 'WE ARE HERE FOR YOU',
       section4Text1:
