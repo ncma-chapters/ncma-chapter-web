@@ -125,7 +125,9 @@ export default {
       section2Text1:
         'Gain a professional advantage with access to valuable member-only content—including seminars, e-courses, and conferences—all at your fingertips.',
       section2Text2:
-        'Learn from subject matter experts at a pace that fits your schedule and puts you in the position to make lasting connections.',
+        'NCMA’s virtual education events are second to none, providing accessible, affordable training for both individuals and work teams. Learn from subject matter experts at a pace that fits your schedule and puts you in the position to unlock your leadership potential.',
+      section2Text3:
+        'And if that wasn’t enough, NCMA members get a front seat to the best contract management thought leadership on local, national, and global levels. Whether you’re attending one of our local forums or an NCMA national conference, you’ll be learning from, and interacting with, the best in the field, all the while making valuable connections that can help advance your career.',
       benefit1Title: 'CONFERENCES',
       benefit1Description:
         'Learn from subject matter experts at a pace that fits your schedule and puts you in the position to make lasting connections.',

@@ -43,6 +43,7 @@ const Membership = () => {
   const section2Header = get(content, 'membership.section2Header');
   const section2Text1 = get(content, 'membership.section2Text1');
   const section2Text2 = get(content, 'membership.section2Text2');
+  const section2Text3 = get(content, 'membership.section2Text3');
   const benefit1Title = get(content, 'membership.benefit1Title');
   const benefit1Description = get(content, 'membership.benefit1Description');
   const benefit1ImageAlt = get(content, 'membership.benefit1ImageAlt');
@@ -105,6 +106,7 @@ const Membership = () => {
         <H2>{section2Header}</H2>
         <Text>{section2Text1}</Text>
         <Text>{section2Text2}</Text>
+        <Text>{section2Text3}</Text>
       </Section>
 
       <Section>
