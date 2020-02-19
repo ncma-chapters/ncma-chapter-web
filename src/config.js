@@ -3,6 +3,7 @@ import moment from 'moment';
 // Relative imports.
 import aboutBannerImage from './assets/pictures/about_banner.png';
 import aboutHeroImage from './assets/pictures/about_header.png';
+import aboutOurStoryImage from './assets/pictures/about_our_story.png';
 import blog from './assets/social/blog.svg';
 import caseyImage from './assets/team_members/casey.png';
 import contactHeroImage from './assets/pictures/contact_header.png';
@@ -96,6 +97,8 @@ export default {
         'Now in our 50th year, we are proud to help contract managers navigate the rapidly evolving world of contract management in the 21st century. Our members live and work in a dynamic section of central New Jersey, including the communities of Long Branch, Asbury Park, Freehold Township and Toms River.',
       section2Text5:
         'Strategically located new the state capital of Trenton to the west and New York City to the north, the NCMA Monmouth chapter looks forward to growing and learning with you and promoting the benefits of contract management in our region.',
+      section2ImageAlt: 'NCMA Monmouth goes back 50 years...',
+      section2ImageSrc: aboutOurStoryImage,
       section3Header: 'MEET OUR OFFICERS',
       section4Header: 'WE ARE HERE FOR YOU',
       section4Text1:
@@ -125,9 +128,10 @@ export default {
       section2Text1:
         'Gain a professional advantage with access to valuable member-only content—including seminars, e-courses, and conferences—all at your fingertips.',
       section2Text2:
-        'NCMA’s virtual education events are second to none, providing accessible, affordable training for both individuals and work teams. Learn from subject matter experts at a pace that fits your schedule and puts you in the position to unlock your leadership potential.',
+        'NCMA’s virtual education events provide accessible, affordable training for both individuals and work teams. The lessons learned in our courses can give your team an advantage the next time you compete for a contract. Or it may help you stay ahead of the curve by giving you the certification you need to land your next career role.',
       section2Text3:
-        'And if that wasn’t enough, NCMA members get a front seat to the best contract management thought leadership on local, national, and global levels. Whether you’re attending one of our local forums or an NCMA national conference, you’ll be learning from, and interacting with, the best in the field, all the while making valuable connections that can help advance your career.',
+        'And if that wasn’t enough, NCMA members get a front seat to the best contract management thought leadership on local, national, and global levels. Whether you’re attending one of our local forums or an NCMA national conference, you’ll be learning from, and interacting with, the best in the field, all the while making valuable connections.',
+      section2Text4: 'You can never be too prepared for success.',
       benefit1Title: 'CONFERENCES',
       benefit1Description:
         'Learn from subject matter experts at a pace that fits your schedule and puts you in the position to make lasting connections.',

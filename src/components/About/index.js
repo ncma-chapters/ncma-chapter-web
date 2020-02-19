@@ -29,6 +29,8 @@ const About = () => {
   const section2Text3 = get(content, 'about.section2Text3');
   const section2Text4 = get(content, 'about.section2Text4');
   const section2Text5 = get(content, 'about.section2Text5');
+  const section2ImageAlt = get(content, 'about.section2ImageAlt');
+  const section2ImageSrc = get(content, 'about.section2ImageSrc');
   // const section3Header = get(content, 'about.section3Header');
   const section4Header = get(content, 'about.section4Header');
   const section4ImageAlt = get(content, 'about.section4ImageAlt');
@@ -53,6 +55,12 @@ const About = () => {
         <Text>{section2Text3}</Text>
         <Text>{section2Text4}</Text>
         <Text>{section2Text5}</Text>
+        <Image
+          alt={section2ImageAlt}
+          largeScreenStyles={{ marginTop: '40px', maxHeight: '300px' }}
+          smallScreenStyles={{ maxHeight: '300px' }}
+          src={section2ImageSrc}
+        />
       </Section>
 
       {/* <Section>
