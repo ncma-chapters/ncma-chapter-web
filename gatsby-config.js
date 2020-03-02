@@ -6,7 +6,20 @@ module.exports = {
     // Generates a sitemap on builds.
     'gatsby-plugin-sitemap',
     // Generates a robots.txt on builds.
-    'gatsby-plugin-robots-txt',
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        resolveEnv: () => process.env.GATSBY_ENV,
+        env: {
+          development: {
+            policy: [{ userAgent: '*', disallow: ['/'] }],
+          },
+          production: {
+            policy: [{ userAgent: '*', allow: '/' }],
+          },
+        },
+      },
+    },
     // Required for creating a PWA: Adds a manifest.json file for offline access.
     {
       resolve: 'gatsby-plugin-manifest',
