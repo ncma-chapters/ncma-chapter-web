@@ -46,7 +46,7 @@ export default {
   chapterName: 'Monmouth',
   contact: {
     email: 'info@ncmamonmouth.com',
-    formattedAddress: 'P.O. Box 1234, Spring Lake, NJ 22222',
+    formattedAddress: '23 Christopher Way, Eatontown, NJ, 07724',
     formattedPhoneNumber: '(201) 555 - 1212',
     phoneNumber: '2015551212',
   },
@@ -96,7 +96,7 @@ export default {
       section2Text4:
         'Now in our 50th year, we are proud to help contract managers navigate the rapidly evolving world of contract management in the 21st century. Our members live and work in a dynamic section of central New Jersey, including the communities of Long Branch, Asbury Park, Freehold Township and Toms River.',
       section2Text5:
-        'Strategically located new the state capital of Trenton to the west and New York City to the north, the NCMA Monmouth chapter looks forward to growing and learning with you and promoting the benefits of contract management in our region.',
+        'Strategically located near the state capital of Trenton to the west and New York City to the north, the NCMA Monmouth chapter looks forward to growing and learning with you and promoting the benefits of contract management in our region.',
       section2ImageAlt: 'NCMA Monmouth goes back 50 years...',
       section2ImageSrc: aboutOurStoryImage,
       section3Header: 'MEET OUR OFFICERS',
