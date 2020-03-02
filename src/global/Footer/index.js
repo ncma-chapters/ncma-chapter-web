@@ -8,11 +8,11 @@ import { window } from 'browser-monads';
 // Relative imports.
 import config from '../../config';
 import {
-  // Address,
+  Address,
   Column,
   ColumnHeader,
   Copyright,
-  // FooterExternalLink,
+  FooterExternalLink,
   FooterLink,
   FooterLinks,
   Line,
@@ -30,11 +30,11 @@ import {
 const Footer = () => {
   // Derive config properties.
   const chapterName = get(config, 'chapterName');
-  // const email = get(config, 'contact.email');
-  // const formattedAddress = get(config, 'contact.formattedAddress');
-  // const formattedPhoneNumber = get(config, 'contact.formattedPhoneNumber');
+  const email = get(config, 'contact.email');
+  const formattedAddress = get(config, 'contact.formattedAddress');
+  const formattedPhoneNumber = get(config, 'contact.formattedPhoneNumber');
   const navItems = get(config, 'navItems');
-  // const phoneNumber = get(config, 'contact.phoneNumber');
+  const phoneNumber = get(config, 'contact.phoneNumber');
   // const socialLinks = get(config, 'socialLinks');
 
   // Derive the current year.
@@ -90,10 +90,10 @@ const Footer = () => {
           </SocialLinks> */}
 
           {/* Contact Phone Number */}
-          {/* <FooterExternalLink href={`tel:${phoneNumber}`}>{formattedPhoneNumber}</FooterExternalLink> */}
+          <FooterExternalLink href={`tel:${phoneNumber}`}>{formattedPhoneNumber}</FooterExternalLink>
 
           {/* Contact Email */}
-          {/* <FooterExternalLink href={`mailto:${email}`}>{email}</FooterExternalLink> */}
+          <FooterExternalLink href={`mailto:${email}`}>{email}</FooterExternalLink>
         </Column>
 
         {/* Vertical Line Separator */}
@@ -120,7 +120,7 @@ const Footer = () => {
           &copy; {currentYear} NCMA {chapterName}
         </Copyright>
 
-        {/* <Address>{formattedAddress}</Address> */}
+        <Address>{formattedAddress}</Address>
 
         <SubFooterLinks>
           <SubFooterLink to="/privacy">Terms of Service</SubFooterLink>
