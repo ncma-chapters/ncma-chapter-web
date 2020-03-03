@@ -233,10 +233,10 @@ export default {
       label: 'Membership',
       href: '/membership',
     },
-    {
-      label: 'Contact Us',
-      href: '/contact',
-    },
+    // {
+    //   label: 'Contact Us',
+    //   href: '/contact',
+    // },
   ],
   logo,
   socialLinks: [
