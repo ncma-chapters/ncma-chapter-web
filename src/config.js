@@ -45,10 +45,10 @@ export default {
   },
   chapterName: 'Monmouth',
   contact: {
-    email: 'info@ncmamonmouth.com',
+    email: 'info@ncmamonmouth.org',
     formattedAddress: '23 Christopher Way, Eatontown, NJ, 07724',
-    formattedPhoneNumber: '(201) 555 - 1212',
-    phoneNumber: '2015551212',
+    formattedPhoneNumber: '(908) 433 - 3216',
+    phoneNumber: '9084333216',
   },
   content: {
     home: {
