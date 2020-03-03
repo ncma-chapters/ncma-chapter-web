@@ -117,12 +117,16 @@ export const Copyright = styled.p`
   color: ${({ theme }) => theme.colors.greys.tint};
 
   @media (max-width: 1000px) {
-    margin: 40px 0 0;
+    margin: 20px 0 0;
   }
 `;
 
 export const Address = styled.div`
   color: ${({ theme }) => theme.colors.greys.tint};
+
+  @media (max-width: 1000px) {
+    margin: 40px 0 0;
+  }
 `;
 
 export const SubFooterLinks = styled.div`

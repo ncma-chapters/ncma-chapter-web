@@ -5,10 +5,10 @@ import config from '../../config';
 import Layout from '../../global/Layout';
 import LegalIframe from '../../primitives/LegalIframe';
 
-const PrivacyPolicy = () => (
+const TermsOfService = () => (
   <Layout className="legal">
-    <LegalIframe frameBorder="0" title="terms of service" src={config.privacyPolicyURL} />
+    <LegalIframe frameBorder="0" title="terms of service" src={config.termsOfServiceURL} />
   </Layout>
 );
 
-export default PrivacyPolicy;
+export default TermsOfService;

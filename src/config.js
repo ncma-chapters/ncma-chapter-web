@@ -184,54 +184,6 @@ export default {
       image: aboutHeroImage,
       startsAt: moment('2020-22-02'),
     },
-    {
-      id: 2,
-      title: 'Industry Best Practices Seminar',
-      description:
-        'Contract changes are inevitable and must be anticipated and properly managed. This one-day seminar will provide the information you need to handle any and all ambiguities, differences of opinion, or potential and real conflicts between the parties.',
-      image: aboutHeroImage,
-      startsAt: moment('2020-22-02'),
-    },
-    {
-      id: 3,
-      title: 'Industry Best Practices Seminar',
-      description:
-        'Contract changes are inevitable and must be anticipated and properly managed. This one-day seminar will provide the information you need to handle any and all ambiguities, differences of opinion, or potential and real conflicts between the parties.',
-      image: aboutHeroImage,
-      startsAt: moment('2020-22-02'),
-    },
-    {
-      id: 4,
-      title: 'Industry Best Practices Seminar',
-      description:
-        'Contract changes are inevitable and must be anticipated and properly managed. This one-day seminar will provide the information you need to handle any and all ambiguities, differences of opinion, or potential and real conflicts between the parties.',
-      image: aboutHeroImage,
-      startsAt: moment('2020-22-02'),
-    },
-    {
-      id: 5,
-      title: 'Industry Best Practices Seminar',
-      description:
-        'Contract changes are inevitable and must be anticipated and properly managed. This one-day seminar will provide the information you need to handle any and all ambiguities, differences of opinion, or potential and real conflicts between the parties.',
-      image: aboutHeroImage,
-      startsAt: moment('2020-22-02'),
-    },
-    {
-      id: 6,
-      title: 'Industry Best Practices Seminar',
-      description:
-        'Contract changes are inevitable and must be anticipated and properly managed. This one-day seminar will provide the information you need to handle any and all ambiguities, differences of opinion, or potential and real conflicts between the parties.',
-      image: aboutHeroImage,
-      startsAt: moment('2020-22-02'),
-    },
-    {
-      id: 7,
-      title: 'Industry Best Practices Seminar',
-      description:
-        'Contract changes are inevitable and must be anticipated and properly managed. This one-day seminar will provide the information you need to handle any and all ambiguities, differences of opinion, or potential and real conflicts between the parties.',
-      image: aboutHeroImage,
-      startsAt: moment('2020-22-02'),
-    },
   ],
   membershipPlans: [
     {
@@ -273,18 +225,18 @@ export default {
       label: 'About',
       href: '/about',
     },
-    // {
-    //   label: 'Events',
-    //   href: '/events',
-    // },
+    {
+      label: 'Events',
+      href: '/events',
+    },
     {
       label: 'Membership',
       href: '/membership',
     },
-    // {
-    //   label: 'Contact Us',
-    //   href: '/contact',
-    // },
+    {
+      label: 'Contact Us',
+      href: '/contact',
+    },
   ],
   logo,
   socialLinks: [
@@ -364,4 +316,6 @@ export default {
       email: '',
     },
   ],
+  termsOfServiceURL: 'https://app.termly.io/document/terms-of-use-for-website/35132b22-3bfc-4326-b3b0-6fa59ca11438',
+  privacyPolicyURL: 'https://app.termly.io/document/privacy-policy/577597a3-bb6e-48ab-b48e-db5e31face3c',
 };
