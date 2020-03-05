@@ -6,6 +6,7 @@ import Column from '../../primitives/Column';
 import H2 from '../../primitives/H2';
 import H3 from '../../primitives/H3';
 import Hero from '../../primitives/Hero';
+import Image from '../../primitives/Image';
 import Layout from '../../global/Layout';
 import Line from '../../primitives/Line';
 import Row from '../../primitives/Row';
@@ -48,6 +49,7 @@ class Contact extends Component {
     const formattedAddress = get(contact, 'formattedAddress');
     const formattedPhoneNumber = get(contact, 'formattedPhoneNumber');
     const contactEmail = get(contact, 'email');
+    const mapURL = get(contact, 'mapURL');
 
     // Derive content properties.
     const heroImage = get(content, 'contact.heroImage');
@@ -56,6 +58,8 @@ class Contact extends Component {
     const section2Header1 = get(content, 'contact.section2Header1');
     const section2Header2 = get(content, 'contact.section2Header2');
     const section3Header = get(content, 'contact.section3Header');
+    const section3ImageAlt = get(content, 'contact.section3ImageAlt');
+    const section3ImageSrc = get(content, 'contact.section3ImageSrc');
 
     return (
       <Layout>
@@ -134,11 +138,14 @@ class Contact extends Component {
 
         <Section>
           <H2>{section3Header}</H2>
-          <Row>
+          <Row style={{ alignItems: 'flex-start' }}>
             <Column smallScreenStyles={{ width: '100%' }}>
               <H3 largeScreenStyles={{ marginBottom: '20px' }}>NCMA {chapterName} HQ</H3>
               <Text>{formattedAddress}</Text>
             </Column>
+            <a href={mapURL} rel="noopener noreferrer" target="_blank">
+              <Image alt={section3ImageAlt} style={{ maxWidth: '100%' }} src={section3ImageSrc} />
+            </a>
           </Row>
         </Section>
       </Layout>

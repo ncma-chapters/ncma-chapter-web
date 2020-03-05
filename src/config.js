@@ -14,6 +14,7 @@ import homeHeroImage from './assets/pictures/home_hero.png';
 import instagram from './assets/social/instagram.svg';
 import jordanImage from './assets/team_members/jordan.png';
 import linkedin from './assets/social/linkedin.svg';
+import locationImage from './assets/pictures/location.png';
 import logo from './assets/critical_images/logo.svg';
 import membershipBecomeAMemberImage from './assets/pictures/memebership_become_a_member.png';
 import membershipCertificationsImage from './assets/pictures/membership_certification_programs.png';
@@ -49,6 +50,7 @@ export default {
     formattedAddress: '23 Christopher Way, Eatontown, NJ, 07724',
     formattedPhoneNumber: '(908) 433 - 3216',
     phoneNumber: '9084333216',
+    mapURL: 'https://www.google.com/maps/place/Monmouth+County,+NJ',
   },
   content: {
     home: {
@@ -173,6 +175,8 @@ export default {
       section2Header1: 'ALL INQUIRIES',
       section2Header2: 'EVENT INQUIRIES',
       section3Header: 'OFFICE LOCATION',
+      section3ImageAlt: 'NCMA Monmouth address on Google Maps',
+      section3ImageSrc: locationImage,
     },
   },
   events: [
