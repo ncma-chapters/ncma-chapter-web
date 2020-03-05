@@ -29,6 +29,15 @@ export const Input = styled.input`
   flex-grow: 1;
   margin: 0 0 10px;
   padding: 10px;
+  width: 100%;
+
+  @media (min-width: 1001px) {
+    ${({ largeScreenStyles }) => largeScreenStyles || ''}
+  }
+
+  @media (max-width: 1000px) {
+    ${({ smallScreenStyles }) => smallScreenStyles || ''}
+  }
 `;
 
 export const Textarea = styled.textarea`
@@ -37,7 +46,7 @@ export const Textarea = styled.textarea`
   color: ${({ theme }) => theme.colors.greys.shade};
   font-size: 1em;
   margin: 0 0 10px;
-  padding: 5px 10px;
+  padding: 10px;
 `;
 
 export const SubmitButton = styled.button`

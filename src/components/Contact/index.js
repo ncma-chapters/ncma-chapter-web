@@ -68,8 +68,10 @@ class Contact extends Component {
 
         <Section>
           <Row largeScreenStyles={{ marginBottom: '0' }}>
-            <Column>
-              <H3 largeScreenStyles={{ marginBottom: '50px' }}>{section2Header1}</H3>
+            <Column smallScreenStyles={{ marginBottom: '50px', width: '100%' }}>
+              <H3 largeScreenStyles={{ marginBottom: '50px' }} smallScreenStyles={{ marginBottom: '20px' }}>
+                {section2Header1}
+              </H3>
               <FieldGroup>
                 <Label>Phone</Label>
                 <Text>{formattedPhoneNumber}</Text>
@@ -78,8 +80,12 @@ class Contact extends Component {
                 <Label>Email</Label>
                 <Text largeScreenStyles={{ marginBottom: '20px' }}>{contactEmail}</Text>
               </FieldGroup>
+
               <Line />
-              <H3 largeScreenStyles={{ margin: '20px 0 50px' }}>{section2Header2}</H3>
+
+              <H3 largeScreenStyles={{ margin: '20px 0 50px' }} smallScreenStyles={{ margin: '5px 0 20px' }}>
+                {section2Header2}
+              </H3>
               <FieldGroup>
                 <Label>Phone</Label>
                 <Text>{formattedPhoneNumber}</Text>
@@ -92,8 +98,15 @@ class Contact extends Component {
 
             <ContactForm onSubmit={onSubmit}>
               <H3 largeScreenStyles={{ textAlign: 'center' }}>GET IN TOUCH</H3>
-              <Row largeScreenStyles={{ margin: '30px 0 0' }}>
-                <Input placeholder="First Name" onChange={onStateChange('firstName')} type="text" value={firstName} />
+              <Row largeScreenStyles={{ margin: '30px 0 0' }} smallScreenStyles={{ margin: '0' }}>
+                <Input
+                  placeholder="First Name"
+                  onChange={onStateChange('firstName')}
+                  largeScreenStyles={{ marginRight: '10px' }}
+                  smallScreenStyles={{ marginTop: '20px' }}
+                  type="text"
+                  value={firstName}
+                />
                 <Input placeholder="Last Name" onChange={onStateChange('lastName')} type="text" value={lastName} />
               </Row>
               <Input placeholder="Email" onChange={onStateChange('email')} type="email" value={email} />
@@ -122,7 +135,7 @@ class Contact extends Component {
         <Section>
           <H2>{section3Header}</H2>
           <Row>
-            <Column>
+            <Column smallScreenStyles={{ width: '100%' }}>
               <H3 largeScreenStyles={{ marginBottom: '20px' }}>NCMA {chapterName} HQ</H3>
               <Text>{formattedAddress}</Text>
             </Column>
