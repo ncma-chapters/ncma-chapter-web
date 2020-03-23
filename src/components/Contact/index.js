@@ -6,7 +6,7 @@ import Column from '../../primitives/Column';
 import H2 from '../../primitives/H2';
 import H3 from '../../primitives/H3';
 import Hero from '../../primitives/Hero';
-import Image from '../../primitives/Image';
+// import Image from '../../primitives/Image';
 import Layout from '../../global/Layout';
 import Line from '../../primitives/Line';
 import Row from '../../primitives/Row';
@@ -41,15 +41,15 @@ class Contact extends Component {
     const { firstName, lastName, phoneNumber, email, message } = this.state;
 
     // Derive config properties.
-    const chapterName = get(config, 'chapterName');
+    // const chapterName = get(config, 'chapterName');
     const contact = get(config, 'contact');
     const content = get(config, 'content');
 
     // Derive contact properties.
-    const formattedAddress = get(contact, 'formattedAddress');
-    const formattedPhoneNumber = get(contact, 'formattedPhoneNumber');
+    // const formattedAddress = get(contact, 'formattedAddress');
+    // const formattedPhoneNumber = get(contact, 'formattedPhoneNumber');
     const contactEmail = get(contact, 'email');
-    const mapURL = get(contact, 'mapURL');
+    // const mapURL = get(contact, 'mapURL');
 
     // Derive content properties.
     const heroImage = get(content, 'contact.heroImage');
@@ -57,9 +57,9 @@ class Contact extends Component {
     const section1Text1 = get(content, 'contact.section1Text1');
     const section2Header1 = get(content, 'contact.section2Header1');
     const section2Header2 = get(content, 'contact.section2Header2');
-    const section3Header = get(content, 'contact.section3Header');
-    const section3ImageAlt = get(content, 'contact.section3ImageAlt');
-    const section3ImageSrc = get(content, 'contact.section3ImageSrc');
+    // const section3Header = get(content, 'contact.section3Header');
+    // const section3ImageAlt = get(content, 'contact.section3ImageAlt');
+    // const section3ImageSrc = get(content, 'contact.section3ImageSrc');
 
     return (
       <Layout>
@@ -76,10 +76,10 @@ class Contact extends Component {
               <H3 largeScreenStyles={{ marginBottom: '50px' }} smallScreenStyles={{ marginBottom: '20px' }}>
                 {section2Header1}
               </H3>
-              <FieldGroup>
+              {/* <FieldGroup>
                 <Label>Phone</Label>
                 <Text>{formattedPhoneNumber}</Text>
-              </FieldGroup>
+              </FieldGroup> */}
               <FieldGroup>
                 <Label>Email</Label>
                 <Text largeScreenStyles={{ marginBottom: '20px' }}>{contactEmail}</Text>
@@ -90,10 +90,10 @@ class Contact extends Component {
               <H3 largeScreenStyles={{ margin: '20px 0 50px' }} smallScreenStyles={{ margin: '5px 0 20px' }}>
                 {section2Header2}
               </H3>
-              <FieldGroup>
+              {/* <FieldGroup>
                 <Label>Phone</Label>
                 <Text>{formattedPhoneNumber}</Text>
-              </FieldGroup>
+              </FieldGroup> */}
               <FieldGroup>
                 <Label>Email</Label>
                 <Text>{contactEmail}</Text>
@@ -137,7 +137,7 @@ class Contact extends Component {
         </Section>
 
         <Section>
-          <H2>{section3Header}</H2>
+          {/* <H2>{section3Header}</H2>
           <Row style={{ alignItems: 'flex-start' }}>
             <Column smallScreenStyles={{ width: '100%' }}>
               <H3 largeScreenStyles={{ marginBottom: '20px' }}>NCMA {chapterName} HQ</H3>
@@ -146,7 +146,7 @@ class Contact extends Component {
             <a href={mapURL} rel="noopener noreferrer" target="_blank">
               <Image alt={section3ImageAlt} style={{ maxWidth: '100%' }} src={section3ImageSrc} />
             </a>
-          </Row>
+          </Row> */}
         </Section>
       </Layout>
     );
