@@ -1,5 +1,3 @@
-// Depenencies.
-import moment from 'moment';
 // Relative imports.
 import aboutBannerImage from './assets/pictures/about_banner.png';
 import aboutHeroImage from './assets/pictures/about_header.png';
@@ -31,13 +29,12 @@ import visionImage from './assets/pictures/vision.png';
 
 /*
  *
- *
  * ** WARNING **: Be sure to update `gatsby-config.js`'s `siteMetadata.siteUrl`,
  * otherwise we will fail to generate both a sitemap and a robots.txt.
  *
  */
-
 export default {
+  API_BASE_URL: 'http://localhost:3000',
   callToAction: {
     label: 'JOIN US',
     href: '/membership',
@@ -179,16 +176,6 @@ export default {
       section3ImageSrc: locationImage,
     },
   },
-  events: [
-    {
-      id: 1,
-      title: 'Industry Best Practices Seminar',
-      description:
-        'Contract changes are inevitable and must be anticipated and properly managed. This one-day seminar will provide the information you need to handle any and all ambiguities, differences of opinion, or potential and real conflicts between the parties.',
-      image: aboutHeroImage,
-      startsAt: moment('2020-22-02'),
-    },
-  ],
   membershipPlans: [
     {
       id: 1,
@@ -229,10 +216,10 @@ export default {
       label: 'About',
       href: '/about',
     },
-    // {
-    //   label: 'Events',
-    //   href: '/events',
-    // },
+    {
+      label: 'Events',
+      href: '/events',
+    },
     {
       label: 'Membership',
       href: '/membership',
