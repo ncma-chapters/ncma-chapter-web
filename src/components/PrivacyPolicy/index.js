@@ -1,4 +1,4 @@
-// Dependencies.
+// Node modules..
 import React from 'react';
 // Relative imports.
 import config from '../../config';

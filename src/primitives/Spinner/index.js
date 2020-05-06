@@ -1,4 +1,4 @@
-// Dependencies
+// Node modules.
 import React from 'react';
 // Relative
 import { Bounce1, Bounce2, Bounce3, Wrapper } from './styles';

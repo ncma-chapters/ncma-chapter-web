@@ -1,4 +1,4 @@
-// Dependencies.
+// Node modules..
 import React from 'react';
 import get from 'lodash/get';
 import { storiesOf } from '@storybook/react';

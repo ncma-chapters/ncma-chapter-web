@@ -1,4 +1,4 @@
-// Dependencies.
+// Node modules..
 import styled from 'styled-components';
 
 export const TeamMembers = styled.div`

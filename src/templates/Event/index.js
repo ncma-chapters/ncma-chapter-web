@@ -20,7 +20,7 @@ import TeamMember from '../../primitives/TeamMember';
 import Text from '../../primitives/Text';
 import { StyledLink, TeamMembers } from './styles';
 
-class TeamMemberDetail extends Component {
+class Event extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -119,10 +119,10 @@ class TeamMemberDetail extends Component {
   }
 }
 
-TeamMemberDetail.propTypes = {
+Event.propTypes = {
   location: PropTypes.shape({
     pathname: PropTypes.string.isRequired,
   }).isRequired,
 };
 
-export default TeamMemberDetail;
+export default Event;

@@ -1,4 +1,4 @@
-// Dependencies
+// Node modules.
 import styled, { keyframes } from 'styled-components';
 
 export const bounceDelay = keyframes`

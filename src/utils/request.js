@@ -1,4 +1,4 @@
-// Dependencies
+// Node modules.
 import axios from 'axios';
 
 // =====================

@@ -1,4 +1,4 @@
-// Dependencies.
+// Node modules..
 import React, { Component } from 'react';
 import filter from 'lodash/filter';
 import get from 'lodash/get';
