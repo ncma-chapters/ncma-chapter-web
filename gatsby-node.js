@@ -9,10 +9,10 @@ const axios = require('axios');
 const crypto = require('crypto');
 const path = require('path');
 
-exports.sourceNodes = async ({ boundActionCreators }) => {
-  const { createNode } = boundActionCreators;
+exports.sourceNodes = async ({ actions }) => {
+  const { createNode } = actions;
 
-  const response = await axios(`http://localhost:3000/events`);
+  const response = await axios(`${process.env.API_URL || 'http://localhost:3000'}/events`);
   const events = response.data.data;
 
   events.forEach((event) => {

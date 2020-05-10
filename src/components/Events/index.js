@@ -1,5 +1,6 @@
 // Node modules..
-import React, { Component } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import filter from 'lodash/filter';
 import get from 'lodash/get';
 import isEmpty from 'lodash/isEmpty';
@@ -13,108 +14,94 @@ import H2 from '../../primitives/H2';
 import Hero from '../../primitives/Hero';
 import Layout from '../../global/Layout';
 import Section from '../../primitives/Section';
-import Spinner from '../../primitives/Spinner';
 import Text from '../../primitives/Text';
 import config from '../../config';
-import request from '../../utils/request';
+import eventsMainImage from '../../assets/pictures/events_main_image.png';
 import { Bar, BarTitle, BarSubtitle, Event, StyledDate, Title } from './styles';
 
-class Events extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      fetching: false,
-      events: [],
-    };
-  }
+const Events = ({ data }) => {
+  // Derive events.
+  const events = get(data, 'allEvent.edges');
 
-  componentDidMount() {
-    this.fetchEvents();
-  }
+  // Derive config properties.
+  const content = get(config, 'content');
+  const heroImage = get(content, 'events.heroImage');
+  const section1Header = get(content, 'events.section1Header');
 
-  fetchEvents = () => {
-    // Show fetching state.
-    this.setState({ fetching: true });
+  // Derive the first event properties.
+  const firstEvent = get(events, '[0].node');
+  const id = get(firstEvent, 'id');
+  const name = get(firstEvent, 'name');
+  const description = get(firstEvent, 'description');
+  const image = get(firstEvent, 'imageURL', eventsMainImage);
+  const startingAt = moment(get(firstEvent, 'startingAt'));
 
-    request(`${config.API_BASE_URL}/events`)
-      .then((response) => {
-        this.setState({ fetching: false, events: get(response, 'data', []) });
-      })
-      .catch((error) => {
-        console.warn('Unable to fetch events:', error);
-        this.setState({ fetching: false });
-      });
-  };
+  // Derive all other events.
+  const otherEvents = filter(events, (event, index) => index !== 0);
 
-  render() {
-    const { fetching, events } = this.state;
+  return (
+    <Layout>
+      {/* Hero Image */}
+      <Hero url={heroImage} />
 
-    // Derive config properties.
-    const content = get(config, 'content');
+      {/* First Event */}
+      {firstEvent && (
+        <Section largeScreenStyles={isEmpty(otherEvents) && { margin: '0 0 100px' }}>
+          <H2>{section1Header}</H2>
+          <BannerImage url={image}>
+            <Bar>
+              <BarTitle>{name}</BarTitle>
+              <BarSubtitle>{startingAt.format('MMMM D, YYYY')}</BarSubtitle>
+            </Bar>
+          </BannerImage>
+          <Text largeScreenStyles={{ marginTop: '50px' }}>{description}</Text>
+          <CallToActionButton to={`/events/${id}`}>REGISTER NOW</CallToActionButton>
+        </Section>
+      )}
 
-    // Derive content properties.
-    const heroImage = get(content, 'events.heroImage');
-    const section1Header = get(content, 'events.section1Header');
+      {/* Other Events */}
+      {!isEmpty(otherEvents) && (
+        <Section largeScreenStyles={{ margin: '0 0 100px' }}>
+          {map(otherEvents, (edge) => {
+            // Derive event properties.
+            const event = get(edge, 'node');
+            const id = get(event, 'id');
+            const name = get(event, 'name');
+            const description = get(event, 'description');
+            const startingAt = moment(get(event, 'startingAt'));
 
-    // Derive the first event and the other events.
-    const firstEvent = get(events, '[0]');
-    const otherEvents = filter(events, (event, index) => index !== 0);
+            return (
+              <Event key={id} to={`/events/${id}`}>
+                <StyledDate>{startingAt.format('MMM D')}</StyledDate>
+                <Column>
+                  <Title>{name}</Title>
+                  <Text largeScreenStyles={{ margin: '0 0 25px' }}>{description}</Text>
+                </Column>
+              </Event>
+            );
+          })}
+        </Section>
+      )}
+    </Layout>
+  );
+};
 
-    // Derive first event properties.
-    const id = get(firstEvent, 'id');
-    const name = get(firstEvent, 'attributes.name');
-    const description = get(firstEvent, 'attributes.description');
-    const image = get(firstEvent, 'attributes.image');
-    const startingAt = moment(get(firstEvent, 'attributes.startingAt'));
-
-    return (
-      <Layout>
-        {/* Hero Image */}
-        <Hero url={heroImage} />
-
-        {/* Spinner */}
-        {fetching && <Spinner />}
-
-        {/* First Event */}
-        {firstEvent && (
-          <Section largeScreenStyles={isEmpty(otherEvents) && { margin: '0 0 100px' }}>
-            <H2>{section1Header}</H2>
-            <BannerImage url={image}>
-              <Bar>
-                <BarTitle>{name}</BarTitle>
-                <BarSubtitle>{startingAt.format('MMMM D, YYYY')}</BarSubtitle>
-              </Bar>
-            </BannerImage>
-            <Text largeScreenStyles={{ marginTop: '50px' }}>{description}</Text>
-            <CallToActionButton to={`/events/${id}`}>REGISTER NOW</CallToActionButton>
-          </Section>
-        )}
-
-        {/* Other Events */}
-        {!isEmpty(otherEvents) && (
-          <Section largeScreenStyles={{ margin: '0 0 100px' }}>
-            {map(otherEvents, (event) => {
-              // Derive event properties.
-              const id = get(event, 'id');
-              const name = get(event, 'attributes.name');
-              const description = get(event, 'attributes.description');
-              const startingAt = moment(get(event, 'attributes.startingAt'));
-
-              return (
-                <Event key={id} to={`/events/${id}`}>
-                  <StyledDate>{startingAt.format('MMM D')}</StyledDate>
-                  <Column>
-                    <Title>{name}</Title>
-                    <Text largeScreenStyles={{ margin: '0 0 25px' }}>{description}</Text>
-                  </Column>
-                </Event>
-              );
-            })}
-          </Section>
-        )}
-      </Layout>
-    );
-  }
-}
+Events.propTypes = {
+  data: PropTypes.shape({
+    allEvent: PropTypes.shape({
+      edges: PropTypes.arrayOf(
+        PropTypes.shape({
+          node: PropTypes.shape({
+            id: PropTypes.string.isRequired,
+            capacity: PropTypes.number.isRequired,
+            description: PropTypes.string.isRequired,
+            startingAt: PropTypes.string.isRequired,
+            name: PropTypes.string.isRequired,
+          }).isRequired,
+        }).isRequired,
+      ).isRequired,
+    }).isRequired,
+  }).isRequired,
+};
 
 export default Events;
