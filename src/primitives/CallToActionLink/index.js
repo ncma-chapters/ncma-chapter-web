@@ -1,7 +1,8 @@
 // Node modules.
 import styled from 'styled-components';
+import { Link } from 'gatsby';
 
-export default styled.button`
+export default styled(Link)`
   align-items: center;
   background: ${({ theme }) => theme.colors.secondary.shade};
   border-radius: 30px;

@@ -1,4 +1,4 @@
-// Node modules..
+// Node modules.
 import styled from 'styled-components';
 
 export default styled.img`

@@ -1,4 +1,4 @@
-// Node modules..
+// Node modules.
 import React from 'react';
 import get from 'lodash/get';
 // import map from 'lodash/map';

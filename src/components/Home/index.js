@@ -1,4 +1,4 @@
-// Node modules..
+// Node modules.
 import React from 'react';
 import get from 'lodash/get';
 // import map from 'lodash/map';
@@ -6,7 +6,7 @@ import get from 'lodash/get';
 import config from '../../config';
 import Layout from '../../global/Layout';
 import Banner from '../../primitives/Banner';
-import CallToActionButton from '../../primitives/CallToActionButton';
+import CallToActionLink from '../../primitives/CallToActionLink';
 import Column from '../../primitives/Column';
 import H2 from '../../primitives/H2';
 import H3 from '../../primitives/H3';
@@ -79,7 +79,7 @@ const Home = () => {
         </Column>
 
         <Column largeScreenStyles={{ alignItems: 'center' }} smallScreenStyles={{ margin: '40px 0 0' }}>
-          <CallToActionButton to={href}>{label}</CallToActionButton>
+          <CallToActionLink to={href}>{label}</CallToActionLink>
         </Column>
       </Banner>
 
@@ -130,9 +130,9 @@ const Home = () => {
             <H3 largeScreenStyles={{ marginLeft: '-15px' }}>{section3SubHeader1}</H3>
             <Box>
               <Text largeScreenStyles={{ marginBottom: '0' }}>{section3SubHeader1Text1}</Text>
-              <CallToActionButton to={href} largeScreenStyles={{ marginTop: '40px' }}>
+              <CallToActionLink to={href} largeScreenStyles={{ marginTop: '40px' }}>
                 {label2}
-              </CallToActionButton>
+              </CallToActionLink>
             </Box>
           </Column>
         </Row>

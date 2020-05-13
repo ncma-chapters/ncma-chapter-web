@@ -111,6 +111,9 @@ export default {
       heroImage: eventsHeroImage,
       section1Header: 'EVENTS',
     },
+    event: {
+      heroImage: eventsHeroImage,
+    },
     membership: {
       heroImage: membershipHeroImage,
       section1Header: 'BECOME A MEMBER. BECOME UNSTOPPABLE.',

@@ -1,4 +1,4 @@
-// Node modules..
+// Node modules.
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 // Relative imports.

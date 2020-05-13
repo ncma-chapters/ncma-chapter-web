@@ -12,7 +12,7 @@ const path = require('path');
 exports.sourceNodes = async ({ actions }) => {
   const { createNode } = actions;
 
-  const response = await axios(`${process.env.API_URL || 'http://localhost:3000'}/events`);
+  const response = await axios(`${process.env.API_URL || 'http://localhost:3000'}/events?include=venue,ticketClasses`);
   const events = response.data.data;
 
   events.forEach((event) => {
@@ -26,6 +26,7 @@ exports.sourceNodes = async ({ actions }) => {
       children: [],
       // Other fields.
       ...event.attributes,
+      relationships: event.relationships,
     };
 
     // Get content digest of node. (Required field)

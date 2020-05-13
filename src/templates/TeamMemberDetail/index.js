@@ -1,4 +1,4 @@
-// Node modules..
+// Node modules.
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import filter from 'lodash/filter';

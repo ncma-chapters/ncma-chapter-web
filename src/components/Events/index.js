@@ -1,4 +1,4 @@
-// Node modules..
+// Node modules.
 import React from 'react';
 import PropTypes from 'prop-types';
 import filter from 'lodash/filter';
@@ -8,7 +8,7 @@ import map from 'lodash/map';
 import moment from 'moment';
 // Relative imports.
 import BannerImage from '../../primitives/BannerImage';
-import CallToActionButton from '../../primitives/CallToActionButton';
+import CallToActionLink from '../../primitives/CallToActionLink';
 import Column from '../../primitives/Column';
 import H2 from '../../primitives/H2';
 import Hero from '../../primitives/Hero';
@@ -55,7 +55,7 @@ const Events = ({ data }) => {
             </Bar>
           </BannerImage>
           <Text largeScreenStyles={{ marginTop: '50px' }}>{description}</Text>
-          <CallToActionButton to={`/events/${id}`}>REGISTER NOW</CallToActionButton>
+          <CallToActionLink to={`/events/${id}`}>REGISTER NOW</CallToActionLink>
         </Section>
       )}
 

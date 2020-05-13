@@ -1,4 +1,4 @@
-// Node modules..
+// Node modules.
 import styled, { keyframes } from 'styled-components';
 import { Link } from 'gatsby';
 
