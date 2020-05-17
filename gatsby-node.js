@@ -13,15 +13,16 @@ exports.sourceNodes = async ({ actions }) => {
   const { createNode } = actions;
 
   const response = await axios(`${process.env.API_URL || 'http://localhost:3000'}/events?include=venue,ticketClasses`);
-  const events = response.data.data;
 
+  // Create events.
+  const events = response.data.data;
   events.forEach((event) => {
     const eventNode = {
       // Required fields.
       id: event.id,
       parent: '__SOURCE__',
       internal: {
-        type: 'Event',
+        type: event.type,
       },
       children: [],
       // Other fields.
@@ -40,6 +41,35 @@ exports.sourceNodes = async ({ actions }) => {
 
     // Create the node.
     createNode(eventNode);
+  });
+
+  // Create all other entities.
+  const { included } = response.data;
+  included.forEach((entity) => {
+    const entityNode = {
+      // Required fields.
+      id: entity.id,
+      parent: '__SOURCE__',
+      internal: {
+        type: entity.type,
+      },
+      children: [],
+      // Other fields.
+      ...entity.attributes,
+      relationships: entity.relationships,
+    };
+
+    // Get content digest of node. (Required field)
+    const contentDigest = crypto
+      .createHash(`md5`)
+      .update(JSON.stringify(entityNode))
+      .digest(`hex`);
+
+    // Add it to the event node.
+    entityNode.internal.contentDigest = contentDigest;
+
+    // Create the node.
+    createNode(entityNode);
   });
 };
 
