@@ -17,4 +17,14 @@ export default createGlobalStyle`
   strong {
     font-weight: bold;
   }
+
+  button {
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+
+    &:disabled {
+      cursor: not-allowed;
+      opacity: 0.3;
+    }
+  }
 `;

@@ -17,7 +17,7 @@ if (process.env.GATSBY_FULL_STORY_ORG_ID) {
   FullStory.init({ orgId: process.env.GATSBY_FULL_STORY_ORG_ID });
 }
 
-const Layout = ({ children }) => {
+const Layout = ({ className, children }) => {
   // Derive theme properties.
   const state = useState(true);
   const isLightTheme = state[0];
@@ -44,7 +44,7 @@ const Layout = ({ children }) => {
         <NavTop />
 
         {/* Content */}
-        <Content>{children}</Content>
+        <Content className={className}>{children}</Content>
 
         {/* Footer */}
         <Footer />
