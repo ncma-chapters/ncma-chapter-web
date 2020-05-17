@@ -5,7 +5,7 @@ import Events from '../components/Events';
 
 export const query = graphql`
   query EventsQuery {
-    allEvent {
+    allEvents {
       edges {
         node {
           id

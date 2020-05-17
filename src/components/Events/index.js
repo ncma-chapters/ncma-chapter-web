@@ -21,7 +21,7 @@ import { Bar, BarTitle, BarSubtitle, Event, StyledDate, Title } from './styles';
 
 const Events = ({ data }) => {
   // Derive events.
-  const events = get(data, 'allEvent.edges');
+  const events = get(data, 'allEvents.edges');
 
   // Derive config properties.
   const content = get(config, 'content');
@@ -88,7 +88,7 @@ const Events = ({ data }) => {
 
 Events.propTypes = {
   data: PropTypes.shape({
-    allEvent: PropTypes.shape({
+    allEvents: PropTypes.shape({
       edges: PropTypes.arrayOf(
         PropTypes.shape({
           node: PropTypes.shape({
