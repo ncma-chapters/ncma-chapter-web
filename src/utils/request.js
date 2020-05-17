@@ -1,6 +1,8 @@
 // Node modules.
 import axios from 'axios';
 
+export const API_BASE_URL = process.env.API_URL || 'http://localhost:3000';
+
 // =====================
 // Ensure we return undefined and not null to avoid `null` being saved into our Redux store.
 // =====================
@@ -33,6 +35,10 @@ const request = (url, options = {}) => {
   // Make the request.
   return axios({
     ...options,
+    headers: {
+      'Content-Type': 'application/vnd.api+json',
+      ...options.headers,
+    },
     url,
   })
     .then(cleanEmptyResponse)
