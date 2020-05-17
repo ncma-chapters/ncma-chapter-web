@@ -1,8 +1,230 @@
 // Node modules.
 import styled from 'styled-components';
+// Relative imports.
+import Layout from '../../global/Layout';
 
-export const H4 = styled.h4``;
+export const StyledLayout = styled(Layout)`
+  .event-details {
+    h2 {
+      color: #4c4a52;
+      font-weight: 600;
+      letter-spacing: -1px;
+    }
 
-export const Field = styled.input``;
+    .row {
+      align-items: flex-start;
+      margin: 0;
+    }
 
-export const Speaker = styled.div``;
+    .column {
+      padding-left: 0;
+    }
+
+    h3 {
+      color: #a16157;
+      font-weight: 600;
+      letter-spacing: -1px;
+      overflow: hidden;
+      margin-bottom: 10px;
+      text-overflow: ellipsis;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .short-description {
+      color: #000000;
+      font-size: 1.1rem;
+      line-height: 1.4;
+    }
+
+    .starting-date {
+      color: #000000;
+      font-size: 1.3rem;
+    }
+
+    a {
+      color: #d88661;
+      text-decoration: underline;
+    }
+
+    img {
+      max-height: 250px;
+      flex: unset;
+    }
+  }
+
+  .description {
+    color: #3d3d3d;
+    font-size: 1.1rem;
+    font-weight: 300;
+    line-height: 1.5;
+    margin-bottom: 30px;
+    max-width: 1000px;
+    min-height: fit-content;
+    padding: 50px 0 0;
+  }
+
+  .line {
+    max-width: 1000px;
+  }
+
+  .event-register {
+    align-items: flex-start;
+    max-width: 1000px;
+    overflow: visible;
+    padding: 40px 0 0;
+
+    h3 {
+      color: #919197;
+      font-size: 1.3rem;
+      font-weight: 600;
+      letter-spacing: -1px;
+    }
+
+    h4 {
+      border-top: 1px dashed #cfd0da;
+      font-size: 1.2rem;
+      font-weight: 600;
+      padding: 40px 0 0;
+      margin: 40px 0 40px;
+      width: 100%;
+
+      &:first-of-type {
+        border-top: none;
+      }
+
+      .required-def {
+        color: #343434;
+        font-size: 0.8rem;
+        font-weight: 400;
+        margin-left: 30px;
+      }
+
+      &:last-of-type {
+        margin: 40px 0 0;
+      }
+    }
+
+    .required {
+      color: #d75e3d;
+    }
+
+    .row {
+      justify-content: flex-start;
+      margin: 0;
+      flex-flow: row wrap;
+
+      label {
+        align-items: center;
+        display: flex;
+        margin-right: 40px;
+
+        &:last-of-type {
+          margin-right: 0;
+        }
+
+        input {
+          margin-right: 10px;
+        }
+      }
+
+      &.attendee-info {
+        label {
+          align-items: flex-start;
+          color: #555555;
+          flex-direction: column;
+          font-weight: 300;
+          margin: 0 50px 30px 0;
+          min-width: 250px;
+
+          input {
+            border-radius: 3px;
+            border: 1px solid #d8d8d8;
+            margin-top: 5px;
+            font-size: 1rem;
+            padding: 8px 8px;
+            overflow: visible;
+            width: 100%;
+          }
+        }
+      }
+    }
+
+    .summary-header {
+      font-weight: bold;
+      margin: 50px 0 10px;
+    }
+
+    .summary-value {
+      margin: 10px 0;
+      min-height: 16px;
+    }
+
+    .error {
+    }
+
+    button {
+      background: #d88661;
+      border-radius: 30px;
+      color: #ffffff;
+      font-size: 1.3rem;
+      font-weight: 500;
+      letter-spacing: -1px;
+      margin: 50px 0 0;
+      padding: 15px 50px;
+    }
+  }
+
+  .events-banner-wrapper {
+    align-items: center;
+    background: #f9fcff;
+    border-top: 1px solid #dcdcdc;
+    display: flex;
+    justify-content: center;
+    margin: 180px 0 0;
+    width: 100%;
+
+    .events-banner {
+      margin: 0;
+      padding: 40px 0;
+
+      .column {
+        display: flex;
+        flex-direction: column;
+        max-width: 500px;
+
+        &:last-of-type {
+          align-items: flex-end;
+        }
+
+        h2 {
+          border-bottom: 1px solid #cbcbcb;
+          color: #605f66;
+          font-size: 1.3rem;
+          font-weight: 600;
+          letter-spacing: -1px;
+          padding: 0 0 15px;
+        }
+
+        p {
+          color: #464646;
+          font-size: 1rem;
+          font-weight: 300;
+          line-height: 1.5;
+          margin: 15px 0 0;
+        }
+
+        a {
+          background: #d88661;
+          border-radius: 30px;
+          color: #ffffff;
+          font-size: 1.3rem;
+          font-weight: 500;
+          letter-spacing: -1px;
+          padding: 15px 35px;
+          white-space: nowrap;
+        }
+      }
+    }
+  }
+`;
