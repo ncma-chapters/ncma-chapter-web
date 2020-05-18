@@ -46,7 +46,10 @@ const Events = ({ data }) => {
 
       {/* First Event */}
       {firstEvent && (
-        <Section largeScreenStyles={isEmpty(otherEvents) && { margin: '0 0 100px' }}>
+        <Section
+          largeScreenStyles={isEmpty(otherEvents) && { margin: '0 0 100px' }}
+          smallScreenStyles={isEmpty(otherEvents) && { margin: '0 0 100px' }}
+        >
           <H2>{section1Header}</H2>
           <BannerImage url={image}>
             <Bar>
@@ -54,8 +57,12 @@ const Events = ({ data }) => {
               <BarSubtitle>{startingAt.format('MMMM D, YYYY')}</BarSubtitle>
             </Bar>
           </BannerImage>
-          <Text largeScreenStyles={{ marginTop: '50px' }}>{description}</Text>
-          <CallToActionLink to={`/events/${id}`}>REGISTER NOW</CallToActionLink>
+          <Text largeScreenStyles={{ marginTop: '50px' }} smallScreenStyles={{ marginTop: '50px' }}>
+            {description}
+          </Text>
+          <CallToActionLink smallScreenStyles={{ marginTop: '40px' }} to={`/events/${id}`}>
+            REGISTER NOW
+          </CallToActionLink>
         </Section>
       )}
 
