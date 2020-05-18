@@ -24,17 +24,19 @@ export const StyledLayout = styled(Layout)`
       color: #a16157;
       font-weight: 600;
       letter-spacing: -1px;
-      overflow: hidden;
+      line-height: 1.5;
       margin-bottom: 10px;
-      text-overflow: ellipsis;
       text-transform: uppercase;
-      white-space: nowrap;
     }
 
     .short-description {
       color: #000000;
       font-size: 1.1rem;
       line-height: 1.4;
+
+      @media (max-width: 1000px) {
+        margin: 0 0 20px;
+      }
     }
 
     .starting-date {
@@ -45,11 +47,16 @@ export const StyledLayout = styled(Layout)`
     a {
       color: #d88661;
       text-decoration: underline;
+
+      @media (max-width: 1000px) {
+        margin: 20px 0 0;
+      }
     }
 
     img {
-      max-height: 250px;
       flex: unset;
+      max-height: 250px;
+      max-width: 100%;
     }
   }
 
@@ -59,9 +66,9 @@ export const StyledLayout = styled(Layout)`
     font-weight: 300;
     line-height: 1.5;
     margin-bottom: 30px;
-    max-width: 1000px;
+    max-width: 1040px;
     min-height: fit-content;
-    padding: 50px 0 0;
+    padding: 50px 20px 0;
   }
 
   .line {
@@ -70,9 +77,9 @@ export const StyledLayout = styled(Layout)`
 
   .event-register {
     align-items: flex-start;
-    max-width: 1000px;
+    max-width: 1040px;
     overflow: visible;
-    padding: 40px 0 0;
+    padding: 40px 20px 0;
 
     h3 {
       color: #919197;
@@ -98,6 +105,10 @@ export const StyledLayout = styled(Layout)`
         font-size: 0.8rem;
         font-weight: 400;
         margin-left: 30px;
+
+        @media (max-width: 1000px) {
+          margin-left: 10px;
+        }
       }
 
       &:last-of-type {
@@ -122,6 +133,10 @@ export const StyledLayout = styled(Layout)`
 
         &:last-of-type {
           margin-right: 0;
+        }
+
+        @media (max-width: 1000px) {
+          margin-bottom: 10px;
         }
 
         input {
@@ -212,16 +227,18 @@ export const StyledLayout = styled(Layout)`
 
   .error {
     color: #d04747;
-    margin: 20px 0 0;
     font-size: 1rem;
     font-weight: 600;
+    line-height: 1.5;
+    margin: 20px 0 0;
   }
 
   .success {
     color: #3e843e;
-    margin: 20px 0 0;
     font-size: 1rem;
     font-weight: 600;
+    line-height: 1.5;
+    margin: 20px 0 0;
   }
 
   .events-banner-wrapper {
@@ -235,12 +252,13 @@ export const StyledLayout = styled(Layout)`
 
     .events-banner {
       margin: 0;
-      padding: 40px 0;
+      padding: 40px 20px;
+      max-width: 1040px;
+      width: 100%;
 
       .column {
         display: flex;
         flex-direction: column;
-        max-width: 500px;
 
         &:last-of-type {
           align-items: flex-end;
@@ -272,6 +290,10 @@ export const StyledLayout = styled(Layout)`
           letter-spacing: -1px;
           padding: 15px 35px;
           white-space: nowrap;
+
+          @media (max-width: 1000px) {
+            margin-top: 30px;
+          }
         }
       }
     }
