@@ -2,9 +2,10 @@
 import React from 'react';
 import get from 'lodash/get';
 import map from 'lodash/map';
+import size from 'lodash/size';
+import take from 'lodash/take';
 import toUpper from 'lodash/toUpper';
 import trimEnd from 'lodash/trimEnd';
-import take from 'lodash/take';
 import { window } from 'browser-monads';
 import { StaticQuery, graphql } from 'gatsby';
 // Relative imports.
@@ -127,6 +128,7 @@ const Footer = () => (
                     {get(event, 'name', '')}
                   </FooterLink>
                 ))}
+                {size(events) >= 3 && <FooterLink to="/events">See all events</FooterLink>}
               </FooterLinks>
 
               {/* Events Link */}
