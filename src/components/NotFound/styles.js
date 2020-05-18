@@ -1,40 +1,23 @@
 // Node modules.
 import styled from 'styled-components';
+// Relative imports.
+import Layout from '../../global/Layout';
 
-export const Hero = styled.div``;
+export const StyledLayout = styled(Layout)`
+  margin: 0 0 100px;
 
-export const Section = styled.div``;
+  a {
+    background: #d88661;
+    border-radius: 30px;
+    color: #ffffff;
+    font-size: 1.3rem;
+    font-weight: 500;
+    letter-spacing: -1px;
+    padding: 15px 35px;
+    white-space: nowrap;
 
-export const H2 = styled.div``;
-
-export const Text = styled.div``;
-
-export const Video = styled.div``;
-
-export const Banner = styled.div``;
-
-export const Column = styled.div``;
-
-export const H3 = styled.div``;
-
-export const Line = styled.div``;
-
-export const Row = styled.div``;
-
-export const StyledImage = styled.div``;
-
-export const TeamMembers = styled.div``;
-
-export const TeamMember = styled.div``;
-
-export const Role = styled.div``;
-
-export const TeamMemberImage = styled.div``;
-
-export const Name = styled.div``;
-
-export const MeetTeamMembersLink = styled.div``;
-
-export const Box = styled.div``;
-
-export const LearnMoreButton = styled.div``;
+    @media (max-width: 1000px) {
+      margin-top: 30px;
+    }
+  }
+`;
