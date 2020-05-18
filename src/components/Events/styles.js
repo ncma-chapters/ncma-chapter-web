@@ -1,6 +1,22 @@
 // Node modules.
 import styled from 'styled-components';
 import { Link } from 'gatsby';
+// Relative imports.
+import Layout from '../../global/Layout';
+
+export const StyledLayout = styled(Layout)`
+  .no-events {
+    margin: 0 0 100px;
+
+    p {
+      text-align: center;
+    }
+
+    a {
+      color: #4c9ce5;
+    }
+  }
+`;
 
 export const Bar = styled.div`
   align-items: center;

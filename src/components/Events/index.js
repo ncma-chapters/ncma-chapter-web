@@ -12,12 +12,11 @@ import CallToActionLink from '../../primitives/CallToActionLink';
 import Column from '../../primitives/Column';
 import H2 from '../../primitives/H2';
 import Hero from '../../primitives/Hero';
-import Layout from '../../global/Layout';
 import Section from '../../primitives/Section';
 import Text from '../../primitives/Text';
 import config from '../../config';
 import eventsMainImage from '../../assets/pictures/events_main_image.png';
-import { Bar, BarTitle, BarSubtitle, Event, StyledDate, Title } from './styles';
+import { Bar, BarTitle, BarSubtitle, Event, StyledDate, StyledLayout, Title } from './styles';
 
 const Events = ({ data }) => {
   // Derive events.
@@ -40,9 +39,18 @@ const Events = ({ data }) => {
   const otherEvents = filter(events, (event, index) => index !== 0);
 
   return (
-    <Layout>
+    <StyledLayout>
       {/* Hero Image */}
       <Hero url={heroImage} />
+
+      {isEmpty(events) && (
+        <Section className="no-events">
+          <H2>{section1Header}</H2>
+          <Text>
+            No events here! <a href="mailto:info@ncmamonmouth.org">Contact us if you think this is a mistake.</a>
+          </Text>
+        </Section>
+      )}
 
       {/* First Event */}
       {firstEvent && (
@@ -89,7 +97,7 @@ const Events = ({ data }) => {
           })}
         </Section>
       )}
-    </Layout>
+    </StyledLayout>
   );
 };
 
