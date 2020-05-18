@@ -12,7 +12,9 @@ const path = require('path');
 exports.sourceNodes = async ({ actions }) => {
   const { createNode } = actions;
 
-  const response = await axios(`${process.env.API_URL || 'http://localhost:3000'}/events?include=venue,ticketClasses`);
+  const response = await axios(
+    `${process.env.GATSBY_API_URL || 'http://localhost:3000'}/events?include=venue,ticketClasses`,
+  );
 
   // Create events.
   const events = response.data.data;
@@ -76,7 +78,9 @@ exports.sourceNodes = async ({ actions }) => {
 exports.createPages = async ({ actions }) => {
   const { createPage } = actions;
 
-  const response = await axios(`${process.env.API_URL || 'http://localhost:3000'}/events?include=venue,ticketClasses`);
+  const response = await axios(
+    `${process.env.GATSBY_API_URL || 'http://localhost:3000'}/events?include=venue,ticketClasses`,
+  );
   const events = response.data.data;
 
   // Create event detail pages.

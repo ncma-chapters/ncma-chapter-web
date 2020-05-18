@@ -1,7 +1,7 @@
 // Node modules.
 import axios from 'axios';
 
-export const API_BASE_URL = process.env.API_URL || 'http://localhost:3000';
+export const API_BASE_URL = process.env.GATSBY_API_URL || 'http://localhost:3000';
 
 // =====================
 // Ensure we return undefined and not null to avoid `null` being saved into our Redux store.
