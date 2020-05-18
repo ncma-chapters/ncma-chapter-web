@@ -217,6 +217,7 @@ class Event extends Component {
               <input
                 autoComplete="given-name"
                 id="firstName"
+                maxLength="50"
                 onChange={onStateChange('firstName')}
                 required
                 type="text"
@@ -231,6 +232,7 @@ class Event extends Component {
               <input
                 autoComplete="family-name"
                 id="lastName"
+                maxLength="50"
                 onChange={onStateChange('lastName')}
                 required
                 type="text"
@@ -245,6 +247,7 @@ class Event extends Component {
               <input
                 autoComplete="email"
                 id="email"
+                maxLength="100"
                 onChange={onStateChange('email')}
                 required
                 type="email"
@@ -254,12 +257,12 @@ class Event extends Component {
 
             <label htmlFor="company">
               Company
-              <input id="company" onChange={onStateChange('company')} type="text" value={company} />
+              <input id="company" maxLength="100" onChange={onStateChange('company')} type="text" value={company} />
             </label>
 
             <label htmlFor="title">
               Title
-              <input id="title" onChange={onStateChange('title')} type="text" value={title} />
+              <input id="title" maxLength="100" onChange={onStateChange('title')} type="text" value={title} />
             </label>
           </Row>
 
