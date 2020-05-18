@@ -76,10 +76,14 @@ exports.sourceNodes = async ({ actions }) => {
 exports.createPages = async ({ actions }) => {
   const { createPage } = actions;
 
+  const response = await axios(`${process.env.API_URL || 'http://localhost:3000'}/events?include=venue,ticketClasses`);
+  const events = response.data.data;
+
   // Create event detail pages.
-  createPage({
-    path: '/events/:eventID',
-    matchPath: '/events/:eventID',
-    component: path.resolve('./src/templates/Event/index.js'),
+  events.forEach((event) => {
+    createPage({
+      path: `/events/${event.id}`,
+      component: path.resolve('./src/templates/Event/index.js'),
+    });
   });
 };
