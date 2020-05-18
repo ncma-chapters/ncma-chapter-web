@@ -29,7 +29,6 @@ export const createEventRegistration = async (options = {}) => {
     }),
     method: 'POST',
   });
-  console.log('response', response);
 
   return response;
 };

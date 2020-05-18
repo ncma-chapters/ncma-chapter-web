@@ -116,6 +116,7 @@ export const StyledLayout = styled(Layout)`
 
       label {
         align-items: center;
+        cursor: pointer;
         display: flex;
         margin-right: 40px;
 
@@ -131,6 +132,7 @@ export const StyledLayout = styled(Layout)`
       &.attendee-info {
         label {
           align-items: flex-start;
+          cursor: default;
           color: #555555;
           flex-direction: column;
           font-weight: 300;
@@ -173,6 +175,53 @@ export const StyledLayout = styled(Layout)`
       margin: 50px 0 0;
       padding: 15px 50px;
     }
+
+    form {
+      margin: 10px 0;
+      max-width: 400px;
+      width: 100%;
+
+      .total {
+        background: #e8edf1;
+        color: #282828;
+        display: flex;
+        font-size: 1.2rem;
+        font-weight: bold;
+        justify-content: space-between;
+        margin: 70px 0 30px;
+        min-width: 200px;
+        padding: 25px 15px;
+      }
+
+      .tos {
+        color: #282828;
+        font-size: 0.9rem;
+        font-weight: 300;
+        line-height: 1.5;
+
+        a {
+          color: #4c9ce5;
+        }
+      }
+
+      button {
+        margin: 70px 0 0;
+      }
+    }
+  }
+
+  .error {
+    color: #d04747;
+    margin: 20px 0 0;
+    font-size: 1rem;
+    font-weight: 600;
+  }
+
+  .success {
+    color: #3e843e;
+    margin: 20px 0 0;
+    font-size: 1rem;
+    font-weight: 600;
   }
 
   .events-banner-wrapper {
@@ -210,7 +259,7 @@ export const StyledLayout = styled(Layout)`
           color: #464646;
           font-size: 1rem;
           font-weight: 300;
-          line-height: 1.5;
+          line-height: 2;
           margin: 15px 0 0;
         }
 

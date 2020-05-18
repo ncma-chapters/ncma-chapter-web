@@ -3,13 +3,13 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import filter from 'lodash/filter';
 import get from 'lodash/get';
+import isEmpty from 'lodash/isEmpty';
 import join from 'lodash/join';
 import map from 'lodash/map';
-import isEmpty from 'lodash/isEmpty';
 import moment from 'moment';
 import { Link, graphql } from 'gatsby';
 // Relative imports.
-import CheckoutForm from '../../components/CheckoutForm';
+import RegisterPaidEventForm from '../../components/RegisterPaidEventForm';
 import Column from '../../primitives/Column';
 import H2 from '../../primitives/H2';
 import H3 from '../../primitives/H3';
@@ -23,6 +23,7 @@ import Text from '../../primitives/Text';
 import config from '../../config';
 import eventDetailImage from '../../assets/pictures/events_details.png';
 import { StyledLayout } from './styles';
+import { createEventRegistration } from './api';
 
 class Event extends Component {
   constructor(props) {
@@ -35,6 +36,7 @@ class Event extends Component {
       lastName: '',
       registering: false,
       selectedTicketClass: get(props, 'data.allTicketClasses.nodes[0]', {}),
+      success: false,
       title: '',
     };
   }
@@ -48,28 +50,72 @@ class Event extends Component {
   };
 
   isCheckoutDisabled = () => {
-    const { email, firstName, lastName, selectedTicketClass } = this.state;
+    const { email, firstName, lastName, selectedTicketClass, success } = this.state;
 
+    // Escape early if no ticket class has been selected.
     if (isEmpty(selectedTicketClass)) {
       return true;
     }
 
+    // Escape early if they are missing required fields.
     if (!email || !firstName || !lastName) {
+      return true;
+    }
+
+    // Escape early if they already registered successfully.
+    if (success) {
       return true;
     }
 
     return false;
   };
 
-  onCheckoutClick = () => {
+  onCheckoutClick = async () => {
+    const { company, email, firstName, lastName, selectedTicketClass, title } = this.state;
+
+    // Escape early if checkout is disabled.
     if (this.isCheckoutDisabled()) {
+      return;
+    }
+
+    // Show spinner.
+    this.setState({ registering: true });
+
+    try {
+      await createEventRegistration({
+        company,
+        email,
+        firstName,
+        lastName,
+        title,
+        ticketClassID: get(selectedTicketClass, 'id'),
+      });
+      this.setState({ error: '', registering: false, success: true });
+    } catch (error) {
+      console.error('Unable to create event registration:', error);
+      this.setState({ error: error.message, registering: false });
     }
   };
 
+  deriveSubmitButtonLabel = () => {
+    const { success, selectedTicketClass } = this.state;
+
+    if (success) {
+      return 'REGISTERED';
+    }
+
+    const isPaidEvent = get(selectedTicketClass, 'price.value') > 0;
+    if (isPaidEvent) {
+      return 'PLACE YOUR ORDER';
+    }
+
+    return 'REGISTER';
+  };
+
   render() {
-    const { onTicketClassClick, onStateChange, onCheckoutClick, isCheckoutDisabled } = this;
+    const { deriveSubmitButtonLabel, onTicketClassClick, onStateChange, onCheckoutClick, isCheckoutDisabled } = this;
     const { data } = this.props;
-    const { registering, error, selectedTicketClass, firstName, lastName, email, company, title } = this.state;
+    const { registering, error, success, selectedTicketClass, firstName, lastName, email, company, title } = this.state;
 
     // Derive config properties.
     const content = get(config, 'content');
@@ -81,7 +127,7 @@ class Event extends Component {
     const shortDescription = get(event, 'shortDescription', 'Getting you in the know about 2020 best practices');
     const description = get(event, 'description');
     const imageURL = get(event, 'imageURL', eventDetailImage);
-    const startingAt = moment(get(event, 'startingAt'));
+    const startingAt = moment(get(event, 'startingAt', new Date()));
 
     // Derive venue properties.
     const venue = get(data, 'venues');
@@ -108,7 +154,6 @@ class Event extends Component {
       ' ',
     );
     const isPaidEvent = get(selectedTicketClass, 'price.value') > 0;
-    const submitButtonText = isPaidEvent ? 'PLACE YOUR ORDER' : 'RESERVE SPOT';
 
     return (
       <StyledLayout>
@@ -144,15 +189,15 @@ class Event extends Component {
           <h4>Select a ticket option:</h4>
           <Row className="row">
             {map(ticketClasses, (ticketClass) => (
-              <label htmlFor={ticketClass.id} key={ticketClass.id}>
+              <label htmlFor={get(ticketClass, 'id')} key={get(ticketClass, 'id')}>
                 <input
-                  checked={ticketClass.id === selectedTicketClass.id}
-                  id={ticketClass.id}
-                  name={ticketClass.name}
+                  checked={get(ticketClass, 'id') === get(selectedTicketClass, 'id')}
+                  id={get(ticketClass, 'id')}
+                  name={get(ticketClass, 'name')}
                   onChange={onTicketClassClick(ticketClass)}
                   type="radio"
                 />
-                {get(ticketClass, 'price.display', '$0.00')} ({ticketClass.name})
+                {get(ticketClass, 'price.display', '$0.00')} ({get(ticketClass, 'name')})
               </label>
             ))}
           </Row>
@@ -222,31 +267,44 @@ class Event extends Component {
           <h4>Summary</h4>
           <p className="summary-header">Ticket option:</p>
           <p className="summary-value">
-            {get(selectedTicketClass, 'price.display', '$0.00')} ({selectedTicketClass.name})
+            {get(selectedTicketClass, 'price.display', '$0.00')} ({get(selectedTicketClass, 'name')})
           </p>
 
           {/* Confirm: Attendee Info */}
           <p className="summary-header">Attendee Information</p>
           <p className="summary-value">{fullName || 'Unknown name'}</p>
           <p className="summary-value">{email || 'Unknown email'}</p>
-          <p className="summary-value">{companyAndTitle}</p>
+          {companyAndTitle && <p className="summary-value">{companyAndTitle}</p>}
 
           {/* Payment Method */}
-          {isPaidEvent && (
+          {isPaidEvent ? (
             <>
               <p className="summary-header">Payment Method</p>
-              <CheckoutForm />
+              <RegisterPaidEventForm
+                company={company}
+                disabled={isCheckoutDisabled()}
+                email={email}
+                firstName={firstName}
+                lastName={lastName}
+                onError={(error) => this.setState({ error, registering: false })}
+                onSubmit={() => this.setState({ registering: true })}
+                onSuccess={() => this.setState({ error: '', success: true, registering: false })}
+                showSpinner={registering}
+                ticketClass={selectedTicketClass}
+                title={title}
+              />
             </>
+          ) : (
+            <button disabled={isCheckoutDisabled()} onClick={onCheckoutClick} type="button">
+              {registering ? <Spinner /> : deriveSubmitButtonLabel()}
+            </button>
           )}
 
-          {/* Error */}
-          <p className="error" id="error">
-            {error}
-          </p>
+          {/* Error Message */}
+          <p className="error">{error}</p>
 
-          <button disabled={isCheckoutDisabled()} onClick={onCheckoutClick} type="button">
-            {registering ? <Spinner /> : submitButtonText}
-          </button>
+          {/* Success Message */}
+          <p className="success">{success ? 'You registered successfully!' : ''}</p>
         </Section>
 
         <div className="events-banner-wrapper">

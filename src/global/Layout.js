@@ -55,6 +55,7 @@ const Layout = ({ className, children }) => {
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
+  className: PropTypes.string,
 };
 
 const Content = styled.div`
