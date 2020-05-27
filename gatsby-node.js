@@ -17,62 +17,66 @@ exports.sourceNodes = async ({ actions }) => {
   );
 
   // Create events.
-  const events = response.data.data;
-  events.forEach((event) => {
-    const eventNode = {
-      // Required fields.
-      id: event.id,
-      parent: '__SOURCE__',
-      internal: {
-        type: event.type,
-      },
-      children: [],
-      // Other fields.
-      ...event.attributes,
-      relationships: event.relationships,
-    };
+  const { data: events } = response.data;
+  if (events) {
+    events.forEach((event) => {
+      const eventNode = {
+        // Required fields.
+        id: event.id,
+        parent: '__SOURCE__',
+        internal: {
+          type: event.type,
+        },
+        children: [],
+        // Other fields.
+        ...event.attributes,
+        relationships: event.relationships,
+      };
 
-    // Get content digest of node. (Required field)
-    const contentDigest = crypto
-      .createHash(`md5`)
-      .update(JSON.stringify(eventNode))
-      .digest(`hex`);
+      // Get content digest of node. (Required field)
+      const contentDigest = crypto
+        .createHash(`md5`)
+        .update(JSON.stringify(eventNode))
+        .digest(`hex`);
 
-    // Add it to the event node.
-    eventNode.internal.contentDigest = contentDigest;
+      // Add it to the event node.
+      eventNode.internal.contentDigest = contentDigest;
 
-    // Create the node.
-    createNode(eventNode);
-  });
+      // Create the node.
+      createNode(eventNode);
+    });
+  }
 
   // Create all other entities.
   const { included } = response.data;
-  included.forEach((entity) => {
-    const entityNode = {
-      // Required fields.
-      id: entity.id,
-      parent: '__SOURCE__',
-      internal: {
-        type: entity.type,
-      },
-      children: [],
-      // Other fields.
-      ...entity.attributes,
-      relationships: entity.relationships,
-    };
+  if (included) {
+    included.forEach((entity) => {
+      const entityNode = {
+        // Required fields.
+        id: entity.id,
+        parent: '__SOURCE__',
+        internal: {
+          type: entity.type,
+        },
+        children: [],
+        // Other fields.
+        ...entity.attributes,
+        relationships: entity.relationships,
+      };
 
-    // Get content digest of node. (Required field)
-    const contentDigest = crypto
-      .createHash(`md5`)
-      .update(JSON.stringify(entityNode))
-      .digest(`hex`);
+      // Get content digest of node. (Required field)
+      const contentDigest = crypto
+        .createHash(`md5`)
+        .update(JSON.stringify(entityNode))
+        .digest(`hex`);
 
-    // Add it to the event node.
-    entityNode.internal.contentDigest = contentDigest;
+      // Add it to the event node.
+      entityNode.internal.contentDigest = contentDigest;
 
-    // Create the node.
-    createNode(entityNode);
-  });
+      // Create the node.
+      createNode(entityNode);
+    });
+  }
 };
 
 exports.createPages = async ({ actions }) => {
@@ -81,13 +85,15 @@ exports.createPages = async ({ actions }) => {
   const response = await axios(
     `${process.env.GATSBY_API_URL || 'http://localhost:3000'}/events?include=venue,ticketClasses`,
   );
-  const events = response.data.data;
+  const { data: events } = response.data;
 
   // Create event detail pages.
-  events.forEach((event) => {
-    createPage({
-      path: `/events/${event.id}`,
-      component: path.resolve('./src/templates/Event/index.js'),
+  if (events) {
+    events.forEach((event) => {
+      createPage({
+        path: `/events/${event.id}`,
+        component: path.resolve('./src/templates/Event/index.js'),
+      });
     });
-  });
+  }
 };
