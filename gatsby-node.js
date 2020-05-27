@@ -9,6 +9,45 @@ const axios = require('axios');
 const crypto = require('crypto');
 const path = require('path');
 
+exports.createSchemaCustomization = ({ actions }) => {
+  const { createTypes } = actions;
+  const typeDefs = `
+    type Events implements Node {
+      name: String
+      description: String
+      capacity: Int
+      venueId: String
+      startingAt: String
+    }
+
+    interface Address {
+      city: String
+      state: String
+      street: String
+      street2: String
+      zip: Int
+    }
+
+    type Venues implements Node {
+      address: Address
+      relationships: [Events]
+    }
+
+    interface Price {
+      currency: String
+      display: String
+      value: Float
+    }
+
+    type TicketClasses implements Node {
+      name: String
+      price: Price
+      relationships: [Events]
+    }
+  `;
+  createTypes(typeDefs);
+};
+
 exports.sourceNodes = async ({ actions }) => {
   const { createNode } = actions;
 
