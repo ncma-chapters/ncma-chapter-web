@@ -7,12 +7,12 @@ export const query = graphql`
   query EventsQuery {
     allEvents {
       nodes {
-        id
         capacity
         description
         fake
-        startingAt
+        id
         name
+        startingAt
       }
     }
   }

@@ -20,8 +20,8 @@ import { Bar, BarTitle, BarSubtitle, Event, StyledDate, StyledLayout, Title } fr
 
 const Events = ({ data }) => {
   // Derive events.
-  const events = get(data, 'allEvents.edges');
-  const filteredEvents = filter(events, (event) => event.fake);
+  const events = get(data, 'allEvents.nodes');
+  const filteredEvents = filter(events, (event) => !event.fake);
 
   // Derive config properties.
   const content = get(config, 'content');
@@ -105,16 +105,14 @@ const Events = ({ data }) => {
 Events.propTypes = {
   data: PropTypes.shape({
     allEvents: PropTypes.shape({
-      edges: PropTypes.arrayOf(
+      nodes: PropTypes.arrayOf(
         PropTypes.shape({
-          node: PropTypes.shape({
-            id: PropTypes.string.isRequired,
-            capacity: PropTypes.number.isRequired,
-            description: PropTypes.string.isRequired,
-            fake: PropTypes.bool.isRequired,
-            startingAt: PropTypes.string.isRequired,
-            name: PropTypes.string.isRequired,
-          }).isRequired,
+          id: PropTypes.string.isRequired,
+          capacity: PropTypes.number.isRequired,
+          description: PropTypes.string.isRequired,
+          fake: PropTypes.bool.isRequired,
+          startingAt: PropTypes.string.isRequired,
+          name: PropTypes.string.isRequired,
         }).isRequired,
       ).isRequired,
     }).isRequired,
