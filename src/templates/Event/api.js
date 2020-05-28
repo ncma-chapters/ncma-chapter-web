@@ -10,18 +10,18 @@ export const createEventRegistration = async (options = {}) => {
         type: 'eventRegistrations',
         attributes: {
           data: {
-            company: get(options, 'company', ''),
-            email: get(options, 'email', ''),
-            firstName: get(options, 'firstName', ''),
-            lastName: get(options, 'lastName', ''),
-            title: get(options, 'title', ''),
+            company: get(options, 'company'),
+            email: get(options, 'email'),
+            firstName: get(options, 'firstName'),
+            lastName: get(options, 'lastName'),
+            title: get(options, 'title'),
           },
         },
         relationships: {
           ticketClass: {
             data: {
               type: 'ticketClasses',
-              id: get(options, 'ticketClassID', ''),
+              id: get(options, 'ticketClassID'),
             },
           },
         },
