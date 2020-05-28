@@ -1,0 +1,142 @@
+{
+  "data": [
+    {
+      "id": "1",
+      "type": "events",
+      "links": {
+        "self": "http://localhost:3000/events/1"
+      },
+      "attributes": {
+        "createdAt": "2020-05-27T23:13:59.726Z",
+        "updatedAt": "2020-05-27T23:13:59.726Z",
+        "name": "Developing Winning Proposals",
+        "description": "Developing Winning Proposals is designed to provide you with the nuts and bolts you need to review a request for proposal (RFP), put a proposal together, and develop the detailed cost estimates you need to convince a customer that you can best satisfy their needs. This seminar is designed for everyone involved in the development and response to an RFP. In addition to contract management professionals, this program benefits anyone involved in the acquisition process: managers, directors, financial analysts, engineers, and business development employees, among others.",
+        "venueId": 1,
+        "publishedAt": "2020-05-27T23:13:59.723Z",
+        "startingAt": "2020-06-10T23:13:59.724Z",
+        "endingAt": "2020-06-11T01:13:59.725Z",
+        "capacity": 200,
+        "fake": true
+      },
+      "relationships": {
+        "venue": {
+          "data": {
+            "type": "venues",
+            "id": "1"
+          }
+        },
+        "ticketClasses": {
+          "data": [
+            {
+              "type": "ticketClasses",
+              "id": "1"
+            },
+            {
+              "type": "ticketClasses",
+              "id": "2"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "included": [
+    {
+      "id": "1",
+      "type": "venues",
+      "links": {
+        "self": "http://localhost:3000/venues/1"
+      },
+      "attributes": {
+        "createdAt": "2020-05-27T23:13:59.705Z",
+        "updatedAt": "2020-05-27T23:13:59.705Z",
+        "name": "Station House",
+        "ageRestriction": null,
+        "capacity": null,
+        "address": {
+          "street": "260 1st St. S.",
+          "street2": "#200",
+          "city": "St. Petersburg",
+          "state": "FL",
+          "zip": "33701"
+        }
+      },
+      "relationships": {
+        "events": {
+          "data": [
+            {
+              "type": "events",
+              "id": "1"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "1",
+      "type": "ticketClasses",
+      "links": {
+        "self": "http://localhost:3000/ticket-classes/1"
+      },
+      "attributes": {
+        "createdAt": "2020-05-27T23:13:59.902Z",
+        "updatedAt": "2020-05-27T23:13:59.902Z",
+        "name": "Members",
+        "description": null,
+        "sorting": null,
+        "capacity": null,
+        "salesStart": null,
+        "salesEnd": null,
+        "eventId": 1,
+        "price": {
+          "currency": "USD",
+          "value": 0,
+          "display": "$0.00"
+        }
+      },
+      "relationships": {
+        "event": {
+          "data": {
+            "type": "events",
+            "id": "1"
+          }
+        }
+      }
+    },
+    {
+      "id": "2",
+      "type": "ticketClasses",
+      "links": {
+        "self": "http://localhost:3000/ticket-classes/2"
+      },
+      "attributes": {
+        "createdAt": "2020-05-27T23:13:59.907Z",
+        "updatedAt": "2020-05-27T23:13:59.907Z",
+        "name": "Non Members",
+        "description": null,
+        "sorting": null,
+        "capacity": null,
+        "salesStart": null,
+        "salesEnd": null,
+        "eventId": 1,
+        "price": {
+          "currency": "USD",
+          "value": 250000,
+          "display": "$2,500.00"
+        }
+      },
+      "relationships": {
+        "event": {
+          "data": {
+            "type": "events",
+            "id": "1"
+          }
+        }
+      }
+    }
+  ],
+  "links": {
+    "first": "http://localhost:3000/events?include=venue%2CticketClasses&page%5Bnumber%5D=1&page%5Bsize%5D=20",
+    "last": "http://localhost:3000/events?include=venue%2CticketClasses&page%5Bnumber%5D=1&page%5Bsize%5D=20"
+  }
+}
