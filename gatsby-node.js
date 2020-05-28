@@ -6,94 +6,70 @@
 
 // Node modules.
 const axios = require('axios');
-const crypto = require('crypto');
 const path = require('path');
+// Relative imports.
+const stubbedEventsResponse = require('./build-utils/stubbedEventsResponse.json');
+const { createEntityNode } = require('./build-utils/createNodes');
 
 exports.sourceNodes = async ({ actions }) => {
   const { createNode } = actions;
 
-  const response = await axios(
+  // Fetch all events.
+  let response = await axios(
     `${process.env.GATSBY_API_URL || 'http://localhost:3000'}/events?include=venue,ticketClasses`,
   );
 
-  // Create events.
-  const { data: events } = response.data;
-  if (events) {
-    events.forEach((event) => {
-      const eventNode = {
-        // Required fields.
-        id: event.id,
-        parent: '__SOURCE__',
-        internal: {
-          type: event.type,
-        },
-        children: [],
-        // Other fields.
-        ...event.attributes,
-        relationships: event.relationships,
-      };
-
-      // Get content digest of node. (Required field)
-      const contentDigest = crypto
-        .createHash(`md5`)
-        .update(JSON.stringify(eventNode))
-        .digest(`hex`);
-
-      // Add it to the event node.
-      eventNode.internal.contentDigest = contentDigest;
-
-      // Create the node.
-      createNode(eventNode);
-    });
+  // No events? Mock them so GraphQL doesn't freak out.
+  const events = response.data.data;
+  if (!events) {
+    response = { data: stubbedEventsResponse };
   }
+
+  // Create events.
+  events.forEach((event) => {
+    event.attributes.fake = event.attributes.fake || false;
+    createEntityNode(event, createNode);
+  });
 
   // Create all other entities.
   const { included } = response.data;
   if (included) {
     included.forEach((entity) => {
-      const entityNode = {
-        // Required fields.
-        id: entity.id,
-        parent: '__SOURCE__',
-        internal: {
-          type: entity.type,
-        },
-        children: [],
-        // Other fields.
-        ...entity.attributes,
-        relationships: entity.relationships,
-      };
-
-      // Get content digest of node. (Required field)
-      const contentDigest = crypto
-        .createHash(`md5`)
-        .update(JSON.stringify(entityNode))
-        .digest(`hex`);
-
-      // Add it to the event node.
-      entityNode.internal.contentDigest = contentDigest;
-
-      // Create the node.
-      createNode(entityNode);
+      createEntityNode(entity, createNode);
     });
   }
 };
 
-exports.createPages = async ({ actions }) => {
+exports.createPages = async ({ actions, graphql }) => {
   const { createPage } = actions;
 
-  const response = await axios(
-    `${process.env.GATSBY_API_URL || 'http://localhost:3000'}/events?include=venue,ticketClasses`,
-  );
-  const { data: events } = response.data;
+  // Fetch our events.
+  const result = await graphql(`
+    {
+      allEvents {
+        nodes {
+          fake
+          id
+        }
+      }
+    }
+  `);
+
+  // Throw any errors.
+  if (result.errors) {
+    throw result.errors;
+  }
 
   // Create event detail pages.
+  const { nodes: events } = result.data.allEvents;
   if (events) {
     events.forEach((event) => {
-      createPage({
-        path: `/events/${event.id}`,
-        component: path.resolve('./src/templates/Event/index.js'),
-      });
+      if (!event.fake) {
+        createPage({
+          path: `/events/${event.id}`,
+          component: path.resolve('./src/templates/Event/index.js'),
+        });
+      }
     });
   }
 };

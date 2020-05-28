@@ -334,6 +334,7 @@ Event.propTypes = {
       id: PropTypes.string.isRequired,
       capacity: PropTypes.number.isRequired,
       description: PropTypes.string.isRequired,
+      fake: PropTypes.bool.isRequired,
       startingAt: PropTypes.string.isRequired,
       name: PropTypes.string.isRequired,
     }).isRequired,
@@ -356,7 +357,7 @@ Event.propTypes = {
         state: PropTypes.string.isRequired,
         street: PropTypes.string.isRequired,
         street2: PropTypes.string.isRequired,
-        zip: PropTypes.number.isRequired,
+        zip: PropTypes.string.isRequired,
       }).isRequired,
       id: PropTypes.string.isRequired,
     }).isRequired,
@@ -367,6 +368,7 @@ export const query = graphql`
   query EventQuery($eventID: String) {
     events(id: { eq: $eventID }) {
       id
+      fake
       name
       description
       capacity

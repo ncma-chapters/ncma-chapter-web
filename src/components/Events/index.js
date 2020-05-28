@@ -21,6 +21,7 @@ import { Bar, BarTitle, BarSubtitle, Event, StyledDate, StyledLayout, Title } fr
 const Events = ({ data }) => {
   // Derive events.
   const events = get(data, 'allEvents.edges');
+  const filteredEvents = filter(events, (event) => !event.fake);
 
   // Derive config properties.
   const content = get(config, 'content');
@@ -28,7 +29,7 @@ const Events = ({ data }) => {
   const section1Header = get(content, 'events.section1Header');
 
   // Derive the first event properties.
-  const firstEvent = get(events, '[0].node');
+  const firstEvent = get(filteredEvents, '[0].node');
   const id = get(firstEvent, 'id');
   const name = get(firstEvent, 'name');
   const description = get(firstEvent, 'description');
@@ -36,14 +37,14 @@ const Events = ({ data }) => {
   const startingAt = moment(get(firstEvent, 'startingAt'));
 
   // Derive all other events.
-  const otherEvents = filter(events, (event, index) => index !== 0);
+  const otherEvents = filter(filteredEvents, (event, index) => index !== 0);
 
   return (
     <StyledLayout>
       {/* Hero Image */}
       <Hero url={heroImage} />
 
-      {isEmpty(events) && (
+      {isEmpty(filteredEvents) && (
         <Section className="no-events">
           <H2>{section1Header}</H2>
           <Text>
@@ -110,6 +111,7 @@ Events.propTypes = {
             id: PropTypes.string.isRequired,
             capacity: PropTypes.number.isRequired,
             description: PropTypes.string.isRequired,
+            fake: PropTypes.bool.isRequired,
             startingAt: PropTypes.string.isRequired,
             name: PropTypes.string.isRequired,
           }).isRequired,
