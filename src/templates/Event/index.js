@@ -133,7 +133,7 @@ class Event extends Component {
     const venue = get(data, 'venues');
     const city = get(venue, 'address.city');
     const state = get(venue, 'address.state');
-    const street1 = get(venue, 'address.street1');
+    const street1 = get(venue, 'address.street');
     const street2 = get(venue, 'address.street2');
     const zip = get(venue, 'address.zip');
     const venueAddress = join(
