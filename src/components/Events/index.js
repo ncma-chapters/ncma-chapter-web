@@ -29,7 +29,7 @@ const Events = ({ data }) => {
   const section1Header = get(content, 'events.section1Header');
 
   // Derive the first event properties.
-  const firstEvent = get(filteredEvents, '[0].node');
+  const firstEvent = get(filteredEvents, '[0]');
   const id = get(firstEvent, 'id');
   const name = get(firstEvent, 'name');
   const description = get(firstEvent, 'description');
@@ -78,9 +78,8 @@ const Events = ({ data }) => {
       {/* Other Events */}
       {!isEmpty(otherEvents) && (
         <Section largeScreenStyles={{ margin: '0 0 100px' }}>
-          {map(otherEvents, (edge) => {
+          {map(otherEvents, (event) => {
             // Derive event properties.
-            const event = get(edge, 'node');
             const id = get(event, 'id');
             const name = get(event, 'name');
             const description = get(event, 'description');
