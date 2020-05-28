@@ -65,6 +65,7 @@ exports.createPages = async ({ actions, graphql }) => {
   if (events) {
     events.forEach((event) => {
       if (!event.fake) {
+        console.log('Creating event detail page:', event);
         createPage({
           path: `/events/${event.id}`,
           component: path.resolve('./src/templates/Event/index.js'),

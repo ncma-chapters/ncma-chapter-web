@@ -21,7 +21,7 @@ import { Bar, BarTitle, BarSubtitle, Event, StyledDate, StyledLayout, Title } fr
 const Events = ({ data }) => {
   // Derive events.
   const events = get(data, 'allEvents.edges');
-  const filteredEvents = filter(events, (event) => !event.fake);
+  const filteredEvents = filter(events, (event) => event.fake);
 
   // Derive config properties.
   const content = get(config, 'content');
