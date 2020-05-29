@@ -9,13 +9,14 @@ import map from 'lodash/map';
 import moment from 'moment';
 import { Link, graphql } from 'gatsby';
 // Relative imports.
-import RegisterPaidEventForm from '../../components/RegisterPaidEventForm';
+import AttendeeList from '../../components/AttendeeList';
 import Column from '../../primitives/Column';
 import H2 from '../../primitives/H2';
 import H3 from '../../primitives/H3';
 import Hero from '../../primitives/Hero';
 import Image from '../../primitives/Image';
 import Line from '../../primitives/Line';
+import RegisterPaidEventForm from '../../components/RegisterPaidEventForm';
 import Row from '../../primitives/Row';
 import Section from '../../primitives/Section';
 import Spinner from '../../primitives/Spinner';
@@ -123,6 +124,7 @@ class Event extends Component {
 
     // Derive event properties.
     const event = get(data, 'events');
+    const id = get(event, 'id');
     const name = get(event, 'name');
     const shortDescription = get(event, 'shortDescription', 'Getting you in the know about 2020 best practices');
     const description = get(event, 'description');
@@ -309,6 +311,8 @@ class Event extends Component {
           {/* Success Message */}
           <p className="success">{success ? 'You registered successfully!' : ''}</p>
         </Section>
+
+        <AttendeeList eventID={id} />
 
         <div className="events-banner-wrapper">
           <Row className="events-banner">

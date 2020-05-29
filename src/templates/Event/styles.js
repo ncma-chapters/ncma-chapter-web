@@ -177,9 +177,6 @@ export const StyledLayout = styled(Layout)`
       min-height: 16px;
     }
 
-    .error {
-    }
-
     button {
       background: #d88661;
       border-radius: 30px;
@@ -247,7 +244,7 @@ export const StyledLayout = styled(Layout)`
     border-top: 1px solid #dcdcdc;
     display: flex;
     justify-content: center;
-    margin: 180px 0 0;
+    margin: 50px 0 0;
     width: 100%;
 
     .events-banner {
