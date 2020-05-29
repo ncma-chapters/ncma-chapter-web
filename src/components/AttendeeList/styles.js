@@ -76,14 +76,23 @@ export const Wrapper = styled.div`
 
   table {
     th,
-    tr {
+    td {
       border-bottom: 1px solid #efefef;
       border-right: 1px solid #efefef;
       padding: 10px;
+      text-align: center;
 
       &:last-of-type {
         border-right: none;
       }
+    }
+
+    th {
+      font-weight: 500;
+    }
+
+    td {
+      font-size: 1rem;
     }
   }
 `;

@@ -3,7 +3,9 @@ import request, { API_BASE_URL } from '../../utils/request';
 
 export const fetchEventRegistrations = async (eventID, passcode) => {
   const response = await request(
-    `${API_BASE_URL}/events/${eventID}/event-registrations?passcode=${encodeURIComponent(passcode)}`,
+    `${API_BASE_URL}/events/${eventID}/event-registrations?include=ticketClass&passcode=${encodeURIComponent(
+      passcode,
+    )}`,
   );
 
   // Normalize response.

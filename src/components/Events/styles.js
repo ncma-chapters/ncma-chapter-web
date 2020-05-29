@@ -16,6 +16,10 @@ export const StyledLayout = styled(Layout)`
       color: #4c9ce5;
     }
   }
+
+  .banner-image-link {
+    width: 100%;
+  }
 `;
 
 export const Bar = styled.div`

@@ -60,12 +60,14 @@ const Events = ({ data }) => {
           smallScreenStyles={isEmpty(otherEvents) && { margin: '0 0 100px' }}
         >
           <H2>{section1Header}</H2>
-          <BannerImage url={image}>
-            <Bar>
-              <BarTitle>{name}</BarTitle>
-              <BarSubtitle>{startingAt.format('MMMM D, YYYY')}</BarSubtitle>
-            </Bar>
-          </BannerImage>
+          <a className="banner-image-link" href={`/events/${id}`}>
+            <BannerImage url={image}>
+              <Bar>
+                <BarTitle>{name}</BarTitle>
+                <BarSubtitle>{startingAt.format('MMMM D, YYYY')}</BarSubtitle>
+              </Bar>
+            </BannerImage>
+          </a>
           <Text largeScreenStyles={{ marginTop: '50px' }} smallScreenStyles={{ marginTop: '50px' }}>
             {description}
           </Text>

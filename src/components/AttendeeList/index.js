@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import filter from 'lodash/filter';
+import find from 'lodash/find';
 import get from 'lodash/get';
 import join from 'lodash/join';
 import map from 'lodash/map';
@@ -23,6 +24,7 @@ class AttendeeList extends Component {
       fetching: false,
       passcode: '',
       showComponent: VIEW_BUTTON,
+      ticketClasses: [],
     };
   }
 
@@ -50,7 +52,13 @@ class AttendeeList extends Component {
 
     try {
       const response = await fetchEventRegistrations(this.props.eventID, this.state.passcode);
-      this.setState({ eventRegistrations: get(response, 'data.data'), fetching: false, showComponent: VIEW_LIST });
+      console.log('response', response);
+      this.setState({
+        eventRegistrations: get(response, 'data'),
+        ticketClasses: filter(get(response, 'included'), ['type', 'ticketClasses']),
+        fetching: false,
+        showComponent: VIEW_LIST,
+      });
     } catch (error) {
       this.setState({ error: error.message, fetching: false });
     }
@@ -58,7 +66,7 @@ class AttendeeList extends Component {
 
   render() {
     const { onBackClick, onPasscodeChange, onPasscodeSubmit, onViewButtonClick } = this;
-    const { error, eventRegistrations, fetching, showComponent, passcode } = this.state;
+    const { error, eventRegistrations, fetching, showComponent, ticketClasses, passcode } = this.state;
 
     if (showComponent === VIEW_LIST) {
       return (
@@ -72,28 +80,30 @@ class AttendeeList extends Component {
               <tr>
                 <th>Name</th>
                 <th>Email</th>
-                <th>Company</th>
+                <th>Company & Title</th>
                 <th>Ticket</th>
               </tr>
             </thead>
             <tbody>
               {map(eventRegistrations, (registration) => {
+                console.log('registration', registration);
                 // Derive registration properties.
-                const company = get(registration, 'attributes.company');
-                const email = get(registration, 'attributes.email', 'Not provided');
-                const firstName = get(registration, 'attributes.firstName');
+                const company = get(registration, 'attributes.data.company');
+                const email = get(registration, 'attributes.data.email', 'Not provided');
+                const firstName = get(registration, 'attributes.data.firstName');
                 const id = get(registration, 'id');
-                const lastName = get(registration, 'attributes.lastName');
-                // const ticketClassID = get(registration, 'attributes.ticketClassId');
-                const title = get(registration, 'attributes.title');
+                const lastName = get(registration, 'attributes.data.lastName');
+                const title = get(registration, 'attributes.data.title');
 
                 // Derive ticket class properties.
-                const ticketName = get(registration, 'attributes.name');
-                const ticketPrice = get(registration, 'attributes.price.display');
+                const ticketClassID = get(registration, 'relationships.ticketClass.data.id');
+                const ticketClass = find(ticketClasses, ['id', ticketClassID]);
+                const ticketName = get(ticketClass, 'attributes.name');
+                const ticketPrice = get(ticketClass, 'attributes.price.display');
 
                 // Derive composed fields.
-                const fullName = join(filter(firstName, lastName), ' ') || 'Not provided';
-                const companyAndTitle = join(filter(company, title), ', ') || 'Not provided';
+                const fullName = join(filter([firstName, lastName]), ' ') || 'Not provided';
+                const companyAndTitle = join(filter([company, title]), ', ') || 'Not provided';
                 const ticketDisplay = ticketName && ticketPrice ? `${ticketName} (${ticketPrice})` : 'Not provided';
 
                 return (
