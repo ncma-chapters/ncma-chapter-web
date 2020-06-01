@@ -74,7 +74,13 @@ export const Wrapper = styled.div`
     min-height: 24px;
   }
 
+  .showing-results {
+    padding: 0 0 20px;
+  }
+
   table {
+    font-size: 0.8rem;
+
     th,
     td {
       border-bottom: 1px solid #efefef;
@@ -88,11 +94,7 @@ export const Wrapper = styled.div`
     }
 
     th {
-      font-weight: 500;
-    }
-
-    td {
-      font-size: 1rem;
+      font-weight: 600;
     }
   }
 `;

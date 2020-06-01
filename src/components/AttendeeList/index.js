@@ -6,6 +6,7 @@ import find from 'lodash/find';
 import get from 'lodash/get';
 import join from 'lodash/join';
 import map from 'lodash/map';
+import moment from 'moment';
 // Relative imports.
 import Spinner from '../../primitives/Spinner';
 import { Wrapper } from './styles';
@@ -75,9 +76,12 @@ class AttendeeList extends Component {
             Back
           </button>
 
+          <p className="showing-results">Showing {eventRegistrations.length} registrations.</p>
+
           <table>
             <thead>
               <tr>
+                <th>Registered</th>
                 <th>Name</th>
                 <th>Email</th>
                 <th>Company & Title</th>
@@ -86,8 +90,8 @@ class AttendeeList extends Component {
             </thead>
             <tbody>
               {map(eventRegistrations, (registration) => {
-                console.log('registration', registration);
                 // Derive registration properties.
+                const createdAt = get(registration, 'attributes.createdAt');
                 const company = get(registration, 'attributes.data.company');
                 const email = get(registration, 'attributes.data.email', 'Not provided');
                 const firstName = get(registration, 'attributes.data.firstName');
@@ -102,12 +106,14 @@ class AttendeeList extends Component {
                 const ticketPrice = get(ticketClass, 'attributes.price.display');
 
                 // Derive composed fields.
+                const formattedCreatedAt = createdAt ? moment(createdAt).format('MM/DD/YYYY') : 'N/A';
                 const fullName = join(filter([firstName, lastName]), ' ') || 'Not provided';
                 const companyAndTitle = join(filter([company, title]), ', ') || 'Not provided';
                 const ticketDisplay = ticketName && ticketPrice ? `${ticketName} (${ticketPrice})` : 'Not provided';
 
                 return (
                   <tr key={id}>
+                    <td>{formattedCreatedAt}</td>
                     <td>{fullName}</td>
                     <td>{email}</td>
                     <td>{companyAndTitle}</td>
