@@ -20,21 +20,24 @@ exports.sourceNodes = async ({ actions }) => {
   );
 
   // No events? Mock them so GraphQL doesn't freak out.
-  const events = response.data.data;
-  if (!events) {
+  if (!response.data.data || !response.data.data.length) {
     response = { data: stubbedEventsResponse };
+    console.log('stubbed repsonse');
   }
 
   // Create events.
-  events.forEach((event) => {
-    event.attributes.fake = event.attributes.fake || false;
-    createEntityNode(event, createNode);
-  });
+  const events = response.data.data;
+  if (events) {
+    events.forEach((event) => {
+      event.attributes.fake = event.attributes.fake || false;
+      createEntityNode(event, createNode);
+    });
+  }
 
   // Create all other entities.
-  const { included } = response.data;
-  if (included) {
-    included.forEach((entity) => {
+  const otherEntities = response.data.included;
+  if (otherEntities) {
+    otherEntities.forEach((entity) => {
       createEntityNode(entity, createNode);
     });
   }
