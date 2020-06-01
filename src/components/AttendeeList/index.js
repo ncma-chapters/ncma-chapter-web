@@ -132,7 +132,7 @@ class AttendeeList extends Component {
               <span>
                 Passcode <span className="required">*</span>
               </span>
-              <input name="passcode" type="password" onChange={onPasscodeChange} value={passcode} />
+              <input autoFocus name="passcode" type="password" onChange={onPasscodeChange} value={passcode} />
             </label>
             <button type="submit">{fetching ? <Spinner /> : 'VIEW'}</button>
             <p className="error">{error}</p>

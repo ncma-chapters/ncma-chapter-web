@@ -3,14 +3,14 @@ import styled from 'styled-components';
 
 export const Wrapper = styled.div`
   color: #3d3d3d;
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: 300;
   line-height: 1.5;
   display: flex;
   flex-direction: column;
   max-width: 1040px;
   min-height: 200px;
-  padding: 20px;
+  padding: 30px 20px 20px;
   width: 100%;
 
   button {

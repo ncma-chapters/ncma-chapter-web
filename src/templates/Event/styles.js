@@ -77,6 +77,7 @@ export const StyledLayout = styled(Layout)`
 
   .event-register {
     align-items: flex-start;
+    border-bottom: 1px dashed rgb(207, 208, 218);
     max-width: 1040px;
     overflow: visible;
     padding: 40px 20px 0;
