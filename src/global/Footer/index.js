@@ -1,5 +1,6 @@
 // Node modules.
 import React from 'react';
+import filter from 'lodash/filter';
 import get from 'lodash/get';
 import map from 'lodash/map';
 import size from 'lodash/size';
@@ -36,6 +37,7 @@ const Footer = () => (
       {
         allEvents {
           nodes {
+            fake
             id
             name
           }
@@ -60,6 +62,7 @@ const Footer = () => (
 
       // Derive events.
       const events = get(data, 'allEvents.nodes');
+      const filteredEvents = filter(events, (event) => !event.fake);
 
       return (
         <Wrapper>
@@ -123,12 +126,12 @@ const Footer = () => (
 
               {/* Event Links */}
               <FooterLinks>
-                {map(take(events, 3), (event) => (
+                {map(take(filteredEvents, 3), (event) => (
                   <FooterLink key={get(event, 'id')} to={`/events/${get(event, 'id', '')}`}>
                     {get(event, 'name', '')}
                   </FooterLink>
                 ))}
-                {size(events) >= 3 && <FooterLink to="/events">See all events</FooterLink>}
+                {size(filteredEvents) >= 3 && <FooterLink to="/events">See all events</FooterLink>}
               </FooterLinks>
 
               {/* Events Link */}
